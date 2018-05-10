@@ -27,23 +27,6 @@ MonoBehaviour:
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
-  - itemName: Sword 1
-    itemID: 1
-    itemDesc: Description of sword 1
-    itemIcon: {fileID: 21300000, guid: 439486a4aa566984eba71b527d0ceaf7, type: 3}
-    itemModel: {fileID: 1000011202513472, guid: 91c2311f9bd94dd48a9b52872af815d1,
-      type: 2}
-    itemValue: 1
-    itemType: 1
-    itemWeight: 0
-    maxStack: 200
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes:
-    - attributeName: AttackType
-      attributeValue: 1
-    - attributeName: Sword
-      attributeValue: 0
   - itemName: Bow
     itemID: 2
     itemDesc: Bow description
@@ -152,6 +135,23 @@ MonoBehaviour:
       attributeValue: 0
     - attributeName: AttackType
       attributeValue: 2
+  - itemName: Sword 1
+    itemID: 1
+    itemDesc: Description of sword 1
+    itemIcon: {fileID: 21300000, guid: 439486a4aa566984eba71b527d0ceaf7, type: 3}
+    itemModel: {fileID: 1000011202513472, guid: 91c2311f9bd94dd48a9b52872af815d1,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemWeight: 0
+    maxStack: 200
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: AttackType
+      attributeValue: 1
+    - attributeName: Sword
+      attributeValue: 0  
   - itemName: Sword 2
     itemID: 9
     itemDesc: desc
