@@ -63,6 +63,7 @@ public class Player : MonoBehaviour {
     private Camera playerCamera;
 
 
+    private float attackSpeed = 1;
 
     private Dictionary<PlayerType, List<GameObject>> weapons = new Dictionary<PlayerType, List<GameObject>>();
 
@@ -134,9 +135,14 @@ public class Player : MonoBehaviour {
             if (type == PlayerType.Sword) index = defaultSwordIndex;
 
             GameObject currentWeapon = null;
-            if(weapons[type].Count> index) currentWeapon = weapons[type][index]; 
+
+            if(weapons[type].Count> index) currentWeapon = weapons[type][index];
+
             if (currentWeapon != null) currentWeapon.SetActive(true);
+
             moveBehaviour.GetAnimator.SetFloat(floatPlayerType, (int)type);
+
+            attackSpeed = PlayerManager.GetAttackSpeed(type);
         }
     }
     public AttackType Attack
@@ -285,7 +291,14 @@ public class Player : MonoBehaviour {
         }
 
     }
-
+    public float AttackSpeed
+    {
+        get { return attackSpeed; }
+    }
+    public float NormalSpeed
+    {
+        get { return 1; }
+    }
 
 
     GameObject CloneProjectile(GameObject template)
@@ -310,6 +323,16 @@ public class Player : MonoBehaviour {
 
         return go;
     }
+
+    public void FreezeAnimation()
+    {
+        MoveBehaviour.GetAnimator.speed = 0;
+    }
+    public void UnFreezeAnimation()
+    {
+        MoveBehaviour.GetAnimator.speed = attackSpeed;
+    }
+
     public bool IsAiming
     {
         get { return moveBehaviour.IsAiming; }

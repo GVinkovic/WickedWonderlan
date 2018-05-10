@@ -5698,7 +5698,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785875110f0dbb647a2d1a6e9319ad47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerAttackSpeed:
+  - playerType: 1
+    AttackSpeed: 1
+  - playerType: 2
+    AttackSpeed: 2
+  - playerType: 3
+    AttackSpeed: 2
+  players:
+  - character: 0
+    player: {fileID: 0}
   playerCamera: {fileID: 1703789253277540}
   healthBar: {fileID: 114818837279639190}
   manaBar: {fileID: 114523920536105624}
@@ -6103,6 +6112,7 @@ MonoBehaviour:
   inventory: {fileID: 1676306016668852}
   characterSystem: {fileID: 1499353410171034}
   craftSystem: {fileID: 1282636932503986}
+  hotbar: {fileID: 1872837961578492}
 --- !u!114 &114738853651567752
 MonoBehaviour:
   m_ObjectHideFlags: 1

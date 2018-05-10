@@ -15,6 +15,8 @@ public class SaveGame : MonoBehaviour {
     static readonly char itemValueDelimiter = '-';
 
 
+    static readonly string character = "ch";
+
     static readonly string position = "pos";
     static readonly string rotation = "rot";
     static readonly string experience = "xp";
@@ -44,6 +46,7 @@ public class SaveGame : MonoBehaviour {
         {
             AddSaveGameName(profileName);
         }
+        SaveSystem.SetInt(profileName + character, (int)PlayerManager.Character);
 
         var player = PlayerManager.Player;
         SaveSystem.SetVector3(profileName + position, player.transform.position);
@@ -91,6 +94,8 @@ public class SaveGame : MonoBehaviour {
             print("Save profil " + profileName + " ne postoji");
             return;
         }
+
+        PlayerManager.Character = (PlayerManager.PlayerCharacter) SaveSystem.GetInt(profileName + character);
 
         var player = PlayerManager.Player;
 

@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour
     }
     public virtual void Start()
     {
-        player = PlayerManager.instance.player;
+        player = PlayerManager.Player;
         StartCoroutine(CheckInteractions());
       //  Debug.Log("Interactable start");
     }

@@ -4,7 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
-    public GameObject player;
+
+    public enum PlayerCharacter
+    {
+        Man = 0,
+        Woman = 1
+    }
+
+
+    [System.Serializable]
+    public class PlayerAttackSpeed
+    {
+        public Player.PlayerType playerType;
+        public float AttackSpeed;
+    }
+
+    [System.Serializable]
+    public class CharacterGameObject
+    {
+        public PlayerCharacter character;
+        public GameObject player;
+    }
+
+
+    public PlayerAttackSpeed[] playerAttackSpeed;
+
+    public CharacterGameObject[] players;
+
     public GameObject playerCamera;
     public ProgressBar healthBar;
     public ProgressBar manaBar;
@@ -24,6 +50,8 @@ public class PlayerManager : MonoBehaviour {
     private MoveBehaviour moveBehaviour;
     private BasicBehaviour basicBehaviour;
     private PlayerStats playerStats;
+    private GameObject player;
+
 
     private PlayerInventory playerInventory;
 
@@ -33,22 +61,31 @@ public class PlayerManager : MonoBehaviour {
 
     private static bool isManaRecovering = false;
 
+    private static PlayerCharacter playerCharacter ;
+
     #region Singleton
     public static PlayerManager instance;
 
     void Awake()
     {
         instance = this;
-        playerScript = player.GetComponent<Player>();
-        moveBehaviour = player.GetComponent<MoveBehaviour>();
-        basicBehaviour = player.GetComponent<BasicBehaviour>();
-        playerStats = player.GetComponent<PlayerStats>();
+
+        if (!player) Character = PlayerCharacter.Man;
+        else ReferencePlayerScripts();
+
         cameraScript = playerCamera.GetComponent<ThirdPersonOrbitCamBasic>();
 
         playerInventory = GetComponent<PlayerInventory>();
 
         Inventory.AllInventoriesClosed += InventoriesClosed;
         Inventory.InventoryOpen += InventoryOpened;
+    }
+    void ReferencePlayerScripts()
+    {
+        playerScript = player.GetComponent<Player>();
+        moveBehaviour = player.GetComponent<MoveBehaviour>();
+        basicBehaviour = player.GetComponent<BasicBehaviour>();
+        playerStats = player.GetComponent<PlayerStats>();
     }
     #endregion
     public static GameObject Player
@@ -71,6 +108,26 @@ public class PlayerManager : MonoBehaviour {
     {
         get { return instance.ExperiencePoints; }
         set { instance.ExperiencePoints = value; }
+    }
+
+    public static PlayerCharacter Character
+    {
+        get { return playerCharacter; }
+        set {
+            if (instance.player) instance.player.SetActive(false);
+            playerCharacter = value;
+            foreach(var character in instance.players)
+            {
+                if(value == character.character)
+                {
+                    instance.player = character.player;
+                    instance.player.SetActive(true);
+                    instance.ReferencePlayerScripts();
+                    break;
+                }
+            }
+
+        }
     }
 
     public static PlayerInventory PlayerInventory
@@ -162,6 +219,16 @@ public class PlayerManager : MonoBehaviour {
         //TODO: animacija level-upanja i pozivanja rapoređivanja onih bodova
         print("Level up: " + level);
     }
+
+    public static float GetAttackSpeed(Player.PlayerType playerType)
+    {
+        foreach(var playerAttackSpeed in instance.playerAttackSpeed)
+        {
+            if (playerAttackSpeed.playerType == playerType) return playerAttackSpeed.AttackSpeed;
+        }
+        return 1;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.S)) { 

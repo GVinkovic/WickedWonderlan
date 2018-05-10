@@ -23,7 +23,7 @@ public class RhinoController : MonoBehaviour {
         speedFloat = Animator.StringToHash("Speed");
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        Target = PlayerManager.instance.player;
+        Target = PlayerManager.Player;
 
         StartCoroutine(trackPlayer());
     }

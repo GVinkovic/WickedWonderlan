@@ -199,7 +199,6 @@ public class MoveBehaviour : GenericBehaviour
         if (!wasAttacking && attack)
         {
             GetAnimator.SetFloat(floatAttackType, player.GetAttackType);
-
         }
 
     }

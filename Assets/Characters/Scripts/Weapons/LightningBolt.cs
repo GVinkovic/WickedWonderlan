@@ -51,7 +51,7 @@ public class LightningBolt : MonoBehaviour
             {
                 TurnOffLightningBolt();
 
-                player.MoveBehaviour.GetAnimator.speed = 1;
+                player.UnFreezeAnimation();
             }
         }
         
@@ -129,7 +129,7 @@ public class LightningBolt : MonoBehaviour
         {
 
             lineRenderer.colorGradient = sparkColor;
-            player.MoveBehaviour.GetAnimator.speed = 0;
+            player.FreezeAnimation();
             StartCoroutine(SparkLightning());
             
         }
