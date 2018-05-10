@@ -181,7 +181,11 @@ MonoBehaviour:
     maxStack: 200
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
+    itemAttributes:
+    - attributeName: AttackType
+      attributeValue: 1
+    - attributeName: Sword
+      attributeValue: 2
   - itemName: Sword 4
     itemID: 11
     itemDesc: desc
@@ -194,7 +198,11 @@ MonoBehaviour:
     maxStack: 200
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
+    itemAttributes:
+    - attributeName: AttackType
+      attributeValue: 1
+    - attributeName: Sword
+      attributeValue: 3
   - itemName: Sword 5
     itemID: 12
     itemDesc: 
@@ -207,7 +215,11 @@ MonoBehaviour:
     maxStack: 200
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
+    itemAttributes:
+    - attributeName: AttackType
+      attributeValue: 1
+    - attributeName: Sword
+      attributeValue: 4
   - itemName: Sword 6
     itemID: 13
     itemDesc: desc
@@ -220,7 +232,11 @@ MonoBehaviour:
     maxStack: 200
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
+    itemAttributes:
+    - attributeName: AttackType
+      attributeValue: 1
+    - attributeName: Sword
+      attributeValue: 5
   - itemName: Sword 7
     itemID: 14
     itemDesc: desc
@@ -233,7 +249,11 @@ MonoBehaviour:
     maxStack: 200
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
+    itemAttributes:
+    - attributeName: AttackType
+      attributeValue: 1
+    - attributeName: Sword
+      attributeValue: 6
   - itemName: Sword 8
     itemID: 15
     itemDesc: desc
@@ -246,7 +266,11 @@ MonoBehaviour:
     maxStack: 200
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
+    itemAttributes:
+    - attributeName: AttackType
+      attributeValue: 1
+    - attributeName: Sword
+      attributeValue: 7
   - itemName: Sword 9
     itemID: 16
     itemDesc: desc
@@ -259,7 +283,11 @@ MonoBehaviour:
     maxStack: 200
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
+    itemAttributes:
+    - attributeName: AttackType
+      attributeValue: 1
+    - attributeName: Sword
+      attributeValue: 8
   - itemName: Sword 10
     itemID: 17
     itemDesc: desc
