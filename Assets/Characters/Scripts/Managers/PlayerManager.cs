@@ -25,6 +25,8 @@ public class PlayerManager : MonoBehaviour {
     private BasicBehaviour basicBehaviour;
     private PlayerStats playerStats;
 
+    private PlayerInventory playerInventory;
+
     private ThirdPersonOrbitCamBasic cameraScript;
 
 
@@ -42,6 +44,8 @@ public class PlayerManager : MonoBehaviour {
         basicBehaviour = player.GetComponent<BasicBehaviour>();
         playerStats = player.GetComponent<PlayerStats>();
         cameraScript = playerCamera.GetComponent<ThirdPersonOrbitCamBasic>();
+
+        playerInventory = GetComponent<PlayerInventory>();
 
         Inventory.AllInventoriesClosed += InventoriesClosed;
         Inventory.InventoryOpen += InventoryOpened;
@@ -66,7 +70,14 @@ public class PlayerManager : MonoBehaviour {
     public static int Experience
     {
         get { return instance.ExperiencePoints; }
+        set { instance.ExperiencePoints = value; }
     }
+
+    public static PlayerInventory PlayerInventory
+    {
+        get { return instance.playerInventory; }
+    }
+
     static void RecoverMana()
     {
         if(!isManaRecovering)
@@ -151,5 +162,14 @@ public class PlayerManager : MonoBehaviour {
         //TODO: animacija level-upanja i pozivanja rapoređivanja onih bodova
         print("Level up: " + level);
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S)) { 
+            SaveGame.Save("save1");
+        }
+        else if(Input.GetKeyDown(KeyCode.L))
+        {
+            SaveGame.Load("save1");
+        }
+    }
 }

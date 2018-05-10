@@ -26,7 +26,7 @@ public static class SaveSystem {
 	static void Load()
 	{
 		data = SerializatorBinary.LoadBinary(GetPath());
-		Debug.Log("[SaveGame] --> Loading the save file: " + GetPath());
+	//	Debug.Log("[SaveGame] --> Loading the save file: " + GetPath());
 	}
 
 	static void ReplaceItem(string name, string item)
@@ -108,7 +108,7 @@ public static class SaveSystem {
     {
 		if(data.items.Count == 0) return;
 		SerializatorBinary.SaveBinary(data, GetPath());
-		Debug.Log("[SaveGame] --> Save game data: " + GetPath());
+		//Debug.Log("[SaveGame] --> Save game data: " + GetPath());
 	}
 
 	public static Vector3 GetVector3(string name)

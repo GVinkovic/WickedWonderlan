@@ -8,10 +8,13 @@ public class PlayerInventory : MonoBehaviour
     public GameObject inventory;
     public GameObject characterSystem;
     public GameObject craftSystem;
+    public GameObject hotbar;
+
     private Inventory craftSystemInventory;
     private CraftSystem cS;
     private Inventory mainInventory;
     private Inventory characterSystemInventory;
+    private Inventory hotbarInventory;
     private Tooltip toolTip;
 
     private InputManager inputManagerDatabase;
@@ -37,6 +40,14 @@ public class PlayerInventory : MonoBehaviour
     public Inventory MainInventory
     {
         get { return mainInventory; }
+    }
+    public Inventory CharacterSystemInventory
+    {
+        get { return characterSystemInventory; }
+    }
+    public Inventory HotbarInventory
+    {
+        get { return hotbarInventory; }
     }
 
     public void OnEnable()
@@ -225,6 +236,8 @@ public class PlayerInventory : MonoBehaviour
             characterSystemInventory = characterSystem.GetComponent<Inventory>();
         if (craftSystem != null)
             craftSystemInventory = craftSystem.GetComponent<Inventory>();
+        if (hotbar != null)
+            hotbarInventory = hotbar.GetComponent<Inventory>();
     }
 
     //void UpdateHPBar()

@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class CharacterStats : MonoBehaviour {
 
     public int MaxHealth = 100;
-    public int CurrentHealth { get; private set; }
+    public int CurrentHealth { get; set; }
 
 
     public Stat damage;

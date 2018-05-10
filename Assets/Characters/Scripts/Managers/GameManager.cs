@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    public static ItemDataBaseList ItemDatabase
+    {
+        get { return inventoryItems; }
+    }
     public static ProgressBar GetEnemyHealthBarCopy(GameObject enemy)
     {
       

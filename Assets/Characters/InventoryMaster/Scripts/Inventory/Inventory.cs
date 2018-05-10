@@ -628,20 +628,8 @@ public class Inventory : MonoBehaviour
             if (SlotContainer.transform.GetChild(i).childCount == 0 && 
                 (!equipmentSystem || (equipmentSystem && equipmentSystem.itemTypeOfSlots[i] == itemType)))
             {
-                GameObject item = (GameObject)Instantiate(prefabItem);
-                ItemOnObject itemOnObject = item.GetComponent<ItemOnObject>();
-                itemOnObject.item = itemDatabase.getItemByID(id);
-                if (itemOnObject.item.itemValue <= itemOnObject.item.maxStack && value <= itemOnObject.item.maxStack)
-                    itemOnObject.item.itemValue = value;
-                else
-                    itemOnObject.item.itemValue = 1;
-                item.transform.SetParent(SlotContainer.transform.GetChild(i));
-                item.GetComponent<RectTransform>().localPosition = Vector3.zero;
-                item.transform.GetChild(0).GetComponent<Image>().sprite = itemOnObject.item.itemIcon;
-                itemOnObject.item.indexItemInList = ItemsInInventory.Count - 1;
-                if (inputManagerDatabase == null)
-                    inputManagerDatabase = (InputManager)Resources.Load("InputManager");
-                return item;
+
+                return addStackableItem(id, value,i);
             }
         }
 
@@ -649,6 +637,37 @@ public class Inventory : MonoBehaviour
         updateItemList();
         return null;
 
+    }
+
+     GameObject addStackableItem(int id, int value, int i)
+    {
+        GameObject item = (GameObject)Instantiate(prefabItem);
+        ItemOnObject itemOnObject = item.GetComponent<ItemOnObject>();
+        itemOnObject.item = itemDatabase.getItemByID(id);
+        if (itemOnObject.item.itemValue <= itemOnObject.item.maxStack && value <= itemOnObject.item.maxStack)
+            itemOnObject.item.itemValue = value;
+        else
+            itemOnObject.item.itemValue = 1;
+        item.transform.SetParent(SlotContainer.transform.GetChild(i));
+        item.GetComponent<RectTransform>().localPosition = Vector3.zero;
+        item.transform.GetChild(0).GetComponent<Image>().sprite = itemOnObject.item.itemIcon;
+        itemOnObject.item.indexItemInList = ItemsInInventory.Count - 1;
+        if (inputManagerDatabase == null)
+            inputManagerDatabase = (InputManager)Resources.Load("InputManager");
+        return item;
+    }
+    public GameObject addItemToPosition(int id, int value, int position)
+    {
+        if (SlotContainer.transform.childCount < position) return null;
+
+        if (SlotContainer.transform.GetChild(position).childCount != 0)
+        {
+            Destroy(SlotContainer.transform.GetChild(position).GetChild(0).gameObject);
+        }
+
+        var item = addStackableItem(id, value,position);
+
+        return item;
     }
 
     public void addItemToInventoryStorage(int itemID, int value)
