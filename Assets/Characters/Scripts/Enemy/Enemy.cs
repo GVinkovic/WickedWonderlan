@@ -18,6 +18,8 @@ public class Enemy : Interactable {
 
     private EnemyStats enemyStats;
     private ProgressBar healthBar;
+    private Vector3 initialPosition;
+
     public override void Start()
     {
         base.Start();
@@ -25,6 +27,7 @@ public class Enemy : Interactable {
         navAgent = GetComponent<NavMeshAgent>();
         healthBar = GameManager.GetEnemyHealthBarCopy(gameObject);
         enemyStats = GetComponent<EnemyStats>();
+        initialPosition = transform.position;
      //   navAgent.isStopped = true;
     }
     private void Update()
@@ -49,14 +52,15 @@ public class Enemy : Interactable {
                     navAgent.SetDestination(player.transform.position);
                 }
             }
-            controller.SetSpeed(navAgent.velocity.magnitude);
         }
+        controller.SetSpeed(navAgent.velocity.magnitude);
+
     }
     public override void Interact()
     {
         base.Interact();
         interacting = true;
-        navAgent.isStopped = false;
+       // navAgent.isStopped = false;
         //  Attack();
 
     }
@@ -64,10 +68,13 @@ public class Enemy : Interactable {
     {
         base.StopInteract();
         interacting = false;
-        if(navAgent.enabled) navAgent.isStopped = true;
-        controller.SetSpeed(0);
-    }
+        //  if(navAgent.enabled) navAgent.isStopped = true;
+        //controller.SetSpeed(0);
 
+        //vraca se na inicijalnu poziciju
+        navAgent.SetDestination(initialPosition);
+
+    }
     public void Attack()
     {
         FaceTarget();
@@ -134,8 +141,13 @@ public class Enemy : Interactable {
     {
         if (!interacting) Interact();
 
-        controller.Hit();
+        // ako trči prema igraču onda neće play-at animacije udara da ga ne usporava
+        if (GetPlayerDistance() < navAgent.stoppingDistance)
+        {
+            controller.Hit();
+        }
         healthBar.SetProgress(enemyStats.CurrentHealth);
+
     }
 
     public EnemyController EnemyController

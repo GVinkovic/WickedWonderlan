@@ -80,6 +80,11 @@ public class PlayerManager : MonoBehaviour {
         Inventory.AllInventoriesClosed += InventoriesClosed;
         Inventory.InventoryOpen += InventoryOpened;
     }
+    void OnDestroy()
+    {
+        Inventory.AllInventoriesClosed -= InventoriesClosed;
+        Inventory.InventoryOpen -= InventoryOpened;
+    }
     void ReferencePlayerScripts()
     {
         playerScript = player.GetComponent<Player>();
