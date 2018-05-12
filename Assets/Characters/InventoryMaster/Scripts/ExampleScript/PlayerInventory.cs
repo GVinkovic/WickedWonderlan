@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
     public GameObject characterSystem;
     public GameObject craftSystem;
     public GameObject hotbar;
+	public GameObject passiveSkillTree;
 
     private Inventory craftSystemInventory;
     private CraftSystem cS;
@@ -340,6 +341,20 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (Input.GetKeyDown(inputManagerDatabase.CharacterSystemKeyCode))
+		{
+			if (!characterSystem.activeSelf)
+			{
+				characterSystemInventory.openInventory();
+			}
+			else
+			{
+				if (toolTip != null)
+					toolTip.deactivateTooltip();
+				characterSystemInventory.closeInventory();
+			}
+		}
+
         if (Input.GetKeyDown(inputManagerDatabase.CharacterSystemKeyCode))
         {
             if (!characterSystem.activeSelf)

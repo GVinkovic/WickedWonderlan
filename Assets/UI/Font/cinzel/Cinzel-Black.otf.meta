@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 491705fa1aee6ed41aef5faf77752274
+timeCreated: 1524784090
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cinzel
+  fontNames:
+  - Cinzel
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 31d87ec0cd617534f92425dcf4dfc511, type: 3}
+  - {fileID: 12800000, guid: 04373b4eeb06e05459ba5d4c0ae00ec8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
