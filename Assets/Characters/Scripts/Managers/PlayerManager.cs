@@ -177,6 +177,15 @@ public class PlayerManager : MonoBehaviour {
 
     }
 
+    public void WindowOpened()
+    {
+        InventoryOpened();
+    }
+
+    public void WindowClosed()
+    {
+        InventoriesClosed();
+    }
     public static void TakeHit()
     {
         instance.healthBar.SetProgress(instance.playerStats.CurrentHealth);

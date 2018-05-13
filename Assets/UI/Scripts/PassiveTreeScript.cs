@@ -29,19 +29,23 @@ public class PassiveTreeScript : MonoBehaviour {
 
 	public void Resume()
 	{
-		PassiveTreeUI.SetActive (false);
+        PlayerManager.instance.WindowClosed();
+
+        PassiveTreeUI.SetActive (false);
 		StatsUI.SetActive (false);
 		TreeIsActive = false;
-		Cursor.visible = false;
+	//	Cursor.visible = false;
 
 	}
 
 	void Pause()
-	{
-		PassiveTreeUI.SetActive (true);
+    {
+        PlayerManager.instance.WindowOpened();
+
+        PassiveTreeUI.SetActive (true);
 		StatsUI.SetActive (true);
 		TreeIsActive = true;
-		Cursor.visible = true;
+	//	Cursor.visible = true;
 	}
 
 

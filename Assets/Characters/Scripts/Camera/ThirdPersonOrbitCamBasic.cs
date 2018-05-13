@@ -3,7 +3,6 @@
 // This class corresponds to the 3rd person camera features.
 public class ThirdPersonOrbitCamBasic : MonoBehaviour 
 {
-	public GameObject pauseMenu;                                       //PauseMenu reference
 	public Transform player;                                           // Player's reference.
 	public Vector3 pivotOffset = new Vector3(0.0f, 1.0f,  0.0f);       // Offset to repoint the camera.
 	public Vector3 camOffset   = new Vector3(0.4f, 0.5f, -2.0f);       // Offset to relocate the camera related to the player position.
@@ -27,8 +26,8 @@ public class ThirdPersonOrbitCamBasic : MonoBehaviour
 	private float defaultFOV;                                          // Default camera Field of View.
 	private float targetFOV;                                           // Target camera Field of View.
 	private float targetMaxVerticalAngle;                              // Custom camera max vertical clamp angle.
-	private float horizontalSpeed;									   // Float to store default HorizontalAimingSpeed
-	private float verticalSpeed;									   // Float to store default VerticalAimingSpeed
+	//private float horizontalSpeed;									   // Float to store default HorizontalAimingSpeed
+	//getHprivate float verticalSpeed;									   // Float to store default VerticalAimingSpeed
 
 	// Get the camera horizontal angle.
 	public float GetH { get { return angleH; } }
@@ -52,10 +51,6 @@ public class ThirdPersonOrbitCamBasic : MonoBehaviour
 		defaultFOV = cam.GetComponent<Camera>().fieldOfView;
 		angleH = player.eulerAngles.y;
 
-		//saving default AimingSpeed
-		horizontalSpeed = horizontalAimingSpeed;
-		verticalSpeed = verticalAimingSpeed;
-
 		ResetTargetOffsets ();
 		ResetFOV ();
 		ResetMaxVerticalAngle();
@@ -63,17 +58,6 @@ public class ThirdPersonOrbitCamBasic : MonoBehaviour
 
 	void Update()
 	{
-		//Stopping camera movement when pause menu is active
-		if (pauseMenu.gameObject.activeInHierarchy) 
-		{
-			horizontalAimingSpeed = 0f;                           
-			verticalAimingSpeed = 0f; 
-		} else 
-		{
-			horizontalAimingSpeed = horizontalSpeed;                           
-			verticalAimingSpeed = verticalSpeed; 
-		}
-		// Horizontal turn speed.	
 		// Get mouse movement to orbit the camera.
 		// Mouse:
 		angleH += Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1) * horizontalAimingSpeed;

@@ -115,7 +115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1250111008155344
 GameObject:
   m_ObjectHideFlags: 1
@@ -149,7 +149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1357254584062934
 GameObject:
   m_ObjectHideFlags: 1
@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 223989068125951438}
   - component: {fileID: 114639513938996334}
   - component: {fileID: 114552965031414176}
+  - component: {fileID: 114157574962536086}
   m_Layer: 5
   m_Name: PassiveSkillMenu
   m_TagString: Untagged
@@ -705,6 +706,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114157574962536086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1953438185286212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d176f26212c592541b3105eb492669b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PassiveTreeUI: {fileID: 1256493176873788}
+  StatsUI: {fileID: 1195212770457964}
+  inputManagerDatabase: {fileID: 11400000, guid: 702008cd9ccb2de4b8c666e42b2c1efd,
+    type: 2}
 --- !u!114 &114160719507288304
 MonoBehaviour:
   m_ObjectHideFlags: 1

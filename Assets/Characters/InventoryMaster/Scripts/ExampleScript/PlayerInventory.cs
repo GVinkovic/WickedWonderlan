@@ -239,6 +239,7 @@ public class PlayerInventory : MonoBehaviour
             craftSystemInventory = craftSystem.GetComponent<Inventory>();
         if (hotbar != null)
             hotbarInventory = hotbar.GetComponent<Inventory>();
+
     }
 
     //void UpdateHPBar()
@@ -341,20 +342,7 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyDown(inputManagerDatabase.CharacterSystemKeyCode))
-		{
-			if (!characterSystem.activeSelf)
-			{
-				characterSystemInventory.openInventory();
-			}
-			else
-			{
-				if (toolTip != null)
-					toolTip.deactivateTooltip();
-				characterSystemInventory.closeInventory();
-			}
-		}
-
+		
         if (Input.GetKeyDown(inputManagerDatabase.CharacterSystemKeyCode))
         {
             if (!characterSystem.activeSelf)

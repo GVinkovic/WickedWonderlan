@@ -25,19 +25,21 @@ public class PauseMenuScript : MonoBehaviour {
 
 	public void Resume()
 	{
-		PauseMenuUI.SetActive (false);
+        PlayerManager.instance.WindowClosed();
+        PauseMenuUI.SetActive (false);
 		Time.timeScale = 1f;
 		GameIsPaused = false;
-		Cursor.visible = false;
+		//Cursor.visible = false;
 
 	}
 
 	void Pause()
 	{
+        PlayerManager.instance.WindowOpened();
 		PauseMenuUI.SetActive (true);
 		Time.timeScale = 0f;
 		GameIsPaused = true;
-		Cursor.visible = true;
+		//Cursor.visible = true;
 	}
 
 	public void LoadMenu(int sceneIndex){
