@@ -7011,6 +7011,8 @@ MonoBehaviour:
   players:
   - character: 0
     player: {fileID: 0}
+  - character: 1
+    player: {fileID: 0}
   playerCamera: {fileID: 1703789253277540}
   healthBar: {fileID: 114818837279639190}
   manaBar: {fileID: 114523920536105624}
