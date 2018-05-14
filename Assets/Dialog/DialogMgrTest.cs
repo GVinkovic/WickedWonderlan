@@ -37,7 +37,7 @@ public class DialogMgrTest : MonoBehaviour
                 {
                     "Upute. Ako si razumio, klikni na NEXT!"
                 },
-                ActionButton1Text="Next"
+                ActionButton2Text="Next"
             },
             // dialog #4
             new DialogMgr.Dialog()
