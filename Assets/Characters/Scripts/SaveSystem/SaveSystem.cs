@@ -98,7 +98,13 @@ public static class SaveSystem {
 		ReplaceItem(name, val.ToString());
 	}
 
-	public static void SetString(string name, string val)
+    public static void SetLong(string name, long val)
+    {
+        if (string.IsNullOrEmpty(name)) return;
+        ReplaceItem(name, val.ToString());
+    }
+
+    public static void SetString(string name, string val)
 	{
 		if(string.IsNullOrEmpty(name)) return;
 		ReplaceItem(name, val);
@@ -247,7 +253,13 @@ public static class SaveSystem {
 		return iFloat(name, 0);
 	}
 
-	public static float GetFloat(string name, float defaultValue)
+    public static long GetLong(string name)
+    {
+        if (string.IsNullOrEmpty(name)) return 0;
+        return iLong(name, 0);
+    }
+
+    public static float GetFloat(string name, float defaultValue)
 	{
 		if(string.IsNullOrEmpty(name)) return defaultValue;
 		return iFloat(name, defaultValue);
@@ -266,7 +278,22 @@ public static class SaveSystem {
 		return defaultValue;
 	}
 
-	public static int GetInt(string name)
+
+    static long iLong(string name, long defaultValue)
+    {
+        for (int i = 0; i < data.items.Count; i++)
+        {
+            if (string.Compare(name, data.items[i].Key) == 0)
+            {
+                return longParse(Crypt(data.items[i].Value));
+            }
+        }
+
+        return defaultValue;
+    }
+
+
+    public static int GetInt(string name)
 	{
 		if(string.IsNullOrEmpty(name)) return 0;
 		return iInt(name, 0);
@@ -333,7 +360,14 @@ public static class SaveSystem {
 		return 0;
 	}
 
-	static string Crypt(string text)
+    static long longParse(string val)
+    {
+        long value;
+        if (long.TryParse(val, out value)) return value;
+        return 0;
+    }
+
+    static string Crypt(string text)
 	{
 		string result = string.Empty;
 		foreach(char j in text) result += (char)((int)j ^ 42);

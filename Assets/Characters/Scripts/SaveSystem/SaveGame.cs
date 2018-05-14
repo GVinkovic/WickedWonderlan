@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class SaveGame : MonoBehaviour {
     static readonly string SaveGameNames = "saveGameNames";
     static readonly char delimiter = ',';
     static readonly char itemValueDelimiter = '-';
+    static readonly string time = "time";
 
 
     static readonly string character = "ch";
@@ -69,7 +71,7 @@ public class SaveGame : MonoBehaviour {
         SaveInventoryItems(PlayerManager.PlayerInventory.CharacterSystemInventory, characterSystemInventoryItems);
         SaveInventoryItems(PlayerManager.PlayerInventory.HotbarInventory, hotbarInventoryItems);
 
-
+        SaveSystem.SetLong(profileName + time, DateTime.Now.ToBinary());
         SaveSystem.SaveToDisk();
     }
 
@@ -199,6 +201,11 @@ public class SaveGame : MonoBehaviour {
         }
         return saveGameNamesList;
     } 
+    public static DateTime getSaveTime(string profileName)
+    {
+       var timeBinary =  SaveSystem.GetLong(profileName + time);
+       return DateTime.FromBinary(timeBinary);
+    }
     private static void AddSaveGameName(string name)
     {
         GetSaveGameNames();
@@ -211,6 +218,7 @@ public class SaveGame : MonoBehaviour {
 
         SaveSystem.SetString(SaveGameNames,names);
         SaveSystem.SaveToDisk();
+
     }
 
 }

@@ -69,9 +69,10 @@ public class PlayerManager : MonoBehaviour {
     void Awake()
     {
         instance = this;
+        int playerIndex =  PlayerPrefs.GetInt("CharacterSelected", 0);
+        //TODO: provjerit dali se loada save game
 
-        if (!player) Character = PlayerCharacter.Man;
-        else ReferencePlayerScripts();
+        Character = (PlayerCharacter) playerIndex;
 
         cameraScript = playerCamera.GetComponent<ThirdPersonOrbitCamBasic>();
 
@@ -119,17 +120,18 @@ public class PlayerManager : MonoBehaviour {
     {
         get { return playerCharacter; }
         set {
-            if (instance.player) instance.player.SetActive(false);
+         // if (instance.player) instance.player.SetActive(false);
             playerCharacter = value;
             foreach(var character in instance.players)
             {
-                if(value == character.character)
+                if (value == character.character)
                 {
                     instance.player = character.player;
                     instance.player.SetActive(true);
                     instance.ReferencePlayerScripts();
-                    break;
+
                 }
+                else character.player.SetActive(false);
             }
 
         }
@@ -177,6 +179,15 @@ public class PlayerManager : MonoBehaviour {
 
     }
 
+    public void WindowOpened()
+    {
+        InventoryOpened();
+    }
+
+    public void WindowClosed()
+    {
+        InventoriesClosed();
+    }
     public static void TakeHit()
     {
         instance.healthBar.SetProgress(instance.playerStats.CurrentHealth);

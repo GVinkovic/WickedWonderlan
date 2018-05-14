@@ -26,6 +26,8 @@ public class ThirdPersonOrbitCamBasic : MonoBehaviour
 	private float defaultFOV;                                          // Default camera Field of View.
 	private float targetFOV;                                           // Target camera Field of View.
 	private float targetMaxVerticalAngle;                              // Custom camera max vertical clamp angle.
+	//private float horizontalSpeed;									   // Float to store default HorizontalAimingSpeed
+	//getHprivate float verticalSpeed;									   // Float to store default VerticalAimingSpeed
 
 	// Get the camera horizontal angle.
 	public float GetH { get { return angleH; } }
