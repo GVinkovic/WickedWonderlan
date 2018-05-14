@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        Cursor.visible = false;
+     //   Cursor.visible = false;
 
         inventoryItems = (ItemDataBaseList)Resources.Load("ItemDatabase");
     }
