@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226407418072eb3469f2c21200708903, type: 3}
+  m_Name: RhinoDialogs
+  m_EditorClassIdentifier: 
+  dialogsCollection:
+  - Name: Tutorial
+    dialogs:
+    - ActorName: Dykon
+      DialogLines:
+      - Try moving using W,A,S,D keys
+      - There is a weapon just by the wall, try picking it up
+      - Try attacking with your left mouse key
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0

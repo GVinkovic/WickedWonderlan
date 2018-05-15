@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public GameObject OnEnemyDeathParticle;
     public GameObject EnemyHealthBar;
+    public DialogMgr Dialog;
+    public DialogMgr ButtonsDialog;
+
+
     public LootTableEntry[] LootTable;
 
     private static ItemDataBaseList inventoryItems;
@@ -37,6 +41,17 @@ public class GameManager : MonoBehaviour
         inventoryItems = (ItemDataBaseList)Resources.Load("ItemDatabase");
     }
     #endregion
+
+    public static DialogMgr GetDialogMgr
+    {
+        get { return instance.Dialog; }
+    }
+
+    public static DialogMgr GetButtonsDialogMgr
+    {
+        get { return instance.ButtonsDialog; }
+    }
+
 
     public static ItemDataBaseList ItemDatabase
     {

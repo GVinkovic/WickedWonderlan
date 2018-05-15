@@ -4,13 +4,7 @@ using System.Collections;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
-public class RhinoController : MonoBehaviour {
-
-
-   
-   
-    public float AllowedDistance = 2;
-
+public class RhinoController : MonoBehaviour {  
 
     protected int speedFloat;                     
 
@@ -26,6 +20,7 @@ public class RhinoController : MonoBehaviour {
         Target = PlayerManager.Player;
 
         StartCoroutine(trackPlayer());
+
     }
 	
     IEnumerator trackPlayer()
@@ -34,20 +29,19 @@ public class RhinoController : MonoBehaviour {
         {
             var distanceToTarget = Vector3.Distance(transform.position, Target.transform.position);
             float speed = 0;
-            if (distanceToTarget > AllowedDistance)
+            if (distanceToTarget > navMeshAgent.stoppingDistance)
             {
              
                 navMeshAgent.SetDestination(Target.transform.position);
 
-                speed = distanceToTarget / AllowedDistance *2;
+                speed = distanceToTarget / navMeshAgent.stoppingDistance * 2;
 
                 navMeshAgent.speed = speed;
                 animator.SetFloat(speedFloat, speed/2);
-
+                
             }
             else
             {
-                
                 animator.SetFloat(speedFloat, 0);
             }
             yield return new WaitForSeconds(.5f);

@@ -4,8 +4,10 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 // represents a dialog
-[CreateAssetMenu(menuName = "Dialog")]
-public class Dialog : ScriptableObject {
+//[CreateAssetMenu(menuName = "Dialogs/Dialog")]
+
+[System.Serializable]
+public class Dialog/* : ScriptableObject */{
     [Tooltip("Ime aktora koji trenutno govori")]
     public string ActorName; // name of the dialog actor
     [Tooltip("Lista rečenica koje će aktor izreć u ovom dialogu.")]

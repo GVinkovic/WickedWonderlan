@@ -11,7 +11,7 @@ public class DialogMgr : MonoBehaviour
     public Text DialogText; // the text object in the dialog box to render the dialog text
     public Button LeftActionButon; // reference to the first action button in the dialog box
     public Button RightActionButton; // reference to the second action button in the dialog box
-
+    public Text TooltipText; // reference to the tooltip text shown when no buttons are shown
     // key the user has to press to progress through the dialogs
     public KeyCode NextDialogKey = KeyCode.Return; // enter key
 
@@ -93,6 +93,15 @@ public class DialogMgr : MonoBehaviour
 
             }
 
+            if (!hasAction)
+            {
+                TooltipText.gameObject.SetActive(true);
+            }
+            else
+            {
+                TooltipText.gameObject.SetActive(false);
+            }
+
             // begin going through dialog lines
             foreach (var line in dialog.DialogLines)
             {
@@ -123,6 +132,7 @@ public class DialogMgr : MonoBehaviour
         this.DialogBox.SetActive(false);
         if(LeftActionButon) this.LeftActionButon.gameObject.SetActive(false);
         if(RightActionButton) this.RightActionButton.gameObject.SetActive(false);
+        this.TooltipText.gameObject.SetActive(false);
     }
 
     private IEnumerator SkinDialogRoutine()
