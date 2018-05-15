@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public DialogMgr ButtonsDialog;
 
 
+
+
     public LootTableEntry[] LootTable;
 
     private static ItemDataBaseList inventoryItems;
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+		SaveGame.Load (LoadGameScript.LoadGameName);
         instance = this;
         Cursor.visible = false;
 
