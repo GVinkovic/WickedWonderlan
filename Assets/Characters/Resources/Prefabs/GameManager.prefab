@@ -626,6 +626,7 @@ MonoBehaviour:
   EnemyHealthBar: {fileID: 1523173178202128}
   Dialog: {fileID: 114842330639587350}
   ButtonsDialog: {fileID: 114485133880959056}
+  dialogsCollection: {fileID: 11400000, guid: ea1d0d68a170de249837e7cc6349bd25, type: 2}
   LootTable:
   - enemyType: 0
     ExperienceFromKilling: 1000

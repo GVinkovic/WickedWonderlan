@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +7,7 @@ public class GameManager : MonoBehaviour
     public DialogMgr Dialog;
     public DialogMgr ButtonsDialog;
 
+    public DialogsCollection dialogsCollection;
 
 
 
@@ -54,7 +53,10 @@ public class GameManager : MonoBehaviour
     {
         get { return instance.ButtonsDialog; }
     }
-
+    public static DialogsCollection GetDialogsCollection
+    {
+        get { return instance.dialogsCollection; }
+    }
 
     public static ItemDataBaseList ItemDatabase
     {
