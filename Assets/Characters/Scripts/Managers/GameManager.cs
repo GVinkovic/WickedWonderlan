@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-		SaveGame.Load (LoadGameScript.LoadGameName);
         instance = this;
         Cursor.visible = false;
 
@@ -44,6 +43,14 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    private void Start()
+    {
+        Invoke("Load", 0);
+    }
+    void Load()
+    {
+        SaveGame.Load(LoadGameScript.LoadGameName);
+    }
     public static DialogMgr GetDialogMgr
     {
         get { return instance.Dialog; }
