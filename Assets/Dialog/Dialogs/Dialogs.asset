@@ -16,9 +16,13 @@ MonoBehaviour:
     dialogs:
     - ActorName: Dykon
       DialogLines:
-      - Try moving using W,A,S,D keys
-      - There is a weapon just by the wall, try picking it up
-      - Try attacking with your left mouse key
+      - Press W,A,S,D to move around and rotate the camera with your mouse.
+      - Press I to open your inventory. There you can see items you are using and
+        items you have found.
+      - You can drag and item from your inventory into your hotbar to gain quick access
+        to it.
+      - Press Left Mouse Button to attack.
+      - 
       LeftActionButtonText: 
       ActionLeftNext: 0
       LeftButtonAction:
