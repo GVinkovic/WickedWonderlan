@@ -160,7 +160,7 @@ public class Inventory : MonoBehaviour
             InventoryOpen();
     }
 
-    public void checkIfAllInventoryClosed()
+    public static void checkIfAllInventoryClosed()
     {
         GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
 

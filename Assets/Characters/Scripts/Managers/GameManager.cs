@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
     void Load()
     {
         SaveGame.Load(LoadGameScript.LoadGameName);
+        // refresh stats nakon loadana
+        PlayerManager.RefreshStats();
     }
     public static DialogMgr GetDialogMgr
     {

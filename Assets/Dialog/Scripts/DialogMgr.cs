@@ -6,6 +6,9 @@ using UnityEngine.Events;
 
 public class DialogMgr : MonoBehaviour
 {
+    // globalni event koji se okida kada završi dialog
+    public static UnityAction OnDialogEnd;
+
     public GameObject DialogBox; // referenca na GameObject koji predstavlja dialog holder
     public Text DialogActorNameText; // referenca na text GameObject u kojem će se prikazivat ime trenutnog aktera
     public Text DialogText; // referenca na text GameObject u kojem se prikazuje tekst dialoga
@@ -162,6 +165,8 @@ public class DialogMgr : MonoBehaviour
         }
         // kada su svi dialozi prikazani, resetiraj postavke i sakrij dialog
         this._Reset();
+        // ako netko hvata ovaj event onda okini event
+        if (OnDialogEnd != null) OnDialogEnd();
     }
 
     private void _Reset()

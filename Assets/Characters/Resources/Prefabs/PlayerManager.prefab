@@ -6296,7 +6296,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 1
 --- !u!114 &114504933047430234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7433,6 +7433,7 @@ MonoBehaviour:
   healthBar: {fileID: 114818837279639190}
   manaBar: {fileID: 114523920536105624}
   experienceBar: {fileID: 114343171807078268}
+  playerLevelText: {fileID: 114503893398084544}
   ManaRegenerationAmount: 1
   ManaRegenerationTime: 1
   ExperienceLevels: 000000002c010000840300008c0a000064190000b0360000d8590000d084000080bb000000fa0000

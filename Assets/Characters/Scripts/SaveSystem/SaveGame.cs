@@ -23,7 +23,9 @@ public class SaveGame : MonoBehaviour {
     static readonly string rotation = "rot";
     static readonly string experience = "xp";
     static readonly string health = "hp";
+    static readonly string maxHealth = "maxhp";
     static readonly string mana = "mana";
+    static readonly string maxMana = "maxmana";
     static readonly string strength = "str";
     static readonly string constitution = "const";
     static readonly string intelligence = "intel";
@@ -57,7 +59,9 @@ public class SaveGame : MonoBehaviour {
         
         PlayerStats ps = PlayerManager.PlayerStats;
         SaveSystem.SetInt(profileName + health, ps.CurrentHealth);
+        SaveSystem.SetInt(profileName + maxHealth, ps.MaxHealth);
         SaveSystem.SetInt(profileName + mana, ps.CurrentMana);
+        SaveSystem.SetInt(profileName + maxMana, ps.MaxMana);
         SaveSystem.SetInt(profileName + strength, ps.strength.Value);
         SaveSystem.SetInt(profileName + constitution, ps.constitution.Value);
         SaveSystem.SetInt(profileName + intelligence, ps.intelligence.Value);
@@ -93,7 +97,7 @@ public class SaveGame : MonoBehaviour {
     {
         if (!GetSaveGameNames().Contains(profileName))
         {
-            print("Save profil " + profileName + " ne postoji");
+        //    print("Save profil " + profileName + " ne postoji");
             return;
         }
 
@@ -108,7 +112,9 @@ public class SaveGame : MonoBehaviour {
 
         PlayerStats ps = PlayerManager.PlayerStats;
         ps.CurrentHealth = SaveSystem.GetInt(profileName + health);
+        ps.MaxHealth = SaveSystem.GetInt(profileName + maxHealth);
         ps.CurrentMana = SaveSystem.GetInt(profileName + mana);
+        ps.MaxMana = SaveSystem.GetInt(profileName + maxMana);
         ps.strength.Value = SaveSystem.GetInt(profileName + strength);
         ps.constitution.Value = SaveSystem.GetInt(profileName + constitution);
         ps.intelligence.Value = SaveSystem.GetInt(profileName + intelligence);

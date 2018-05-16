@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour {
 
@@ -35,6 +36,7 @@ public class PlayerManager : MonoBehaviour {
     public ProgressBar healthBar;
     public ProgressBar manaBar;
     public ProgressBar experienceBar;
+    public Text playerLevelText;
 
     public int ManaRegenerationAmount = 1;
     public float ManaRegenerationTime = 1;
@@ -70,7 +72,6 @@ public class PlayerManager : MonoBehaviour {
     {
         instance = this;
         int playerIndex =  PlayerPrefs.GetInt("CharacterSelected", 0);
-        //TODO: provjerit dali se loada save game
 
         Character = (PlayerCharacter) playerIndex;
 
@@ -113,7 +114,36 @@ public class PlayerManager : MonoBehaviour {
     public static int Experience
     {
         get { return instance.ExperiencePoints; }
-        set { instance.ExperiencePoints = value; }
+        set {
+
+            instance.ExperiencePoints = value;
+
+            int MaxExperiencePoints = instance.ExperienceLevels[instance.ExperienceLevels.Length - 1];
+            instance.experienceBar.SetProgress(((float)instance.ExperiencePoints / (float)MaxExperiencePoints) *100, 
+            instance.ExperiencePoints + "/" + MaxExperiencePoints, Level);
+
+
+            int currentLevel = Array.BinarySearch(instance.ExperienceLevels, value);
+            if (currentLevel < 0) currentLevel = (currentLevel + 1) * -1;
+
+           // currentLevel--;
+
+            if (currentLevel != level)
+            {
+                Level = currentLevel;
+                LevelUp();
+            }
+        }
+    }
+
+    public static int Level
+    {
+        get { return level;}
+        set {
+
+            level = value;
+            instance.playerLevelText.text = value.ToString();
+        }
     }
 
     public static PlayerCharacter Character
@@ -162,10 +192,13 @@ public class PlayerManager : MonoBehaviour {
 
     void InventoriesClosed()
     {
+        if (openedWindows > 0) return;
+
         Cursor.visible = false;
         cameraScript.enabled = true;
         moveBehaviour.enabled = true;
         basicBehaviour.enabled = true;
+        Time.timeScale = 1f;
     }
     void InventoryOpened()
     {
@@ -175,22 +208,29 @@ public class PlayerManager : MonoBehaviour {
             cameraScript.enabled = false;
             moveBehaviour.enabled = false;
             basicBehaviour.enabled = false;
+            Time.timeScale = 0f;
         }
 
     }
-
+    private static int openedWindows = 0;
     public void WindowOpened()
     {
+        openedWindows++;
         InventoryOpened();
     }
 
     public void WindowClosed()
     {
-        InventoriesClosed();
+        openedWindows--;
+        //       InventoriesClosed();
+        //provjerava dali su svi inventory zatvoreni
+        // ako jesu invoka event, koji onda poziva metodu InventoriesClosed();
+        Inventory.checkIfAllInventoryClosed();
     }
     public static void TakeHit()
     {
-        instance.healthBar.SetProgress(instance.playerStats.CurrentHealth);
+        instance.healthBar.SetProgress((float)instance.playerStats.CurrentHealth / (float)instance.playerStats.MaxHealth*100,
+            instance.playerStats.CurrentHealth +"/" + instance.playerStats.MaxHealth);
     }
     public static void Die()
     {
@@ -203,31 +243,32 @@ public class PlayerManager : MonoBehaviour {
         AlterMana(-1);
         RecoverMana();
     }
-    static void AlterMana(int amount)
+    public static void AlterMana(int amount)
     {
         instance.playerStats.CurrentMana += amount;
-        instance.manaBar.SetProgress(instance.playerStats.CurrentMana);
+        instance.manaBar.SetProgress((float)instance.playerStats.CurrentMana / (float)instance.playerStats.MaxMana * 100,
+            instance.playerStats.CurrentMana + "/" +instance.playerStats.MaxMana);
+    }
+
+    // osvjezava sve statove prikazane na ekranu
+    public static void RefreshStats()
+    {
+        TakeHit();
+        AlterMana(0);
+
     }
     public static void GainExperience(int amount)
     {
         int MaxExperiencePoints = instance.ExperienceLevels[instance.ExperienceLevels.Length - 1];
-       
-        instance.ExperiencePoints += amount;
 
-        int currentLevel = Array.BinarySearch(instance.ExperienceLevels, instance.ExperiencePoints);
-        if (currentLevel < 0) currentLevel = (currentLevel + 1) * -1;
-       
-        if (instance.ExperiencePoints >= MaxExperiencePoints) instance.ExperiencePoints = MaxExperiencePoints;
-        currentLevel--;
-        
-        if(currentLevel != level)
-        {
-            level = currentLevel;
-            LevelUp();
-        }
+        int xp = Experience + amount;
 
-        instance.experienceBar.SetProgress(((float)instance.ExperiencePoints / (float)MaxExperiencePoints) *100, 
-            instance.ExperiencePoints + "/" + MaxExperiencePoints, currentLevel);
+        if (xp >= MaxExperiencePoints) xp = MaxExperiencePoints;
+
+
+        Experience = xp;
+
+    
     }
 
     static void LevelUp()
@@ -245,14 +286,5 @@ public class PlayerManager : MonoBehaviour {
         return 1;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S)) { 
-            SaveGame.Save("save1");
-        }
-        else if(Input.GetKeyDown(KeyCode.L))
-        {
-            SaveGame.Load("save1");
-        }
-    }
+
 }
