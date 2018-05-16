@@ -49,6 +49,7 @@ public class PauseMenuScript : MonoBehaviour {
 
 	public void SaveGamee(){
 		SaveGame.Save ("SavedGame" + SaveGame.GetSaveGameNames ().Count);
+		Resume ();
 	}
 
 	public void QuitGame(){
