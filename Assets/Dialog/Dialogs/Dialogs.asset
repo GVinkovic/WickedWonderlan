@@ -12,6 +12,87 @@ MonoBehaviour:
   m_Name: Dialogs
   m_EditorClassIdentifier: 
   dialogsCollection:
+  - Name: Intro
+    dialogs:
+    - ActorName: Player
+      DialogLines:
+      - Ugh... my head. What happened, where am I?
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
+    - ActorName: Dykon
+      DialogLines:
+      - Unbelievable, magic circle actually activated! You there, human, you alive?!
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
+    - ActorName: Player
+      DialogLines:
+      - Huh? A talking ... beast? What in the world is going on, who - no - what are
+        you?
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
+    - ActorName: Dykon
+      DialogLines:
+      - Feeling hazy I see, must a side effect...
+      - 'Name''s Dykon and yes as you have so skillfully observed I am a beast indeed,               but
+        don''t worry eating humans ain''t exactly up my alley '
+      - You should head down to village of Highhaven, I'm sure the Elder there would
+        be               able to explain the situation to you better then I.
+      - Come on, let's get going before this place crumbles from old age I'll tag
+        along,               roads these days aren't very safe.
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
   - Name: Tutorial
     dialogs:
     - ActorName: Dykon

@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54efa9aef6674b94ea4138316199e4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScenarioName: Tutorial
+  ScenarioName: Intro
   simpleDialog: 0
 --- !u!4 &250267265
 Transform:
@@ -3052,6 +3052,46 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 224992701034010170, guid: d96ccc4e1a8f3be46ba717787e415f98,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510460056263354, guid: d96ccc4e1a8f3be46ba717787e415f98,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224992701034010170, guid: d96ccc4e1a8f3be46ba717787e415f98,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510460056263354, guid: d96ccc4e1a8f3be46ba717787e415f98,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224992701034010170, guid: d96ccc4e1a8f3be46ba717787e415f98,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510460056263354, guid: d96ccc4e1a8f3be46ba717787e415f98,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510460056263354, guid: d96ccc4e1a8f3be46ba717787e415f98,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -53
+      objectReference: {fileID: 0}
+    - target: {fileID: 224992701034010170, guid: d96ccc4e1a8f3be46ba717787e415f98,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 165
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d96ccc4e1a8f3be46ba717787e415f98, type: 2}
   m_IsPrefabParent: 0
@@ -3673,6 +3713,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4750205203826396, guid: 22989306d48989c48a423ad7dc9b80af, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989741959405394, guid: 22989306d48989c48a423ad7dc9b80af, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

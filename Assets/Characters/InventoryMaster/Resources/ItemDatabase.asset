@@ -28,7 +28,7 @@ MonoBehaviour:
     rarity: 0
     itemAttributes: []
   - itemName: Bow
-    itemID: 2
+    itemID: 1
     itemDesc: Bow description
     itemIcon: {fileID: 21300000, guid: 07beb17ed46c1ad448cf72e5ecbcd9c9, type: 3}
     itemModel: {fileID: 100002, guid: 022a72268e462114788abcf0c0b07418, type: 3}
@@ -44,7 +44,7 @@ MonoBehaviour:
     - attributeName: Bow
       attributeValue: 0
   - itemName: Fire Ball
-    itemID: 3
+    itemID: 2
     itemDesc: Fire ball description
     itemIcon: {fileID: 21300000, guid: e374e44b1c3fcba41b4a43d8f44018f5, type: 3}
     itemModel: {fileID: 1767112267422432, guid: e06ad9dee84b3a04d9ecf0a1ec58d253,
@@ -104,7 +104,7 @@ MonoBehaviour:
     - attributeName: AttackType
       attributeValue: 3
   - itemName: Bow Knockback
-    itemID: 7
+    itemID: 6
     itemDesc: desc
     itemIcon: {fileID: 21300000, guid: 5302d141cdfd12c4d929311468085f8e, type: 3}
     itemModel: {fileID: 0}
