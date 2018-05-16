@@ -45,10 +45,14 @@ public class PauseMenuScript : MonoBehaviour {
 	public void LoadMenu(int sceneIndex){
 		Time.timeScale = 1f;
 		SceneManager.LoadScene (sceneIndex);
+	}
 
+	public void SaveGamee(){
+		SaveGame.Save ("SavedGame" + SaveGame.GetSaveGameNames ().Count);
 	}
 
 	public void QuitGame(){
 		Application.Quit ();
 	}
+
 }

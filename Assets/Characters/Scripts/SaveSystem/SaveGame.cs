@@ -161,6 +161,8 @@ public class SaveGame : MonoBehaviour {
 
     static void ConnectInventoryItems(Inventory inv1, Inventory inv2)
     {
+        inv1.gameObject.SetActive(true);
+        inv2.gameObject.SetActive(true);
         GameManager.instance.StartCoroutine(ConnectInventoryItemsRoutine(inv1, inv2));
     }
     static IEnumerator ConnectInventoryItemsRoutine(Inventory inv1, Inventory inv2)
@@ -189,6 +191,8 @@ public class SaveGame : MonoBehaviour {
                 }
             }
         }
+        inv1.gameObject.SetActive(false);
+     //   inv2.gameObject.SetActive(false);
     }
     public static List<string> GetSaveGameNames()
     {
