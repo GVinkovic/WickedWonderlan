@@ -166,10 +166,9 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 76.9
-    functionName: loadWorld
-    data: World
-    objectReferenceParameter: {fileID: 102900000, guid: 91f5c483f21ff73458c964879c4aba44,
-      type: 3}
+    functionName: LoadWorld
+    data: 
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 2
     messageOptions: 0

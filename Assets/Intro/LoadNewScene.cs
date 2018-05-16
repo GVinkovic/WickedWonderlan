@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 public class LoadNewScene : MonoBehaviour
 {
 
-    // Use this for initialization
-    public void loadWorld(string World)
+    public void LoadWorld(int sceneIndex)
     {
-        SceneManager.LoadScene(World);
+        SceneManager.LoadScene(sceneIndex);
     }
 }
