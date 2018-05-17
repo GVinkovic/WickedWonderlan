@@ -32,7 +32,7 @@ public class Enemy : Interactable {
     }
     private void Update()
     {
-        if (interacting)
+        if (interacting && navAgent.enabled)
         {
             if (controller.CanAttack())
             {
