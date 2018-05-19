@@ -33,6 +33,14 @@ public class SaveGame : MonoBehaviour {
     static readonly string playerType = "plType";
     static readonly string attackType = "atckType";
     static readonly string sword = "swd";
+	static readonly string statDex = "sd"; //dodano
+	static readonly string statStr = "ss"; //dodano
+	static readonly string statConst = "sc"; //dodano
+	static readonly string statIntel = "si"; //dodano
+	static readonly string statAvail = "sa"; //dodano
+	static readonly string treeAvail = "ta";//dodano
+
+
 
     static readonly string mainInventoryItems = "mii";
     static readonly string characterSystemInventoryItems = "csii";
@@ -67,10 +75,18 @@ public class SaveGame : MonoBehaviour {
         SaveSystem.SetInt(profileName + intelligence, ps.intelligence.Value);
         SaveSystem.SetInt(profileName + dexterity, ps.dexterity.Value);
 
+
+
         SaveSystem.SetInt(profileName + playerType, (int)PlayerManager.PlayerScript.Type);
         SaveSystem.SetInt(profileName + attackType, PlayerManager.PlayerScript.AttackIndex);
         SaveSystem.SetInt(profileName + sword, PlayerManager.PlayerScript.defaultSwordIndex);
-
+		SaveSystem.SetInt (profileName + statDex, PassiveTreeScript.Dexterity);//dodano 
+		SaveSystem.SetInt (profileName + statStr, PassiveTreeScript.Strength);//dodano 
+		SaveSystem.SetInt (profileName + statConst, PassiveTreeScript.Constitution);//dodano 
+		SaveSystem.SetInt (profileName + statIntel, PassiveTreeScript.Intelligence);//dodano 
+		SaveSystem.SetInt (profileName + statAvail, PassiveTreeScript.AvailablePoints);//dodano 
+		SaveSystem.SetInt (profileName + treeAvail, PassiveTreeScript.AvailablePointsT);//dodano
+	
         SaveInventoryItems(PlayerManager.PlayerInventory.MainInventory, mainInventoryItems);
         SaveInventoryItems(PlayerManager.PlayerInventory.CharacterSystemInventory, characterSystemInventoryItems);
         SaveInventoryItems(PlayerManager.PlayerInventory.HotbarInventory, hotbarInventoryItems);
@@ -109,6 +125,15 @@ public class SaveGame : MonoBehaviour {
         player.transform.rotation = Quaternion.Euler(SaveSystem.GetVector3(profileName + rotation));
 
         PlayerManager.Experience = SaveSystem.GetInt(profileName + experience);
+		PassiveTreeScript.Dexterity = SaveSystem.GetInt (profileName + statDex);//dodano
+		PassiveTreeScript.Intelligence = SaveSystem.GetInt (profileName + statIntel);//dodano
+		PassiveTreeScript.Constitution = SaveSystem.GetInt (profileName + statConst);//dodano
+		PassiveTreeScript.Strength = SaveSystem.GetInt (profileName + statStr);//dodano
+		PassiveTreeScript.AvailablePoints = SaveSystem.GetInt (profileName + statAvail);//dodano
+
+
+
+
 
         PlayerStats ps = PlayerManager.PlayerStats;
         ps.CurrentHealth = SaveSystem.GetInt(profileName + health);

@@ -18,7 +18,6 @@ public class PauseMenuScript : MonoBehaviour {
 			} else
 			{
 				Pause ();
-
 			}
 		}
 	}
@@ -30,9 +29,7 @@ public class PauseMenuScript : MonoBehaviour {
 		Time.timeScale = 1f;
 		GameIsPaused = false;
 		//Cursor.visible = false;
-
 	}
-
 	void Pause()
 	{
         PlayerManager.instance.WindowOpened();
@@ -48,7 +45,8 @@ public class PauseMenuScript : MonoBehaviour {
 	}
 
 	public void SaveGamee(){
-		SaveGame.Save ("SavedGame" + SaveGame.GetSaveGameNames ().Count);
+		//SaveGame.Save ("SavedGame" + SaveGame.GetSaveGameNames ().Count);
+		SaveGame.Save(LoadGameScript.LoadGameName);
 		Resume ();
 	}
 
