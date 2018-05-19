@@ -40,7 +40,7 @@ public class LoadGameScript : MonoBehaviour {
 
 	//pozivanje druge scene
 	public void Load(int SceneIndex){
-		if(LoadGameName != null && LoadGameName != "Button"){
+		if(LoadGameName != null && LoadGameName != "EmptySlot"){
 		SceneManager.LoadScene(SceneIndex);
 		}
 	}

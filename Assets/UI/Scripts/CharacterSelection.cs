@@ -53,7 +53,7 @@ public class CharacterSelection : MonoBehaviour {
 	public void ConfirmButton(int SceneIndex){
 
 		PlayerPrefs.SetInt ("CharacterSelected", index);
-        LoadGameScript.LoadGameName = "Profile" + SaveGame.GetSaveGameNames().Count + 1;
+		LoadGameScript.LoadGameName = "Profile" + ((int)SaveGame.GetSaveGameNames().Count+1);
 		SceneManager.LoadScene (SceneIndex);
 	}
 

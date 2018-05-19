@@ -115,7 +115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1250111008155344
 GameObject:
   m_ObjectHideFlags: 1
@@ -770,8 +770,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PassiveTreeUI: {fileID: 1256493176873788}
   StatsUI: {fileID: 1195212770457964}
-  inputManagerDatabase: {fileID: 11400000, guid: 702008cd9ccb2de4b8c666e42b2c1efd,
+  InputManagerDatabase: {fileID: 11400000, guid: 702008cd9ccb2de4b8c666e42b2c1efd,
     type: 2}
+  CurrentLevel: {fileID: 114271078872353466}
 --- !u!114 &114160719507288304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1106,7 +1107,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 1
 --- !u!114 &114323373616819794
 MonoBehaviour:
   m_ObjectHideFlags: 1
