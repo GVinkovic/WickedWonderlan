@@ -49,10 +49,32 @@ public class GameManager : MonoBehaviour
     }
     void Load()
     {
-        SaveGame.Load(LoadGameScript.LoadGameName);
-        // refresh stats nakon loadana
+        var loaded = SaveGame.Load(LoadGameScript.LoadGameName);
+
+       
+        // refresh stats 
         PlayerManager.RefreshStats();
+
+        // ako je ovo nova igra prikazi intro dialoge
+        if(!loaded)
+            StartIntroDialog();
+        
+
     }
+    void StartIntroDialog()
+    {
+        DialogMgr.OnDialogEnd += OnDialogEnd;
+        PlayerManager.StopPlayerMovement();
+        GetButtonsDialogMgr.BeginDialog(GetDialogsCollection.getDialogList("Intro"));
+    }
+
+    private void OnDialogEnd()
+    {
+        PlayerManager.ResumePlayerMovement();
+
+        DialogMgr.OnDialogEnd -= OnDialogEnd;
+    }
+
     public static DialogMgr GetDialogMgr
     {
         get { return instance.Dialog; }

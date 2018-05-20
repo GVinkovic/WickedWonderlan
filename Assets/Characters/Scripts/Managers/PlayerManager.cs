@@ -191,6 +191,17 @@ public class PlayerManager : MonoBehaviour {
         isManaRecovering = false;
     }
 
+    public static void StopPlayerMovement()
+    {
+        instance.moveBehaviour.enabled = false;
+        instance.basicBehaviour.enabled = false;
+    }
+    public static void ResumePlayerMovement()
+    {
+        instance.moveBehaviour.enabled = true;
+        instance.basicBehaviour.enabled = true;
+    }
+
     void InventoriesClosed()
     {
         if (openedWindows > 0) return;

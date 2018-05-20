@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 
 public class DialogMgr : MonoBehaviour
 {
+
+    public delegate void DialogState();
     // globalni event koji se okida kada završi dialog
-    public static UnityAction OnDialogEnd;
+    public static event DialogState OnDialogEnd;
 
     public GameObject DialogBox; // referenca na GameObject koji predstavlja dialog holder
     public Text DialogActorNameText; // referenca na text GameObject u kojem će se prikazivat ime trenutnog aktera

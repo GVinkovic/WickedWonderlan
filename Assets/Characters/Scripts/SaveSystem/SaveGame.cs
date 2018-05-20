@@ -109,12 +109,12 @@ public class SaveGame : MonoBehaviour {
         SaveSystem.SetString(key, items);
     }
 
-    public static void Load(string profileName)
+    public static bool Load(string profileName)
     {
         if (!GetSaveGameNames().Contains(profileName))
         {
-        //    print("Save profil " + profileName + " ne postoji");
-            return;
+            //    print("Save profil " + profileName + " ne postoji");
+            return false;
         }
 
         PlayerManager.Character = (PlayerManager.PlayerCharacter) SaveSystem.GetInt(profileName + character);
@@ -154,7 +154,7 @@ public class SaveGame : MonoBehaviour {
         LoadInventoryItems(PlayerManager.PlayerInventory.HotbarInventory, hotbarInventoryItems);
 
         ConnectInventoryItems(PlayerManager.PlayerInventory.CharacterSystemInventory, PlayerManager.PlayerInventory.HotbarInventory);
-
+        return true;
     }
 
     static void LoadInventoryItems(Inventory inventory, string key)
