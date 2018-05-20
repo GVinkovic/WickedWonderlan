@@ -19,6 +19,8 @@ public class PlayerStats : CharacterStats {
     {
         base.Awake();
         CurrentMana = MaxMana;
+        MaxHealth += constitution.Value * 5;
+        MaxMana += intelligence.Value * 5;
     }
 
     public override void TakeHit()
@@ -38,7 +40,42 @@ public class PlayerStats : CharacterStats {
     }
     public override int GetDamageValue()
     {
-        int val = damage.Value + strength.Value;
+        int val = damage.Value;
+
+        var playerType = PlayerManager.PlayerScript.Type;
+
+        // ako trenutno napada mačem poveća damage za vrijednost snage
+        if (playerType == Player.PlayerType.Sword) val += strength.Value;
+
+        // ako trenutno napada magijom poveća damage za vrijednost inteligencije
+        else if (playerType == Player.PlayerType.Magic) val += intelligence.Value;
+
+        // sansa za dupli damage
+        if (Random.Range(0, 100) <= dexterity.Value) val *= 2;
         return val;
     }
+
+    public void AlterIntelligence(int amount)
+    {
+        intelligence.Value += amount;
+        MaxMana += amount * 5;
+    }
+
+
+    public void AlterDexterity(int amount)
+    {
+        dexterity.Value += amount;
+    }
+
+    public void AlterConstitution(int amount)
+    {
+        constitution.Value += amount;
+        MaxHealth += amount * 5;
+    }
+
+    public void AlterStrength(int amount)
+    {
+        strength.Value += amount;
+    }
+
 }

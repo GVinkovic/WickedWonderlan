@@ -38,7 +38,7 @@ public class PlayerManager : MonoBehaviour {
     public ProgressBar experienceBar;
     public Text playerLevelText;
 
-    public int ManaRegenerationAmount = 1;
+    //public int ManaRegenerationAmount = 1;
     public float ManaRegenerationTime = 1;
 
     public int[] ExperienceLevels;
@@ -183,9 +183,9 @@ public class PlayerManager : MonoBehaviour {
     }
     static IEnumerator ManaRecovery()
     {
-        while (instance.playerStats.CurrentMana < 100)
+        while (instance.playerStats.CurrentMana < instance.playerStats.MaxMana)
         {
-            AlterMana(instance.ManaRegenerationAmount);
+            AlterMana(PlayerStats.intelligence.Value);
             yield return new WaitForSeconds(instance.ManaRegenerationTime);
         }
         isManaRecovering = false;
@@ -223,41 +223,51 @@ public class PlayerManager : MonoBehaviour {
     public void WindowClosed()
     {
         openedWindows--;
-        //       InventoriesClosed();
+
         //provjerava dali su svi inventory zatvoreni
         // ako jesu invoka event, koji onda poziva metodu InventoriesClosed();
         Inventory.checkIfAllInventoryClosed();
     }
     public static void TakeHit()
     {
-        instance.healthBar.SetProgress((float)instance.playerStats.CurrentHealth / (float)instance.playerStats.MaxHealth*100,
-            instance.playerStats.CurrentHealth +"/" + instance.playerStats.MaxHealth);
+        RefreshHealthUI();
     }
     public static void Die()
     {
         instance.healthBar.SetProgress(0);
-
     }
 
     public static void ConsumeMana()
-    {//TODO: uzet modifier od nekud ovisno od tipu magic-a
-        AlterMana(-1);
+    {
+        AlterMana(PlayerStats.intelligence.Value * 5);
         RecoverMana();
     }
     public static void AlterMana(int amount)
     {
         instance.playerStats.CurrentMana += amount;
-        instance.manaBar.SetProgress((float)instance.playerStats.CurrentMana / (float)instance.playerStats.MaxMana * 100,
-            instance.playerStats.CurrentMana + "/" +instance.playerStats.MaxMana);
+        RefreshManaUI();
     }
 
     // osvjezava sve statove prikazane na ekranu
     public static void RefreshStats()
     {
-        TakeHit();
-        AlterMana(0);
+        RefreshHealthUI();
+        RefreshManaUI();
 
     }
+
+    public static void RefreshHealthUI()
+    {
+        instance.healthBar.SetProgress((float)instance.playerStats.CurrentHealth / (float)instance.playerStats.MaxHealth * 100,
+          instance.playerStats.CurrentHealth + "/" + instance.playerStats.MaxHealth);
+    }
+
+    public static void RefreshManaUI()
+    {
+        instance.manaBar.SetProgress((float)instance.playerStats.CurrentMana / (float)instance.playerStats.MaxMana * 100,
+          instance.playerStats.CurrentMana + "/" + instance.playerStats.MaxMana);
+    }
+
     public static void GainExperience(int amount)
     {
         int MaxExperiencePoints = instance.ExperienceLevels[instance.ExperienceLevels.Length - 1];
@@ -287,5 +297,29 @@ public class PlayerManager : MonoBehaviour {
         return 1;
     }
 
+    public static void AlterIntelligence(int amount)
+    {
+        PlayerStats.AlterIntelligence(amount);
+        // osvježi ui prikaza mane
+        RefreshManaUI();
+    }
+
+
+    public static void AlterDexterity(int amount)
+    {
+        PlayerStats.AlterDexterity(amount);
+    }
+
+    public static void AlterConstitution(int amount)
+    {
+        PlayerStats.AlterConstitution(amount);
+        //osvježi ui prikaza health-a
+        RefreshHealthUI();
+    }
+
+    public static void AlterStrength(int amount)
+    {
+        PlayerStats.AlterStrength(amount);
+    }
 
 }

@@ -137,22 +137,22 @@ public class PassiveTreeScript : MonoBehaviour {
 				PointsIntelNum++;
 				StatsManager ();
 				DecreaseAvailPoints ();
-				//TODO: utjecanje na igraca
+				PlayerManager.AlterIntelligence(1);
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Btn_AddDex") {
 				PointsDexNum++;
 				StatsManager ();
 				DecreaseAvailPoints ();
-				//TODO: utjecanje na igraca
+				PlayerManager.AlterDexterity(1);
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Btn_AddConst") {
 				PointsConstNum++;
 				StatsManager ();
 				DecreaseAvailPoints ();
-				//TODO: utjecanje na igraca
+				PlayerManager.AlterConstitution(1);
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Btn_AddStr") {
 				PointsStrNum++;
 				StatsManager ();
 				DecreaseAvailPoints ();
-				//TODO: utjecanje na igraca
+				PlayerManager.AlterStrength(1);
 		}
 	}
 	public void AddTreePoints(){
