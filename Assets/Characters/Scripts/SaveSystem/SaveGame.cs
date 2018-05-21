@@ -39,6 +39,18 @@ public class SaveGame : MonoBehaviour {
 	static readonly string statIntel = "si"; //dodano
 	static readonly string statAvail = "sa"; //dodano
 	static readonly string treeAvail = "ta";//dodano
+	static readonly string orb1 = "o1"; //dodano
+	static readonly string orb2 = "o2"; //dodano
+	static readonly string orb3 = "o3"; //dodano
+	static readonly string orb4 = "o4"; //dodano
+	static readonly string orb5 = "o5"; //dodano
+	static readonly string orb6 = "o6"; //dodano
+	static readonly string orb7 = "o7"; //dodano
+	static readonly string orb8 = "o8"; //dodano
+	static readonly string orb9 = "o9"; //dodano
+	static readonly string orb10 = "10"; //dodano
+
+
 
 
 
@@ -86,7 +98,18 @@ public class SaveGame : MonoBehaviour {
 		SaveSystem.SetInt (profileName + statIntel, PassiveTreeScript.Intelligence);//dodano 
 		SaveSystem.SetInt (profileName + statAvail, PassiveTreeScript.AvailablePoints);//dodano 
 		SaveSystem.SetInt (profileName + treeAvail, PassiveTreeScript.AvailablePointsT);//dodano
-	
+		SaveSystem.SetInt (profileName + orb1, PassiveTreeScript.Orb1);//dodano
+		SaveSystem.SetInt (profileName + orb2, PassiveTreeScript.Orb2);//dodano
+		SaveSystem.SetInt (profileName + orb3, PassiveTreeScript.Orb3);//dodano
+		SaveSystem.SetInt (profileName + orb4, PassiveTreeScript.Orb4);//dodano
+		SaveSystem.SetInt (profileName + orb5, PassiveTreeScript.Orb5);//dodano
+		SaveSystem.SetInt (profileName + orb6, PassiveTreeScript.Orb6);//dodano
+		SaveSystem.SetInt (profileName + orb7, PassiveTreeScript.Orb7);//dodano
+		SaveSystem.SetInt (profileName + orb8, PassiveTreeScript.Orb8);//dodano
+		SaveSystem.SetInt (profileName + orb9, PassiveTreeScript.Orb9);//dodano
+		SaveSystem.SetInt (profileName + orb10, PassiveTreeScript.Orb10);//dodano
+
+
         SaveInventoryItems(PlayerManager.PlayerInventory.MainInventory, mainInventoryItems);
         SaveInventoryItems(PlayerManager.PlayerInventory.CharacterSystemInventory, characterSystemInventoryItems);
         SaveInventoryItems(PlayerManager.PlayerInventory.HotbarInventory, hotbarInventoryItems);
@@ -130,10 +153,16 @@ public class SaveGame : MonoBehaviour {
 		PassiveTreeScript.Constitution = SaveSystem.GetInt (profileName + statConst);//dodano
 		PassiveTreeScript.Strength = SaveSystem.GetInt (profileName + statStr);//dodano
 		PassiveTreeScript.AvailablePoints = SaveSystem.GetInt (profileName + statAvail);//dodano
-
-
-
-
+		PassiveTreeScript.Orb1 = SaveSystem.GetInt (profileName + orb1);//dodano
+		PassiveTreeScript.Orb2 = SaveSystem.GetInt (profileName + orb2);//dodano
+		PassiveTreeScript.Orb3 = SaveSystem.GetInt (profileName + orb3);//dodano
+		PassiveTreeScript.Orb4 = SaveSystem.GetInt (profileName + orb4);//dodano
+		PassiveTreeScript.Orb5 = SaveSystem.GetInt (profileName + orb5);//dodano
+		PassiveTreeScript.Orb6 = SaveSystem.GetInt (profileName + orb6);//dodano
+		PassiveTreeScript.Orb7 = SaveSystem.GetInt (profileName + orb7);//dodano
+		PassiveTreeScript.Orb8 = SaveSystem.GetInt (profileName + orb8);//dodano
+		PassiveTreeScript.Orb9 = SaveSystem.GetInt (profileName + orb9);//dodano
+		PassiveTreeScript.Orb10 = SaveSystem.GetInt (profileName + orb10);//dodano
 
         PlayerStats ps = PlayerManager.PlayerStats;
         ps.CurrentHealth = SaveSystem.GetInt(profileName + health);

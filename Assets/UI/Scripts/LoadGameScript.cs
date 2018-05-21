@@ -12,6 +12,7 @@ public class LoadGameScript : MonoBehaviour {
 	private Button[] buttons;
 	private Text[] texts;
 	public static string LoadGameName;
+	private string LoadContainer;
 
 	// Use this for initialization
 	void Start ()
@@ -35,12 +36,13 @@ public class LoadGameScript : MonoBehaviour {
 	}
 	//spremanje naziva saveGamea 
 	public void StoreLoad(){
-		LoadGameName = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text.ToString();
+		LoadContainer = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text.ToString();
 	}
 
 	//pozivanje druge scene
 	public void Load(int SceneIndex){
-		if(LoadGameName != null && LoadGameName != "EmptySlot"){
+		if(LoadContainer != null && LoadContainer != "EmptySlot"){
+			LoadGameName = LoadContainer;
 		SceneManager.LoadScene(SceneIndex);
 		}
 	}
