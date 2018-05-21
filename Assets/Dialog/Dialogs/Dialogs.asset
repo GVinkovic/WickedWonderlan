@@ -72,12 +72,12 @@ MonoBehaviour:
     - ActorName: Dykon
       DialogLines:
       - Feeling hazy I see, must a side effect...
-      - 'Name''s Dykon and yes as you have so skillfully observed I am a beast indeed,               but
-        don''t worry eating humans ain''t exactly up my alley '
+      - 'Name''s Dykon and yes as you have so skillfully observed I am a beast indeed,
+        but don''t worry eating humans ain''t exactly up my alley '
       - You should head down to village of Highhaven, I'm sure the Elder there would
-        be               able to explain the situation to you better then I.
+        be able to explain the situation to you better then I.
       - Come on, let's get going before this place crumbles from old age I'll tag
-        along,               roads these days aren't very safe.
+        along, roads these days aren't very safe.
       LeftActionButtonText: 
       ActionLeftNext: 0
       LeftButtonAction:
@@ -93,7 +93,7 @@ MonoBehaviour:
         m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
           Culture=neutral, PublicKeyToken=null
       PreventNextOnAction: 0
-  - Name: Tutorial
+  - Name: TutorialIntro
     dialogs:
     - ActorName: Dykon
       DialogLines:
@@ -103,7 +103,177 @@ MonoBehaviour:
       - You can drag and item from your inventory into your hotbar to gain quick access
         to it.
       - Press Left Mouse Button to attack.
-      - 
+      - Slaying monsters gives you experience points, gather enough and you will become
+        stronger.
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
+  - Name: TutorialOnLevelUp
+    dialogs:
+    - ActorName: Dykon
+      DialogLines:
+      - Press O to bring up character screen.
+      - There you can invest points that you get by leveling up. You get 2 points
+        for character stats  and 1 point for passive skill tree.
+      - Strength increases damage with melee attacks.
+      - Constitution increases your maximum health and health regeneration.
+      - Intelligence increases your maximum mana and mana regeneration.
+      - Dexterity increases critical hit chance.
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
+  - Name: ElderFirstDialog
+    dialogs:
+    - ActorName: Elder
+      DialogLines:
+      - Hello there, I don't remember seeing you around here, you must be new.
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
+    - ActorName: Player
+      DialogLines:
+      - Indeed. I'm not quite sure how I got here, all I know is I woke up in that
+        old building up on that hill.
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
+    - ActorName: Elder
+      DialogLines:
+      - '... That is interesting. We call that place The Temple of Elements. According
+        to the legend it used to belong to one of the Divines.'
+      - However, after they disappeared it was left abandoned. Magic and guardians
+        in it are still active so weren't able to approach it.
+      - I might know how and why you found yourself there, but I can't quite trust
+        you yet as I don't know you. Tell you what, you help out the village and I
+        will tell you.
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
+    - ActorName: Player
+      DialogLines:
+      - What can I do?
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
+    - ActorName: Elder
+      DialogLines:
+      - Recently Highhaven has been under constant attack by goblins. I want you to
+        go to their camp and kill the warchief, that should stop the attacks.
+      - Also, because of the attack we are running low on medical supplies, so go
+        and kill few of the spiders in the forest and bring their silk, we use it
+        to craft bandages.
+      LeftActionButtonText: 
+      ActionLeftNext: 0
+      LeftButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      RightActionButtonText: 
+      ActionRightNext: 0
+      RightButtonAction:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      PreventNextOnAction: 0
+  - Name: ElderSecondDialog
+    dialogs:
+    - ActorName: Elder
+      DialogLines:
+      - Well done, I guess you are trustworthy after all.
+      - As promised I will tell you what I know. I believe you are an Argonaut. A
+        hero summoned to this world in order to save it.
+      - You being able to use the magic is proof on its own. See, magic in this world
+        is tainted by evil creatures, therefore any humans that would use it would
+        go insane or die.
+      - We are not quite sure what taint is, but we know it is another essence that
+        is mixed with pure magic, like poison.
+      - There are few places in this world we call Source Wells. As the name suggests
+        those places are source of magical essence.
+      - One those places happens to be the Temple where you woke up. I believe there
+        might be a way to purify the source here on Quiox.
+      - Taint is spread by creatures we call Harbringers. One of those is the dragon
+        called Terrorbringer.
+      - He is terrorizing the sky island for awhile now, but thanks to the Temple
+        and the Divines there is a barrier around the village that prevents him from
+        destroying it for now.
+      - He made his lair under the portal that leads to the mainland. So if you want
+        to find out more about yourself and your purpose you will need to defeat him
+        in order to go through the portal. Defeating him means opening the passage
+        once again.
       LeftActionButtonText: 
       ActionLeftNext: 0
       LeftButtonAction:
