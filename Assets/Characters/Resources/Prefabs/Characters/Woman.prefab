@@ -4675,12 +4675,12 @@ MonoBehaviour:
   speedDampTime: 0.1
   jumpButton: Jump
   attackButton: Attack
-  jumpHeight: 1.5
+  jumpHeight: 2
   jumpIntertialForce: 10
   aimButton: Aim
   shoulderButton: Aim Shoulder
   crosshair: {fileID: 10914, guid: 0000000000000000f000000000000000, type: 0}
-  aimTurnSmoothing: 0.15
+  aimTurnSmoothing: 0.5
   aimPivotOffset: {x: 0.5, y: 1.2, z: 0}
   aimCamOffset: {x: 0, y: 0.4, z: -0.7}
 --- !u!114 &114340124384402044
@@ -4710,11 +4710,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc70623d72041f4db9765fccc9fd5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 250
   damage:
-    baseValue: 30
+    baseValue: 20
   armor:
-    baseValue: 0
+    baseValue: 5
   strength:
     baseValue: 0
   constitution:
@@ -4723,7 +4723,7 @@ MonoBehaviour:
     baseValue: 0
   dexterity:
     baseValue: 0
-  MaxMana: 100
+  MaxMana: 75
 --- !u!114 &114414279666007520
 MonoBehaviour:
   m_ObjectHideFlags: 1
