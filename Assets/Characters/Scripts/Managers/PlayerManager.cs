@@ -133,8 +133,9 @@ public class PlayerManager : MonoBehaviour {
 
             if (currentLevel != level)
             {
+                var prevLevel = Level;
                 Level = currentLevel;
-                LevelUp();
+                LevelUp(prevLevel);
             }
         }
     }
@@ -323,10 +324,17 @@ public class PlayerManager : MonoBehaviour {
     
     }
 
-    static void LevelUp()
+    static void LevelUp(int prevLevel)
     {
         //TODO: animacija level-upanja i pozivanja rapoređivanja onih bodova
-        print("Level up: " + level);
+        print("Level up: " + level + " from "+prevLevel);
+
+        if(prevLevel == 0)
+        {
+            //nakon prvog level up-a prikazi upute za raspoređivanje dobivenih bodova
+            GameManager.GetDialogMgr.BeginDialog(GameManager.GetDialogsCollection.getDialogList("TutorialOnLevelUp"));
+        }
+
     }
 
     public static float GetAttackSpeed(Player.PlayerType playerType)
