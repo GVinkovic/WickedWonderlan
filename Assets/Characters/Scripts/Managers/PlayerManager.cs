@@ -38,10 +38,11 @@ public class PlayerManager : MonoBehaviour {
 	public ProgressBar experienceBar;
 	public Text playerLevelText;
 
-	//public int ManaRegenerationAmount = 1;
-	public float ManaRegenerationTime = 1;
+	
+    public float ManaRegenerationTime = 1;
+    public float HealthRegenerationTime = 1;
 
-	public int[] ExperienceLevels;
+    public int[] ExperienceLevels;
 
 	private int ExperiencePoints = 0;
 
@@ -62,8 +63,9 @@ public class PlayerManager : MonoBehaviour {
 
 
 	private static bool isManaRecovering = false;
+    private static bool isHealthRecovering = false;
 
-	private static PlayerCharacter playerCharacter ;
+    private static PlayerCharacter playerCharacter ;
 
 	#region Singleton
 	public static PlayerManager instance;
@@ -131,9 +133,10 @@ public class PlayerManager : MonoBehaviour {
 
 			if (currentLevel != level)
 			{
-				Level = currentLevel;
-				LevelUp();
-			}
+                var prevLevel = Level;
+                Level = currentLevel;
+                LevelUp(prevLevel);
+            }
 		}
 	}
 
@@ -181,6 +184,17 @@ public class PlayerManager : MonoBehaviour {
 			isManaRecovering = true;
 		}
 	}
+
+   static void RecoverHealth()
+    {
+        if (!isHealthRecovering)
+        {
+            instance.StartCoroutine(HealthRecovery());
+            isHealthRecovering = true;
+        }
+    }
+
+
 	static IEnumerator ManaRecovery()
 	{
 		while (instance.playerStats.CurrentMana < instance.playerStats.MaxMana)
@@ -190,6 +204,16 @@ public class PlayerManager : MonoBehaviour {
 		}
 		isManaRecovering = false;
 	}
+
+    static IEnumerator HealthRecovery()
+    {
+        while (instance.playerStats.CurrentHealth<instance.playerStats.MaxHealth)
+        {
+            AlterHealth(PlayerStats.constitution.Value);
+            yield return new WaitForSeconds(instance.HealthRegenerationTime);
+        }
+        isHealthRecovering = false;
+    }
 
 	public static void StopPlayerMovement()
 	{
@@ -257,7 +281,15 @@ public class PlayerManager : MonoBehaviour {
 	{
 		instance.playerStats.CurrentMana += amount;
 		RefreshManaUI();
-	}
+    }
+
+    public static void AlterHealth(int amount)
+    {
+        instance.playerStats.CurrentHealth += amount;
+        RefreshHealthUI();
+    }
+
+
 
 	// osvjezava sve statove prikazane na ekranu
 	public static void RefreshStats()
@@ -293,11 +325,17 @@ public class PlayerManager : MonoBehaviour {
 
 	}
 
-	static void LevelUp()
+	static void LevelUp(int prevLevel)
 	{
 		//TODO: animacija level-upanja i pozivanja rapoređivanja onih bodova
 		print("Level up: " + level);
-	}
+        if (prevLevel == 0)
+        {
+            //nakon prvog level up-a prikazi upute za rasporeÄ‘ivanje dobivenih bodova
+            GameManager.GetDialogMgr.BeginDialog(GameManager.GetDialogsCollection.getDialogList("TutorialOnLevelUp"));
+        }
+
+    }
 
 	public static float GetAttackSpeed(Player.PlayerType playerType)
 	{
@@ -313,7 +351,9 @@ public class PlayerManager : MonoBehaviour {
 		PlayerStats.AlterIntelligence(amount);
 		// osvježi ui prikaza mane
 		RefreshManaUI();
-	}
+        // povecaj manu do maximuma
+        RecoverMana();
+    }
 
 
 	public static void AlterDexterity(int amount)
@@ -326,7 +366,9 @@ public class PlayerManager : MonoBehaviour {
 		PlayerStats.AlterConstitution(amount);
 		//osvježi ui prikaza health-a
 		RefreshHealthUI();
-	}
+        // povecaj health do maximuma
+        RecoverHealth();
+    }
 
 	public static void AlterStrength(int amount)
 	{
