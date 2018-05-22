@@ -71,8 +71,9 @@ public class Enemy : Interactable {
         //  if(navAgent.enabled) navAgent.isStopped = true;
         //controller.SetSpeed(0);
 
-        //vraca se na inicijalnu poziciju
-        navAgent.SetDestination(initialPosition);
+        if(navAgent.enabled)
+            //vraca se na inicijalnu poziciju ako nije umra
+            navAgent.SetDestination(initialPosition);
 
     }
     public void Attack()

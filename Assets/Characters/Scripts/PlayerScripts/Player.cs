@@ -105,10 +105,13 @@ public class Player : MonoBehaviour {
         else if (Input.GetKeyDown("2"))
         {
             Type = PlayerType.Sword;
+            attackType = AttackType.SwordAttack1;
         }
         else if (Input.GetKeyDown("3"))
         {
             if (AttackType.Spark == attackType) attackType = AttackType.LightningBolt;
+            else if (attackType == AttackType.LightningBolt) attackType = AttackType.FireBall;
+            else if (attackType == AttackType.FireBall) attackType = AttackType.FireBolt;
             else attackType = AttackType.Spark;
             Type = PlayerType.Magic;
         }
