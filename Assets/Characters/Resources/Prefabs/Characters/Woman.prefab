@@ -684,7 +684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1349505844457984
 GameObject:
   m_ObjectHideFlags: 1
@@ -2990,8 +2990,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344294749297956}
-  m_LocalRotation: {x: -0, y: 0.032122493, z: -0, w: -0.99948394}
-  m_LocalPosition: {x: 459.468, y: 83.357, z: 365.227}
+  m_LocalRotation: {x: -0, y: 0.98587346, z: -0, w: 0.16749218}
+  m_LocalPosition: {x: 287.41962, y: 0, z: 40.130486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4194799359106844}
@@ -4679,7 +4679,7 @@ MonoBehaviour:
   jumpIntertialForce: 10
   aimButton: Aim
   shoulderButton: Aim Shoulder
-  crosshair: {fileID: 0}
+  crosshair: {fileID: 10914, guid: 0000000000000000f000000000000000, type: 0}
   aimTurnSmoothing: 0.15
   aimPivotOffset: {x: 0.5, y: 1.2, z: 0}
   aimCamOffset: {x: 0, y: 0.4, z: -0.7}
@@ -4712,7 +4712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   damage:
-    baseValue: 0
+    baseValue: 30
   armor:
     baseValue: 0
   strength:

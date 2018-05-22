@@ -63,6 +63,36 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!206 &206157912221487688
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: DragonRun
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 94249cad6ba93bf48b62a4bdc8b628ed, type: 3}
+    m_Threshold: 2
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: EnemyType
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: d1facc13bc40c14408f2106cf788a7fd, type: 3}
+    m_Threshold: 3
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: EnemyType
+    m_Mirror: 0
+  m_BlendParameter: AttackType
+  m_BlendParameterY: Blend
+  m_MinThreshold: 2
+  m_MaxThreshold: 3
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
 --- !u!206 &206158855165123658
 BlendTree:
   m_ObjectHideFlags: 1
@@ -214,6 +244,36 @@ BlendTree:
   m_BlendParameterY: EnemyType
   m_MinThreshold: 0
   m_MaxThreshold: 5
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
+--- !u!206 &206174109591695008
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Dragon Walk
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: ac9b8cd5f91eeef44a25fce0f31885c1, type: 3}
+    m_Threshold: 2
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: EnemyType
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 29b94464c227dad4997918129dad480c, type: 3}
+    m_Threshold: 3
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: EnemyType
+    m_Mirror: 0
+  m_BlendParameter: AttackType
+  m_BlendParameterY: Blend
+  m_MinThreshold: 2
+  m_MaxThreshold: 3
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
@@ -395,7 +455,7 @@ BlendTree:
     m_DirectBlendParameter: EnemyType
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ac9b8cd5f91eeef44a25fce0f31885c1, type: 3}
+    m_Motion: {fileID: 206174109591695008}
     m_Threshold: 5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -567,7 +627,7 @@ BlendTree:
     m_DirectBlendParameter: EnemyType
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 2f381863b81afe445bb3bbd18f1e90cc, type: 3}
+    m_Motion: {fileID: 206922144241439210}
     m_Threshold: 5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -629,7 +689,7 @@ BlendTree:
     m_DirectBlendParameter: EnemyType
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 94249cad6ba93bf48b62a4bdc8b628ed, type: 3}
+    m_Motion: {fileID: 206157912221487688}
     m_Threshold: 5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -848,6 +908,36 @@ BlendTree:
   m_BlendParameterY: EnemyType
   m_MinThreshold: 0
   m_MaxThreshold: 2
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
+--- !u!206 &206922144241439210
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: DragonIdle
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 2f381863b81afe445bb3bbd18f1e90cc, type: 3}
+    m_Threshold: 2
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: AttackType
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: fe8f656bdccb4074683e623a09c9728e, type: 3}
+    m_Threshold: 3
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: AttackType
+    m_Mirror: 0
+  m_BlendParameter: AttackType
+  m_BlendParameterY: Blend
+  m_MinThreshold: 2
+  m_MaxThreshold: 3
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0

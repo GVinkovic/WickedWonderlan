@@ -229,7 +229,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.18659146
+        functionName: FlameAttackStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 283ec87f903894f48adfba98d7e320b3,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7528763
+        functionName: FlameAttackEnd
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 283ec87f903894f48adfba98d7e320b3,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

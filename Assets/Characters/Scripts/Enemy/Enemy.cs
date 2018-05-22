@@ -105,7 +105,7 @@ public class Enemy : Interactable {
 
         StopInteract();
         navAgent.enabled = false;
-        var colider = GetComponent<BoxCollider>();
+        var colider = GetComponentInChildren<BoxCollider>();
         colider.size = new Vector3(colider.size.x, colider.size.x/2, colider.size.z);
 
         Invoke("RemoveEnemy", 3);
@@ -145,6 +145,10 @@ public class Enemy : Interactable {
         if (GetPlayerDistance() < navAgent.stoppingDistance)
         {
             controller.Hit();
+        }
+        else
+        {
+            controller.NotfyHit();
         }
         healthBar.SetProgress(enemyStats.CurrentHealth);
 

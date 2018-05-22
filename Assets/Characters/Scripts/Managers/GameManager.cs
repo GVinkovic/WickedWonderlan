@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
       
         var hb = Instantiate(instance.EnemyHealthBar, enemy.transform);
         hb.SetActive(true);
-        var y = enemy.GetComponent<BoxCollider>().size.y + .2f ;
+        var y = enemy.GetComponentInChildren<BoxCollider>().size.y + .2f ;
         hb.GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
         return hb.GetComponentInChildren<ProgressBar>();
     }

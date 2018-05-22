@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
+//[RequireComponent(typeof(Collider))]
 public class CombatWeapon : MonoBehaviour {
 
-    CharacterStats stats;
+    protected CharacterStats stats;
  //   MoveBehaviour moveBehaviour;
  //   EnemyController enemyController;
 
@@ -12,7 +12,7 @@ public class CombatWeapon : MonoBehaviour {
 
 
 
-    public void Start()
+    public virtual void Start()
     {
         if(!stats)
             stats = GetComponentInParent<CharacterStats>();

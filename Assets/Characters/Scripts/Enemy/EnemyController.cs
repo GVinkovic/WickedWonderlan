@@ -18,15 +18,15 @@ public class EnemyController : MonoBehaviour {
     }
     
 
-    private static readonly int EnemyTypeFloat = Animator.StringToHash("EnemyType");
-    private static readonly int SpeedFloat = Animator.StringToHash("Speed");
-    private static readonly int AttackTrigger = Animator.StringToHash("Attack");
-    private static readonly int AttackTypeFloat = Animator.StringToHash("AttackType");
-    private static readonly int DieTrigger = Animator.StringToHash("Die");
-    private static readonly int HitTrigger = Animator.StringToHash("Hit");
-    private static readonly int KnockbackTrigger = Animator.StringToHash("Knockback");
-    private static readonly int AttackState = Animator.StringToHash("Attack");
-    private static readonly int KnockbackState = Animator.StringToHash("Knockback");
+    protected static readonly int EnemyTypeFloat = Animator.StringToHash("EnemyType");
+    protected static readonly int SpeedFloat = Animator.StringToHash("Speed");
+    protected static readonly int AttackTrigger = Animator.StringToHash("Attack");
+    protected static readonly int AttackTypeFloat = Animator.StringToHash("AttackType");
+    protected static readonly int DieTrigger = Animator.StringToHash("Die");
+    protected static readonly int HitTrigger = Animator.StringToHash("Hit");
+    protected static readonly int KnockbackTrigger = Animator.StringToHash("Knockback");
+    protected static readonly int AttackState = Animator.StringToHash("Attack");
+    protected static readonly int KnockbackState = Animator.StringToHash("Knockback");
 
 
 
@@ -41,10 +41,10 @@ public class EnemyController : MonoBehaviour {
     };
 
 
-    private Animator animator;
+    protected Animator animator;
     private bool isDead = false;
 
-    void Start () {
+    public virtual void Start () {
         animator = GetComponent<Animator>();
         animator.SetFloat(EnemyTypeFloat, (int)enemyType);
         
@@ -55,11 +55,18 @@ public class EnemyController : MonoBehaviour {
     public void Attack()
     {
         if (isDead) return;
-        var eac = EnemyAttackCount[enemyType];
-        var animIndex = Random.Range(0, eac);
+
+        var animIndex = GetAttackIndex();
 
         animator.SetFloat(AttackTypeFloat, animIndex);
         animator.SetTrigger(AttackTrigger);
+    }
+
+    protected virtual int GetAttackIndex()
+    {
+        var eac = EnemyAttackCount[enemyType];
+        var animIndex = Random.Range(0, eac);
+        return animIndex;
     }
     public void Die()
     {
@@ -101,9 +108,13 @@ public class EnemyController : MonoBehaviour {
         }
     }
    
-    public void Hit()
+    public virtual void Hit()
     {
         animator.applyRootMotion = false;
         animator.SetTrigger(HitTrigger);
+    }
+    public virtual void NotfyHit()
+    {
+
     }
 }

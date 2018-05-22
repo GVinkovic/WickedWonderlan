@@ -2187,7 +2187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateTime: 0.5
-  interactionRadius: 10
+  interactionRadius: 30
   attackSpeed: 0.2
 --- !u!114 &114352497975746698
 MonoBehaviour:
@@ -2202,7 +2202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   damage:
-    baseValue: 1
+    baseValue: 15
   armor:
     baseValue: 0
 --- !u!114 &114906833620172982
@@ -2398,7 +2398,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
