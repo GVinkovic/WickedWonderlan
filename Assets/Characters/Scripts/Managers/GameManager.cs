@@ -73,6 +73,8 @@ public class GameManager : MonoBehaviour
         PlayerManager.ResumePlayerMovement();
 
         DialogMgr.OnDialogEnd -= OnDialogEnd;
+
+        GetDialogMgr.BeginDialog(GetDialogsCollection.getDialogList("TutorialIntro"));
     }
 
     public static DialogMgr GetDialogMgr
