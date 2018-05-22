@@ -118,6 +118,9 @@ public class Player : MonoBehaviour {
         else if (Input.GetKeyDown("4"))
         {
             Type = PlayerType.Bow;
+            if (attackType == AttackType.BowKnockback) attackType = AttackType.BowPiercing;
+            else if (attackType == AttackType.BowPiercing) attackType = AttackType.Bow;
+            else attackType = AttackType.BowKnockback;
         }
         
      }
