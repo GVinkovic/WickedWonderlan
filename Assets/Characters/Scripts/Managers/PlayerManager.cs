@@ -40,6 +40,7 @@ public class PlayerManager : MonoBehaviour {
 
     //public int ManaRegenerationAmount = 1;
     public float ManaRegenerationTime = 1;
+    public float HealthRegenerationTime = 1;
 
     public int[] ExperienceLevels;
 
@@ -62,6 +63,7 @@ public class PlayerManager : MonoBehaviour {
 
 
     private static bool isManaRecovering = false;
+    private static bool isHealthRecovering = false;
 
     private static PlayerCharacter playerCharacter ;
 
@@ -181,6 +183,17 @@ public class PlayerManager : MonoBehaviour {
             isManaRecovering = true;
         }
     }
+    static void RecoverHealth()
+    {
+        if (!isHealthRecovering)
+        {
+            instance.StartCoroutine(HealthRecovery());
+            isHealthRecovering = true;
+        }
+    }
+
+
+
     static IEnumerator ManaRecovery()
     {
         while (instance.playerStats.CurrentMana < instance.playerStats.MaxMana)
@@ -190,6 +203,17 @@ public class PlayerManager : MonoBehaviour {
         }
         isManaRecovering = false;
     }
+
+    static IEnumerator HealthRecovery()
+    {
+        while (instance.playerStats.CurrentHealth < instance.playerStats.MaxHealth)
+        {
+            AlterHealth(PlayerStats.constitution.Value);
+            yield return new WaitForSeconds(instance.HealthRegenerationTime);
+        }
+        isHealthRecovering = false;
+    }
+
 
     public static void StopPlayerMovement()
     {
@@ -259,6 +283,12 @@ public class PlayerManager : MonoBehaviour {
         RefreshManaUI();
     }
 
+    public static void AlterHealth(int amount)
+    {
+        instance.playerStats.CurrentHealth += amount;
+        RefreshHealthUI();
+    }
+
     // osvjezava sve statove prikazane na ekranu
     public static void RefreshStats()
     {
@@ -313,6 +343,8 @@ public class PlayerManager : MonoBehaviour {
         PlayerStats.AlterIntelligence(amount);
         // osvježi ui prikaza mane
         RefreshManaUI();
+        // povećaj manu do maximuma
+        RecoverMana();
     }
 
 
@@ -326,6 +358,8 @@ public class PlayerManager : MonoBehaviour {
         PlayerStats.AlterConstitution(amount);
         //osvježi ui prikaza health-a
         RefreshHealthUI();
+        // povećaj jhealth do maximuma
+        RecoverHealth();
     }
 
     public static void AlterStrength(int amount)
