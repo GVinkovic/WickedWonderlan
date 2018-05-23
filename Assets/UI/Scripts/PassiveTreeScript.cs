@@ -210,11 +210,14 @@ public class PassiveTreeScript : MonoBehaviour {
 				o3.interactable = true;
 				bo1 = 1;
 				DecreaseAvailPointsT ();
+				PlayerManager.AlterHealth (20);
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb2") {
 				o2.enabled = false;
 				o4.interactable = true;
 				bo2 = 1;
 				DecreaseAvailPointsT ();
+				PlayerManager.AlterMana (10);
+
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb3") {
 				o3.enabled = false;
 				o5.interactable = true;
@@ -223,6 +226,8 @@ public class PassiveTreeScript : MonoBehaviour {
 					o6.interactable = true;
 				}
 				DecreaseAvailPointsT ();
+				PlayerManager.AlterStrength (2);
+
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb4") {
 				o4.enabled = false;
 				o7.interactable = true;
@@ -231,33 +236,51 @@ public class PassiveTreeScript : MonoBehaviour {
 					o6.interactable = true;
 				}
 				DecreaseAvailPointsT ();
+				PlayerManager.AlterIntelligence (2);
+
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb5") {
 				o5.enabled = false;
 				o8.interactable = true;
 				DecreaseAvailPointsT ();
 				bo5 = 1;
+				PlayerManager.AlterHealth (30);
+				PlayerManager.AlterStrength (3);
+				PlayerManager.AlterDexterity (2);
+
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb6") {
 				o6.enabled = false;
 				o9.interactable = true;
 				DecreaseAvailPointsT ();
 				bo6 = 1;
+				PlayerManager.AlterHealth (20);
+				PlayerManager.AlterStrength (2);
+				PlayerManager.AlterDexterity (2);
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb7") {
 				o7.enabled = false;
 				o10.interactable = true;
 				DecreaseAvailPointsT ();
 				bo7 = 1;
+				PlayerManager.AlterMana (30);
+				PlayerManager.AlterIntelligence (3);
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb8") {
 				o8.enabled = false;
 				DecreaseAvailPointsT ();
 				bo8 = 1;
+				PlayerManager.AlterConstitution (3);
+				PlayerManager.AlterStrength(2);
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb9") {
 				o9.enabled = false;
 				DecreaseAvailPointsT ();
 				bo9 = 1;
+				PlayerManager.AlterIntelligence (3);
+				PlayerManager.AlterStrength (2);
+				PlayerManager.AlterDexterity (2);
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb10") {
 				o10.enabled = false;
 				DecreaseAvailPointsT ();
 				bo10 = 1;
+				PlayerManager.AlterIntelligence (2);
+				PlayerManager.AlterMana (20);
 			} 
 		}
 	}

@@ -191,9 +191,11 @@ public class Player : MonoBehaviour {
             else if (type == PlayerType.Sword)
             {
                 attackType = AttackType.SwordAttack1;
+
                 if(value == (int)AttackType.SwordJump)
                 {
                     attackType = AttackType.SwordJump;
+				
                 }
             }
             else attackType = AttackType.Default;
@@ -213,6 +215,7 @@ public class Player : MonoBehaviour {
     // Ovu metodu poziva event animacije kada lik otpušta strijelu
     public void OnArrowReleased()
     {
+		FindObjectOfType<AudioController> ().Play ("ArrowShot");
         // kreiranje noveg projektila
         var currentArrow = CloneProjectile(arrow);
         // sakrij strelicu
@@ -251,6 +254,7 @@ public class Player : MonoBehaviour {
     // Ovu metodu poziva event animacije koja baca magiju
     void OnMagicThrowed()
     {
+		
         switch (attackType)
         {
             case AttackType.FireBall:
@@ -272,7 +276,7 @@ public class Player : MonoBehaviour {
 
     void ThrowLightning(LightningBolt.Type type)
     {
-      
+		FindObjectOfType<AudioController> ().Play ("MagicShot");
         LightningBolt.LightningType = type;
         lightningBolt.SetActive(true);
         

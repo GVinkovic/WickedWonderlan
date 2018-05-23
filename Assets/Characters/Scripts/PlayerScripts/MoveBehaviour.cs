@@ -147,7 +147,7 @@ public class MoveBehaviour : GenericBehaviour
 		if (behaviourManager.IsSprinting())
 		{
 			speed = sprintSpeed;
-			FindObjectOfType<AudioController> ().Play ("MaleSprint");
+
 		}
 
 		behaviourManager.GetAnim.SetFloat(speedFloat, speed, speedDampTime, Time.deltaTime);
