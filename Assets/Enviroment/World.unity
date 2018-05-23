@@ -24206,6 +24206,24 @@ Transform:
   m_PrefabParentObject: {fileID: 4317833626639742, guid: f2f9dd0d4e3008a4b8d270a3f1893577,
     type: 2}
   m_PrefabInternal: {fileID: 1201653123}
+--- !u!114 &627565225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 627565216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1991aa13fa8c146ad15374793e3564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: 9726cfb283365094b94145bd4e8ce273, type: 3}
+    name: Walk
+    volume: 0.32
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1001 &631881763
 Prefab:
   m_ObjectHideFlags: 0
@@ -54576,10 +54594,6 @@ Prefab:
     - target: {fileID: 4407895270308272, guid: 961ca276c09c56548835095e69c4c005, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1381616654657582, guid: 961ca276c09c56548835095e69c4c005, type: 2}
-      propertyPath: m_Name
-      value: AudioController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 961ca276c09c56548835095e69c4c005, type: 2}
