@@ -266,6 +266,7 @@ public class PlayerManager : MonoBehaviour {
 	public static void TakeHit()
 	{
 		RefreshHealthUI();
+        RecoverHealth();
 	}
 	public static void Die()
 	{
@@ -278,14 +279,14 @@ public class PlayerManager : MonoBehaviour {
 		RecoverMana();
 	}
 	public static void AlterMana(int amount)
-	{
-		instance.playerStats.CurrentMana += amount;
-		RefreshManaUI();
+    {
+        instance.playerStats.CurrentMana = Mathf.Clamp(PlayerStats.CurrentMana + amount, 0, PlayerStats.MaxMana);
+        RefreshManaUI();
     }
 
     public static void AlterHealth(int amount)
     {
-        instance.playerStats.CurrentHealth += amount;
+        instance.playerStats.CurrentHealth = Mathf.Clamp(PlayerStats.CurrentHealth + amount, 0, PlayerStats.MaxHealth);
         RefreshHealthUI();
     }
 
