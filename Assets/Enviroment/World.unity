@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5368672, g: 0.5160869, b: 0.3838916, a: 1}
+  m_IndirectSpecularColor: {r: 0.5368186, g: 0.51607656, b: 0.38383466, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -16019,7 +16019,7 @@ Transform:
   - {fileID: 202165823}
   - {fileID: 1914685258}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &325119029
 Prefab:
@@ -33104,7 +33104,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421066, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 421066, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -39253,7 +39253,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4485016490135668, guid: d96ccc4e1a8f3be46ba717787e415f98, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114626867191585710, guid: d96ccc4e1a8f3be46ba717787e415f98,
         type: 2}
@@ -45516,7 +45516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &951828237
 GameObject:
@@ -46197,7 +46197,7 @@ Prefab:
     - target: {fileID: 224530114562682440, guid: 2af5c6b26b06dd94fbc823ea4bf90481,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224530114562682440, guid: 2af5c6b26b06dd94fbc823ea4bf90481,
         type: 2}
@@ -50187,7 +50187,7 @@ Transform:
   - {fileID: 1935917581}
   - {fileID: 774682571}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1020156759
 Prefab:
@@ -50618,7 +50618,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4819296656266156, guid: 58544e703e8707e4f99fdfdcc3f910d7, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58544e703e8707e4f99fdfdcc3f910d7, type: 2}
@@ -54992,7 +54992,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4750205203826396, guid: 22989306d48989c48a423ad7dc9b80af, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114994335183573840, guid: 22989306d48989c48a423ad7dc9b80af,
         type: 2}
@@ -57083,7 +57083,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1396194508
 AudioSource:
@@ -67319,7 +67319,7 @@ Transform:
   - {fileID: 589562696}
   - {fileID: 360037911}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1755540311 stripped
 Transform:
@@ -68094,7 +68094,7 @@ Transform:
   - {fileID: 746613330}
   - {fileID: 866358747}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1802193657
 Prefab:
@@ -72555,6 +72555,77 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 436280, guid: edb0d94010558614c976dfa15f61dee3, type: 2}
   m_PrefabInternal: {fileID: 188454339}
+--- !u!1 &1871831190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1871831192}
+  - component: {fileID: 1871831191}
+  m_Layer: 0
+  m_Name: AudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1871831191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1871831190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1991aa13fa8c146ad15374793e3564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: d3ff50d6ad82c1d429bfdc6168ca8c88, type: 3}
+    name: JumpMale
+    volume: 0.36
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d185b539a16e00b4595b7055874e6640, type: 3}
+    name: JumpLand
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - clip: {fileID: 0}
+    name: 
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - clip: {fileID: 0}
+    name: 
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - clip: {fileID: 0}
+    name: 
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &1871831192
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1871831190}
+  m_LocalRotation: {x: -0, y: 0.032122493, z: -0, w: -0.99948394}
+  m_LocalPosition: {x: 459.468, y: 83.357, z: 365.227}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1875172748
 Prefab:
   m_ObjectHideFlags: 0

@@ -58,6 +58,7 @@ public class MoveBehaviour : GenericBehaviour
 		if (!jump && Input.GetButtonDown(jumpButton) && behaviourManager.IsCurrentBehaviour(this.behaviourCode) && !behaviourManager.IsOverriding())
 		{
 			jump = true;
+
 		}
         ManageAim();
     }
@@ -84,12 +85,15 @@ public class MoveBehaviour : GenericBehaviour
 		// Start a new jump.
 		if (jump && !behaviourManager.GetAnim.GetBool(jumpBool) && behaviourManager.IsGrounded())
 		{
+			
 			// Set jump related parameters.
 			behaviourManager.LockTempBehaviour(this.behaviourCode);
 			behaviourManager.GetAnim.SetBool(jumpBool, true);
 			// Is a locomotion jump?
 			if(behaviourManager.GetAnim.GetFloat(speedFloat) > 0.1)
+				
 			{
+				FindObjectOfType<AudioController> ().Play ("JumpMale");
 				// Temporarily change player friction to pass through obstacles.
 				GetComponent<CapsuleCollider>().material.dynamicFriction = 0f;
 				GetComponent<CapsuleCollider>().material.staticFriction = 0f;
@@ -118,6 +122,7 @@ public class MoveBehaviour : GenericBehaviour
 				jump = false;
 				behaviourManager.GetAnim.SetBool(jumpBool, false);
 				behaviourManager.UnlockTempBehaviour(this.behaviourCode);
+				FindObjectOfType<AudioController> ().Play ("JumpLand");
 			}
 		}
 	}
@@ -142,6 +147,7 @@ public class MoveBehaviour : GenericBehaviour
 		if (behaviourManager.IsSprinting())
 		{
 			speed = sprintSpeed;
+			FindObjectOfType<AudioController> ().Play ("MaleSprint");
 		}
 
 		behaviourManager.GetAnim.SetFloat(speedFloat, speed, speedDampTime, Time.deltaTime);

@@ -32,6 +32,7 @@ public class BasicBehaviour : MonoBehaviour
     private int crouchBool;                               // Animator variable related to whether or not the player is crouching.
     private Vector3 colExtents;                           // Collider extents for ground test. 
 
+
 	// Get current horizontal and vertical axes.
 	public float GetH { get { return h; } }
 	public float GetV { get { return v; } }
@@ -87,6 +88,7 @@ public class BasicBehaviour : MonoBehaviour
 		{
 			changedFOV = true;
 			camScript.SetFOV(sprintFOV);
+			FindObjectOfType<AudioController> ().Play ("MaleSprint");
 		}
 		else if(changedFOV)
 		{
