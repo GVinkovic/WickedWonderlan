@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 224241787793699390}
   - component: {fileID: 222333525601191884}
   - component: {fileID: 114590265159157564}
+  - component: {fileID: 95676603749849364}
   m_Layer: 5
   m_Name: TooltipText
   m_TagString: Untagged
@@ -551,6 +552,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95676603749849364
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1719577263031536}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b8da2083bdedda43b7efd6aded408e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114096522032443276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -639,6 +657,42 @@ MonoBehaviour:
       count: 15
   - enemyType: 3
     ExperienceFromKilling: 3000
+    items:
+    - itemId: 6
+      count: 1
+    - itemId: 9
+      count: 1
+    - itemId: 11
+      count: 1
+  - enemyType: 4
+    ExperienceFromKilling: 500
+    items:
+    - itemId: 6
+      count: 1
+    - itemId: 9
+      count: 1
+    - itemId: 11
+      count: 1
+  - enemyType: 1
+    ExperienceFromKilling: 500
+    items:
+    - itemId: 6
+      count: 1
+    - itemId: 9
+      count: 1
+    - itemId: 11
+      count: 1
+  - enemyType: 2
+    ExperienceFromKilling: 1500
+    items:
+    - itemId: 6
+      count: 1
+    - itemId: 9
+      count: 1
+    - itemId: 11
+      count: 1
+  - enemyType: 5
+    ExperienceFromKilling: 5000
     items:
     - itemId: 6
       count: 1
@@ -1345,7 +1399,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dialog text
+  m_Text: '
+
+'
 --- !u!198 &198229380329630434
 ParticleSystem:
   m_ObjectHideFlags: 1
