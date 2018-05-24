@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SaveGame : MonoBehaviour {
@@ -13,6 +14,7 @@ public class SaveGame : MonoBehaviour {
 
     static readonly string SaveGameNames = "saveGameNames";
     static readonly char delimiter = ',';
+    static readonly char keyValueDelimiter = '=';
     static readonly char itemValueDelimiter = '-';
     static readonly string time = "time";
 
@@ -52,7 +54,7 @@ public class SaveGame : MonoBehaviour {
 
 
 
-
+    static readonly string quests = "que";
 
     static readonly string mainInventoryItems = "mii";
     static readonly string characterSystemInventoryItems = "csii";
@@ -109,6 +111,10 @@ public class SaveGame : MonoBehaviour {
 		SaveSystem.SetInt (profileName + orb9, PassiveTreeScript.Orb9);//dodano
 		SaveSystem.SetInt (profileName + orb10, PassiveTreeScript.Orb10);//dodano
 
+        var items = from kvp in QuestManager.QuestsProgress select kvp.Key + keyValueDelimiter + kvp.Value;
+        var questDict = string.Join(delimiter+"", items.ToArray());
+        //Name1=0;Name2=0
+        SaveSystem.SetString(profileName + quests, questDict);
 
         SaveInventoryItems(PlayerManager.PlayerInventory.MainInventory, mainInventoryItems);
         SaveInventoryItems(PlayerManager.PlayerInventory.CharacterSystemInventory, characterSystemInventoryItems);
@@ -177,6 +183,18 @@ public class SaveGame : MonoBehaviour {
         PlayerManager.PlayerScript.Type = (Player.PlayerType)SaveSystem.GetInt(profileName + playerType);
         PlayerManager.PlayerScript.AttackIndex = SaveSystem.GetInt(profileName + attackType);
         PlayerManager.PlayerScript.defaultSwordIndex = SaveSystem.GetInt(profileName + sword);
+
+
+        var questsSting = SaveSystem.GetString(profileName + quests);
+        //Name1=0;Name2=0
+        if (!string.IsNullOrEmpty(questsSting))
+        {
+            QuestManager.QuestsProgress =
+                           questsSting.Split(delimiter)
+                          .Select(s => s.Split(keyValueDelimiter))
+                          .ToDictionary(a => a[0], a =>int.Parse(a[1]));
+           
+        }
 
         LoadInventoryItems(PlayerManager.PlayerInventory.MainInventory, mainInventoryItems);
         LoadInventoryItems(PlayerManager.PlayerInventory.CharacterSystemInventory, characterSystemInventoryItems);

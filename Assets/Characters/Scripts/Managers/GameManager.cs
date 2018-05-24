@@ -108,11 +108,14 @@ public class GameManager : MonoBehaviour
 
     public static void NotifyPickedUpItem(Item item)
     {
+        QuestManager.ItemCollected(item.itemID);
         //TODO: item picked up
     }
 
     public static void EnemyDied(Enemy enemy)
     {
+        QuestManager.EnemyKilled(enemy.EnemyController.enemyType);
+
         foreach(var entry in instance.LootTable){
             if(entry.enemyType == enemy.EnemyController.enemyType)
             {
