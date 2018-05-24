@@ -33,11 +33,9 @@ public class QuestUI : MonoBehaviour
     IEnumerator FadeCorutine(float delta)
     {
         var canvasGroup = GetComponent<CanvasGroup>();
-        print(canvasGroup.alpha);
         while (canvasGroup.alpha <= 1 && canvasGroup.alpha > 0)
         {
             canvasGroup.alpha += delta;
-            print(canvasGroup.alpha);
             yield return new WaitForSeconds(.1f);
         }
         Destroy(gameObject);
