@@ -21,6 +21,14 @@ public class Quest {
 
     }
 
+    [Serializable]
+    public class RewardItem
+    {
+        public int itemId;
+        public int quantity;
+    }
+
+
 
     public string name;
 
@@ -45,6 +53,7 @@ public class Quest {
 
     public string[] requiredQuestNames;
 
+    public RewardItem[] rewardItems;
    // public string requiredQuestStepErroMsg;
     
     public int[] itemIds

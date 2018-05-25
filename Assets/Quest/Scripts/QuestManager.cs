@@ -97,6 +97,7 @@ public class QuestManager : MonoBehaviour {
             if(questUI.quest.name == quest.name)
             {
                 questUI.Remove();
+                ManageRewardedItems(quest);
                 break;
             }
         }
@@ -123,6 +124,17 @@ public class QuestManager : MonoBehaviour {
         {
             //TODO: prikazi poruku da mora najprije prethodne
         }
+    }
+
+    static void ManageRewardedItems(Quest quest)
+    {
+        if (quest.rewardItems == null || quest.rewardItems.Length == 0) return;
+
+        foreach(var rewardItem in quest.rewardItems)
+        {
+            PlayerManager.CollectItem(rewardItem.itemId, rewardItem.quantity);
+        }
+
     }
 
     public static Dictionary<string, int> QuestsProgress
@@ -278,6 +290,14 @@ public class QuestManager : MonoBehaviour {
         }
     }
 
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ArriveAtLocation("Village");
+        }
+    }
     /*
     void Update()
     {

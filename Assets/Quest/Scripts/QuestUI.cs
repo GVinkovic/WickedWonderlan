@@ -26,7 +26,8 @@ public class QuestUI : MonoBehaviour
     public void Remove()
     {
         UpdateUI();
-        StartCoroutine(FadeCorutine(-0.1f));
+        if (quest.rewardItems == null || quest.rewardItems.Length == 0) StartCoroutine(FadeCorutine(-0.1f));
+        else StartCoroutine(ShowRecievedItems());
         //TODO: neki zvuk
     }
     public void RemoveImmediate()
@@ -34,6 +35,21 @@ public class QuestUI : MonoBehaviour
         Destroy(gameObject);
     }
 
+    IEnumerator ShowRecievedItems()
+    {
+        yield return new WaitForSeconds(1);
+        string tekst = "";
+        foreach(var rewardItem in quest.rewardItems)
+        {
+            tekst += rewardItem.quantity + " " + GameManager.ItemDatabase.getItemByID(rewardItem.itemId).itemName +", ";
+        }
+        questDescription.text = "Recieved: " + tekst.Substring(0, tekst.Length - 2);
+
+        yield return new WaitForSeconds(3);
+
+        StartCoroutine(FadeCorutine(-0.1f));
+
+    }
     IEnumerator FadeCorutine(float delta)
     {
         var canvasGroup = GetComponent<CanvasGroup>();

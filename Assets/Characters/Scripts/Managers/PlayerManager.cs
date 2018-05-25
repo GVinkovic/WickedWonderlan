@@ -263,7 +263,30 @@ public class PlayerManager : MonoBehaviour {
 		// ako jesu invoka event, koji onda poziva metodu InventoriesClosed();
 		Inventory.checkIfAllInventoryClosed();
 	}
-	public static void TakeHit()
+
+
+    public static bool CollectItem(int itemId, int quantity)
+    {
+        var item = GameManager.ItemDatabase.getItemByID(itemId);
+        var inventory = PlayerInventory.MainInventory;
+        bool check = inventory.checkIfItemAllreadyExist(item.itemID, quantity);
+
+        if (check) return true;
+        else if (inventory.ItemsInInventory.Count < (inventory.width * inventory.height))
+        {
+            inventory.addItemToInventory(item.itemID, quantity);
+            inventory.updateIconSize();
+            inventory.updateItemList();
+            inventory.stackableSettings();
+            GameManager.NotifyPickedUpItem(item);
+            return true;
+        }
+        return false;
+
+    }
+
+
+    public static void TakeHit()
 	{
 		RefreshHealthUI();
         RecoverHealth();

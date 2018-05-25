@@ -22,6 +22,11 @@ MonoBehaviour:
       items: 
     finishProgress: 1
     requiredQuestNames: []
+    rewardItems:
+    - itemId: 17
+      quantity: 1
+    - itemId: 18
+      quantity: 30
   - name: Silk
     displayName: Collect 10 silks
     description: Collect 10 silks by killing 10 spiders in the woods
@@ -32,3 +37,4 @@ MonoBehaviour:
       items: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
     finishProgress: 10
     requiredQuestNames: []
+    rewardItems: []
