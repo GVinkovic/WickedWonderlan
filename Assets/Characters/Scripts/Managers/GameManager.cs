@@ -75,6 +75,13 @@ public class GameManager : MonoBehaviour
         DialogMgr.OnDialogEnd -= OnDialogEnd;
 
         GetDialogMgr.BeginDialog(GetDialogsCollection.getDialogList("TutorialIntro"));
+
+        DialogMgr.OnDialogEnd += OnTutorialDialogEnd;
+    }
+    private void OnTutorialDialogEnd()
+    {
+        DialogMgr.OnDialogEnd -= OnTutorialDialogEnd;
+        QuestManager.AcceptQuest("Village");
     }
 
     public static DialogMgr GetDialogMgr

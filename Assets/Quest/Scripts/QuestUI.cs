@@ -29,6 +29,10 @@ public class QuestUI : MonoBehaviour
         StartCoroutine(FadeCorutine(-0.1f));
         //TODO: neki zvuk
     }
+    public void RemoveImmediate()
+    {
+        Destroy(gameObject);
+    }
 
     IEnumerator FadeCorutine(float delta)
     {

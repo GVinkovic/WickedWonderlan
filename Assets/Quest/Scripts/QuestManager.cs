@@ -82,7 +82,6 @@ public class QuestManager : MonoBehaviour {
 
     static void ShowQuestInUI(Quest quest)
     {
-        // TOOD: prikazat quest na ekranu
         var questGO = Instantiate(instance.QuestUI, instance.QuestUIParent.transform);
 
         var questUI = questGO.GetComponent<QuestUI>();
@@ -129,13 +128,31 @@ public class QuestManager : MonoBehaviour {
     public static Dictionary<string, int> QuestsProgress
     {
         get { return questsProgress; }
-        set { questsProgress = value; }
+        set {
+                questsProgress = value;
+                UpdateQuestsUI();
+            }
     }
     public static QuestsCollection Quests
     {
         get { return instance.questsCollection; }
     }
 
+    static void UpdateQuestsUI()
+    {
+        foreach (var questUI in instance.QuestUIParent.GetComponentsInChildren<QuestUI>())
+        {
+            questUI.RemoveImmediate();
+        }
+
+        foreach(var kvp in questsProgress)
+        {
+            var quest = Quests.FindByName(kvp.Key);
+
+            ShowQuestInUI(quest);
+
+        }
+    }
 
     public static List<Quest> GetActiveQuests()
     {
@@ -261,7 +278,7 @@ public class QuestManager : MonoBehaviour {
         }
     }
 
-
+    /*
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Q))
@@ -283,4 +300,5 @@ public class QuestManager : MonoBehaviour {
             }
         }
     }
+    */
 }
