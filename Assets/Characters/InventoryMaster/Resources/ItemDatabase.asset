@@ -329,3 +329,16 @@ MonoBehaviour:
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
+  - itemName: Silk
+    itemID: 19
+    itemDesc: This silk is get when killing a spider
+    itemIcon: {fileID: 21300000, guid: 10ae4182eb020e74baae50c907a4fb4c, type: 3}
+    itemModel: {fileID: 1538833425872198, guid: 2e6d24d3e2ec4a14fa470d6e7faaf482,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemWeight: 0
+    maxStack: 200
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
