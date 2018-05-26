@@ -290,14 +290,7 @@ public class QuestManager : MonoBehaviour {
         }
     }
 
-    private void Update()
-    {
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ArriveAtLocation("Village");
-        }
-    }
     /*
     void Update()
     {
