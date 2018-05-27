@@ -2791,7 +2791,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1951583398
+  randomSeed: -412841292
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8958,7 +8958,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1384488846
+  randomSeed: 682919682
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17374,7 +17374,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -864345941
+  randomSeed: 1801755725
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -36069,7 +36069,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 738656862
+  randomSeed: 126658151
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -41827,7 +41827,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1120148674
+  randomSeed: -663488857
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -45625,6 +45625,47 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f7d331f9e3cef4448275dd98fb35936, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &935800801 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100044, guid: 1f7d331f9e3cef4448275dd98fb35936, type: 3}
+  m_PrefabInternal: {fileID: 935800800}
+--- !u!1 &935800802 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100006, guid: 1f7d331f9e3cef4448275dd98fb35936, type: 3}
+  m_PrefabInternal: {fileID: 935800800}
+--- !u!65 &935800803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 935800801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4139991, y: 2.181414, z: 0.9579977}
+  m_Center: {x: 0.063846484, y: 1.0122358, z: 0.046648826}
+--- !u!114 &935800804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 935800802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9949544fd9c68144ba6d058048ce7696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateTime: 1
+  interactionRadius: 2
+  questsForDialog:
+  - dialogName: ElderFirstDialog
+    questsNames:
+    - Silk
+    - Goblins
+  - dialogName: ElderSecondDialog
+    questsNames:
+    - Dragon
 --- !u!4 &936905996 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 2ae571df2bec2ce4aa8af668173c9b5a, type: 3}
@@ -75622,7 +75663,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1307645730
+  randomSeed: -649241295
   InitialModule:
     serializedVersion: 3
     enabled: 1

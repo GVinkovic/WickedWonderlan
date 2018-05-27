@@ -45,7 +45,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke("Load", 0);
+        //TODO: otkomentirat
+    //    Invoke("Load", 0);
     }
     void Load()
     {

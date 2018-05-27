@@ -56,6 +56,15 @@ public class DialogMgr : MonoBehaviour
         this.StartCoroutine(this.SkinDialogRoutine());
     }
 
+    public void EndDialog()
+    {
+        // zaustavi izmjenjivanje dialoga
+        StopAllCoroutines();
+        // kada su svi dialozi prikazani, resetiraj postavke i sakrij dialog
+        this._Reset();
+        // ako netko hvata ovaj event onda okini event
+        if (OnDialogEnd != null) OnDialogEnd();
+    }
 
     // metoda koja prolazi kroz sve dialoge i izmjenjuje ih kako korisnik interakta s njima
     private IEnumerator DialogRoutine(List<Dialog> dialogs)

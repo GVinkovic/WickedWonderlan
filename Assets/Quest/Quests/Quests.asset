@@ -38,3 +38,25 @@ MonoBehaviour:
     finishProgress: 10
     requiredQuestNames: []
     rewardItems: []
+  - name: Goblins
+    displayName: Kill goblin's boss
+    description: Kill the goblin's boss in order to gain elder's trust
+    questType: 0
+    enemyType: 1
+    locationName: Village
+    ItemIds:
+      items: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
+    finishProgress: 10
+    requiredQuestNames: []
+    rewardItems: []
+  - name: Dragon
+    displayName: Kill the dragon
+    description: Kill the dragon in order to get to the portal which leeds to mainworld
+    questType: 0
+    enemyType: 5
+    locationName: Village
+    ItemIds:
+      items: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
+    finishProgress: 1
+    requiredQuestNames: []
+    rewardItems: []

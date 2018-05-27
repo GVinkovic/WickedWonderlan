@@ -559,7 +559,7 @@ MonoBehaviour:
   interactionRadius: 1.5
   item:
     itemName: 
-    itemID: 0
+    itemID: 19
     itemDesc: 
     itemIcon: {fileID: 0}
     itemModel: {fileID: 0}

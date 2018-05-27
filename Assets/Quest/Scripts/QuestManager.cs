@@ -178,7 +178,18 @@ public class QuestManager : MonoBehaviour {
 
         return active;
     }
-
+    public static bool HasActiveQuests()
+    {
+        return GetActiveQuests().Count != 0;
+    }
+    public static bool IsQuestCompleted(string questName)
+    {
+        if (QuestsProgress.ContainsKey(questName))
+        {
+            return QuestsProgress[questName] == Quests.FindByName(questName).finishProgress;
+        }
+        return false;
+    }
     public static List<Quest> GetAvailableQuests()
     {
         List<Quest> available = new List<Quest>();
@@ -209,7 +220,8 @@ public class QuestManager : MonoBehaviour {
 
     public static void EnemyKilled(EnemyController.EnemyType enemyType)
     {
-        foreach(var kvp in questsProgress)
+        Quest temp = null;
+        foreach (var kvp in questsProgress)
         {
             // aktivan quest koji nije završen
             var quest = Quests.FindByName(kvp.Key);
@@ -219,11 +231,13 @@ public class QuestManager : MonoBehaviour {
                 {
                     if(enemyType == quest.enemyType)
                     {
-                        ProgressQuest(quest);
+                        temp = quest;
+                        break;
                     }
                 }
             }
         }
+        if (temp != null) ProgressQuest(temp);
     }
 
 
