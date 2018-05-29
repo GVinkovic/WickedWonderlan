@@ -271,7 +271,11 @@ public class PlayerManager : MonoBehaviour {
         var inventory = PlayerInventory.MainInventory;
         bool check = inventory.checkIfItemAllreadyExist(item.itemID, quantity);
 
-        if (check) return true;
+        if (check)
+        {
+            GameManager.NotifyPickedUpItem(item);
+            return true;
+        }
         else if (inventory.ItemsInInventory.Count < (inventory.width * inventory.height))
         {
             inventory.addItemToInventory(item.itemID, quantity);

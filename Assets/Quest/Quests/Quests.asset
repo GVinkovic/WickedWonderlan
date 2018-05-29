@@ -28,14 +28,14 @@ MonoBehaviour:
     - itemId: 18
       quantity: 30
   - name: Silk
-    displayName: Collect 10 silks
-    description: Collect 10 silks by killing 10 spiders in the woods
+    displayName: Collect 3 silks
+    description: Collect 3 silks by killing 3 spiders in the woods
     questType: 2
     enemyType: 4
     locationName: Village
     ItemIds:
-      items: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
-    finishProgress: 10
+      items: 130000001300000013000000
+    finishProgress: 3
     requiredQuestNames: []
     rewardItems: []
   - name: Goblins
@@ -46,17 +46,19 @@ MonoBehaviour:
     locationName: Village
     ItemIds:
       items: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
-    finishProgress: 10
+    finishProgress: 3
     requiredQuestNames: []
     rewardItems: []
   - name: Dragon
     displayName: Kill the dragon
-    description: Kill the dragon in order to get to the portal which leeds to mainworld
+    description: Kill the dragon in order to get to the portal which leeds to mainland
     questType: 0
     enemyType: 5
     locationName: Village
     ItemIds:
       items: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
     finishProgress: 1
-    requiredQuestNames: []
+    requiredQuestNames:
+    - Silk
+    - Goblins
     rewardItems: []

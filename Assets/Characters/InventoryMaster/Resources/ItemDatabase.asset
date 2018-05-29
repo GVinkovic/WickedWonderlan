@@ -111,7 +111,8 @@ MonoBehaviour:
     itemID: 6
     itemDesc: Arrow that deals moderate damage and pushes an opponent back.
     itemIcon: {fileID: 21300000, guid: 5302d141cdfd12c4d929311468085f8e, type: 3}
-    itemModel: {fileID: 0}
+    itemModel: {fileID: 1385265881409952, guid: 07d4927258f2c33479e846654b1ec4f4,
+      type: 2}
     itemValue: 1
     itemType: 1
     itemWeight: 0
@@ -127,7 +128,8 @@ MonoBehaviour:
     itemID: 7
     itemDesc: Arrow that pierces through enemies hitting everything in its path.
     itemIcon: {fileID: 21300000, guid: 6eb0d0a0ce9ecb2418fdf42e4571b271, type: 3}
-    itemModel: {fileID: 0}
+    itemModel: {fileID: 1270059505761774, guid: 8f4c7d6d474529845b2258f5aecedccf,
+      type: 2}
     itemValue: 1
     itemType: 1
     itemWeight: 0

@@ -104,7 +104,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4975671405589056}
-  - component: {fileID: 114926408878853170}
   m_Layer: 0
   m_Name: Silk
   m_TagString: Untagged
@@ -544,29 +543,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1089658181940226}
   m_Mesh: {fileID: 4300000, guid: b771e8dfc7eb515479171fb99bbf6c81, type: 3}
---- !u!114 &114926408878853170
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1538833425872198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2579761e16114d94d874d2a9a06887e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  updateTime: 0.5
-  interactionRadius: 1.5
-  item:
-    itemName: 
-    itemID: 19
-    itemDesc: 
-    itemIcon: {fileID: 0}
-    itemModel: {fileID: 0}
-    itemValue: 1
-    itemType: 0
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes: []

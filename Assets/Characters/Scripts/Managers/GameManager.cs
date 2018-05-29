@@ -45,8 +45,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //TODO: otkomentirat
-    //    Invoke("Load", 0);
+        Invoke("Load", 0);
     }
     void Load()
     {
@@ -135,9 +134,13 @@ public class GameManager : MonoBehaviour
                     var inventoryItem = inventoryItems.getItemByID(item.itemId);
                     var drop = Instantiate(inventoryItem.itemModel);
                     if (!drop.activeSelf) drop.SetActive(true);
-                    drop.transform.position = new Vector3(  enemy.transform.position.x + offset++, 
-                                                            drop.transform.position.y, 
-                                                                enemy.transform.position.z);
+
+
+                    drop.transform.position = new Vector3(enemy.DyingPosition.x + offset++,
+                                                          enemy.DyingPosition.y + drop.transform.position.y + 0.1f,
+                                                          enemy.DyingPosition.z);
+
+                    drop.transform.rotation = Quaternion.LookRotation(Vector3.zero);
 
                     var pickUpItemScript = drop.GetComponent<PickUpItem>();
                     if (!pickUpItemScript)

@@ -20,6 +20,8 @@ public class Enemy : Interactable {
     private ProgressBar healthBar;
     private Vector3 initialPosition;
 
+
+    public Vector3 DyingPosition { get; set; }
     public override void Start()
     {
         base.Start();
@@ -104,6 +106,8 @@ public class Enemy : Interactable {
         controller.Die();
         healthBar.SetProgress(0);
 
+        DyingPosition = transform.position;
+
         StopInteract();
         navAgent.enabled = false;
         var colider = GetComponentInChildren<BoxCollider>();
@@ -117,7 +121,8 @@ public class Enemy : Interactable {
     void DeathParticle()
     {
         onDeathParticle = Instantiate(GameManager.instance.OnEnemyDeathParticle, null);
-        onDeathParticle.transform.position = transform.position;
+        onDeathParticle.transform.position = DyingPosition;
+
         onDeathParticle.SetActive(true);
         Invoke("RemoveOnDeathParticle",3);
 

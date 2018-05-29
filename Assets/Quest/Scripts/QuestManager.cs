@@ -220,6 +220,7 @@ public class QuestManager : MonoBehaviour {
 
     public static void EnemyKilled(EnemyController.EnemyType enemyType)
     {
+        print("Enemy killed " + enemyType);
         Quest temp = null;
         foreach (var kvp in questsProgress)
         {
@@ -243,6 +244,7 @@ public class QuestManager : MonoBehaviour {
 
     public static void ItemCollected(int id)
     {
+        print("Item collected " + id);
         Quest temp = null;
         foreach (var kvp in questsProgress)
         {
