@@ -2806,6 +2806,7 @@ MonoBehaviour:
   updateTime: 0.5
   interactionRadius: 30
   attackSpeed: 0.5
+  enemyType: 3
 --- !u!114 &114989404152151810
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -218,7 +218,7 @@ public class QuestManager : MonoBehaviour {
         return available;
     }
 
-    public static void EnemyKilled(EnemyController.EnemyType enemyType)
+    public static void EnemyKilled(Enemy.Type enemyType)
     {
         print("Enemy killed " + enemyType);
         Quest temp = null;

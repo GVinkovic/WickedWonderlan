@@ -40,7 +40,7 @@ public class Quest {
 
 
     [ConditionalField("questType", QuestType.KillEnemy)]
-    public EnemyController.EnemyType enemyType;
+    public Enemy.Type enemyType;
 
     [ConditionalField("questType", QuestType.GoToLocation)]
     public string locationName;

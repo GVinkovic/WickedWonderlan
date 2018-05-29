@@ -20,6 +20,19 @@ public class Enemy : Interactable {
     private ProgressBar healthBar;
     private Vector3 initialPosition;
 
+    // za questove type enemy-a
+    // dodat dodatne po po potrebi
+    public enum Type
+    {
+        Elemental = 0,
+        Goblin = 1,
+        GoblinBoss = 2,
+        Monster = 3,
+        Troll = 4,
+        Spider = 5,
+        Dragon = 6
+    }
+    public Type enemyType;
 
     public Vector3 DyingPosition { get; set; }
     public override void Start()

@@ -2228,6 +2228,7 @@ MonoBehaviour:
   updateTime: 0.5
   interactionRadius: 30
   attackSpeed: 0.2
+  enemyType: 5
 --- !u!137 &137741870305747196
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

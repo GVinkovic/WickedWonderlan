@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
 
     public static void EnemyDied(Enemy enemy)
     {
-        QuestManager.EnemyKilled(enemy.EnemyController.enemyType);
+        QuestManager.EnemyKilled(enemy.enemyType);
 
         foreach(var entry in instance.LootTable){
             if(entry.enemyType == enemy.EnemyController.enemyType)
