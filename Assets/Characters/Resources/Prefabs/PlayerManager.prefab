@@ -4515,7 +4515,7 @@ MonoBehaviour:
   smooth: 10
   horizontalAimingSpeed: 6
   verticalAimingSpeed: 6
-  maxVerticalAngle: 30
+  maxVerticalAngle: 60
   minVerticalAngle: -60
   XAxis: Analog X
   YAxis: Analog Y
@@ -6901,8 +6901,8 @@ MonoBehaviour:
   manaBar: {fileID: 114523920536105624}
   experienceBar: {fileID: 114343171807078268}
   playerLevelText: {fileID: 114418148045099106}
-  ManaRegenerationAmount: 1
   ManaRegenerationTime: 1
+  HealthRegenerationTime: 1
   ExperienceLevels: 000000002c010000840300008c0a000064190000b0360000d8590000d084000080bb000000fa0000
 --- !u!114 &114631349959702226
 MonoBehaviour:
