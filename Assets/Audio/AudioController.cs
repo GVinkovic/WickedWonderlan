@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioController : MonoBehaviour {
 
 
 	public Sound[] sounds;
+	public AudioMixerGroup SFXMixer;
 
 	void Awake(){
 
@@ -14,7 +16,7 @@ public class AudioController : MonoBehaviour {
 		foreach (Sound s in sounds) {
 			s.source = gameObject.AddComponent<AudioSource> ();
 			s.source.clip = s.clip;
-
+			s.source.outputAudioMixerGroup = SFXMixer;
 			s.source.volume = s.volume;
 			s.source.pitch = s.pitch;
 			s.source.loop = s.loop;

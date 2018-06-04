@@ -50799,7 +50799,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1045504909496354, guid: 58544e703e8707e4f99fdfdcc3f910d7, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58544e703e8707e4f99fdfdcc3f910d7, type: 2}
@@ -53901,11 +53901,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1799880946}
     m_Modifications:
-    - target: {fileID: 114969478208555696, guid: f2f9dd0d4e3008a4b8d270a3f1893577,
-        type: 2}
-      propertyPath: sounds.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4317833626639742, guid: f2f9dd0d4e3008a4b8d270a3f1893577, type: 2}
       propertyPath: m_LocalPosition.x
       value: 459.468
@@ -54509,6 +54504,18 @@ Prefab:
       propertyPath: sounds.Array.data[4].volume
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 114108565665710926, guid: 961ca276c09c56548835095e69c4c005,
+        type: 2}
+      propertyPath: Mixer
+      value: 
+      objectReference: {fileID: 24300002, guid: 859dd8dc56f063e44a487061a1aee71f,
+        type: 2}
+    - target: {fileID: 114108565665710926, guid: 961ca276c09c56548835095e69c4c005,
+        type: 2}
+      propertyPath: SFXMixer
+      value: 
+      objectReference: {fileID: 24300002, guid: 859dd8dc56f063e44a487061a1aee71f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 961ca276c09c56548835095e69c4c005, type: 2}
   m_IsPrefabParent: 0
