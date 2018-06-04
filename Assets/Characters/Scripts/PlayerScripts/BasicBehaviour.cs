@@ -88,7 +88,6 @@ public class BasicBehaviour : MonoBehaviour
 		{
 			changedFOV = true;
 			camScript.SetFOV(sprintFOV);
-			FindObjectOfType<AudioController> ().Play ("MaleSprint");
 		}
 		else if(changedFOV)
 		{

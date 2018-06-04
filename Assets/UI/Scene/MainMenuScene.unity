@@ -3275,6 +3275,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2027938522}
+        m_MethodName: TaskOnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &624985384
@@ -8450,6 +8461,21 @@ Prefab:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114337106797415896, guid: 6ca379e0bcfff7b4bbfe2caa807314da,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2027938522}
+    - target: {fileID: 114337106797415896, guid: 6ca379e0bcfff7b4bbfe2caa807314da,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TaskOnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114337106797415896, guid: 6ca379e0bcfff7b4bbfe2caa807314da,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ca379e0bcfff7b4bbfe2caa807314da, type: 2}
   m_IsPrefabParent: 0
@@ -9202,6 +9228,17 @@ MonoBehaviour:
       - m_Target: {fileID: 2090473217}
         m_MethodName: Play
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2027938522}
+        m_MethodName: TaskOnClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11410,9 +11447,6 @@ GameObject:
   - component: {fileID: 2027938517}
   - component: {fileID: 2027938516}
   - component: {fileID: 2027938515}
-  - component: {fileID: 2027938519}
-  - component: {fileID: 2027938520}
-  - component: {fileID: 2027938521}
   - component: {fileID: 2027938522}
   - component: {fileID: 2027938523}
   m_Layer: 0
@@ -11502,51 +11536,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2027938519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2027938513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa46923f8b8cf4f469adcea0034796bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 2027938515}
-  settingsBtn: {fileID: 2047313633}
-  nam: Animate
-  number: 12
---- !u!114 &2027938520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2027938513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa46923f8b8cf4f469adcea0034796bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 2027938515}
-  settingsBtn: {fileID: 1569531268}
-  nam: Animate
-  number: 0
---- !u!114 &2027938521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2027938513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa46923f8b8cf4f469adcea0034796bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 2027938515}
-  settingsBtn: {fileID: 2075712790}
-  nam: Animate
-  number: 0
 --- !u!114 &2027938522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11559,9 +11548,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2027938515}
-  settingsBtn: {fileID: 597075433}
-  nam: Animate
-  number: 6
 --- !u!82 &2027938523
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12110,6 +12096,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2027938522}
+        m_MethodName: TaskOnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &2064475240
@@ -12173,12 +12170,6 @@ Transform:
   m_Father: {fileID: 1525995427}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2075712790 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114337106797415896, guid: 6ca379e0bcfff7b4bbfe2caa807314da,
-    type: 2}
-  m_PrefabInternal: {fileID: 1486706585}
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &2081538565
 GameObject:
   m_ObjectHideFlags: 0

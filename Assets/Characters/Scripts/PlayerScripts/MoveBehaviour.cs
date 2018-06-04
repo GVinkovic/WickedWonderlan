@@ -93,7 +93,11 @@ public class MoveBehaviour : GenericBehaviour
 			if(behaviourManager.GetAnim.GetFloat(speedFloat) > 0.1)
 				
 			{
-				FindObjectOfType<AudioController> ().Play ("JumpMale");
+				if (PlayerManager.Character == 0) {
+					FindObjectOfType<AudioController> ().Play ("JumpMale");
+				} else {
+					FindObjectOfType<AudioController> ().Play ("JumpFemale");
+				}
 				// Temporarily change player friction to pass through obstacles.
 				GetComponent<CapsuleCollider>().material.dynamicFriction = 0f;
 				GetComponent<CapsuleCollider>().material.staticFriction = 0f;

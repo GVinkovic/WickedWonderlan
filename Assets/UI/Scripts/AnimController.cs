@@ -6,21 +6,16 @@ using UnityEngine.UI;
 public class AnimController : MonoBehaviour {
 
 	public Animator anim;
-	public Button settingsBtn;
-	public string nam;
-	public float number;
 	// Use this for initialization
-	void Start () {
-		anim = GetComponent<Animator> ();
-		Button btn = settingsBtn.GetComponent<Button> ();
-		btn.onClick.AddListener (TaskOnClick);
+	/*void Start () {
+		anim = GameObject.Find ("Main Camera").GetComponent<Animator> ();
 	}
-	
+	*/
 
 
-	public void TaskOnClick ()
+	public void TaskOnClick (int animationIndex)
 	{
-		anim.SetFloat (nam, number);
+		anim.SetFloat ("Animate", animationIndex);
 	}
 
 }

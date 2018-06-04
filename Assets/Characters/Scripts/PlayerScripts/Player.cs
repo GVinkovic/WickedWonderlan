@@ -284,7 +284,7 @@ public class Player : MonoBehaviour {
 
     void ThrowBall(GameObject ball)
     {
-
+		FindObjectOfType<AudioController> ().Play ("Fireball");
         var fb = CloneProjectile(ball);
         fb.SetActive(true);
         var rb = fb.GetComponent<Rigidbody>();
