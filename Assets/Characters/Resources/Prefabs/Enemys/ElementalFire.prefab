@@ -1919,8 +1919,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateTime: 0.5
-  interactionRadius: 30
+  interactionRadius: 15
   attackSpeed: 0.2
+  enemyType: 0
 --- !u!114 &114856130342438008
 MonoBehaviour:
   m_ObjectHideFlags: 1

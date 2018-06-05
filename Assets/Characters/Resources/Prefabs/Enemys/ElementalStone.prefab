@@ -1958,8 +1958,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateTime: 0.5
-  interactionRadius: 30
+  interactionRadius: 15
   attackSpeed: 0.2
+  enemyType: 0
 --- !u!137 &137653501821334218
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
