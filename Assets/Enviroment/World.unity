@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5368186, g: 0.51607656, b: 0.38383466, a: 1}
+  m_IndirectSpecularColor: {r: 0.5368672, g: 0.5160869, b: 0.3838916, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -58005,15 +58005,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4404660294172976, guid: c0052cc4f851ee04bbeaf552d407170c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 317.83
+      value: 317.84
       objectReference: {fileID: 0}
     - target: {fileID: 4404660294172976, guid: c0052cc4f851ee04bbeaf552d407170c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 29.18
+      value: 29.32
       objectReference: {fileID: 0}
     - target: {fileID: 4404660294172976, guid: c0052cc4f851ee04bbeaf552d407170c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 620.95
+      value: 620.99
       objectReference: {fileID: 0}
     - target: {fileID: 4404660294172976, guid: c0052cc4f851ee04bbeaf552d407170c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -58045,15 +58045,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4404660294172976, guid: c0052cc4f851ee04bbeaf552d407170c, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5889825
+      value: 1.8601344
       objectReference: {fileID: 0}
     - target: {fileID: 4404660294172976, guid: c0052cc4f851ee04bbeaf552d407170c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.588982
+      value: 1.8601338
       objectReference: {fileID: 0}
     - target: {fileID: 4404660294172976, guid: c0052cc4f851ee04bbeaf552d407170c, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.5889826
+      value: 1.8601345
+      objectReference: {fileID: 0}
+    - target: {fileID: 114337395881752266, guid: c0052cc4f851ee04bbeaf552d407170c,
+        type: 2}
+      propertyPath: enemyType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0052cc4f851ee04bbeaf552d407170c, type: 2}

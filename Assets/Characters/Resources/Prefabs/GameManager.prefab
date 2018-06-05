@@ -691,6 +691,8 @@ MonoBehaviour:
       count: 1
     - itemId: 11
       count: 1
+    - itemId: 19
+      count: 1
   - enemyType: 1
     ExperienceFromKilling: 500
     items:
