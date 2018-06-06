@@ -665,7 +665,7 @@ MonoBehaviour:
   dialogsCollection: {fileID: 11400000, guid: ea1d0d68a170de249837e7cc6349bd25, type: 2}
   LootTable:
   - enemyType: 0
-    ExperienceFromKilling: 1000
+    ExperienceFromKilling: 100
     items:
     - itemId: 3
       count: 1

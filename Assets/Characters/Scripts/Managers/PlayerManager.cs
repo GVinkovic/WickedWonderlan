@@ -231,6 +231,7 @@ public class PlayerManager : MonoBehaviour {
 		if (openedWindows > 0) return;
 
 		Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 		cameraScript.enabled = true;
 		moveBehaviour.enabled = true;
 		basicBehaviour.enabled = true;
@@ -241,7 +242,8 @@ public class PlayerManager : MonoBehaviour {
 		if (!Cursor.visible)
 		{
 			Cursor.visible = true;
-			cameraScript.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            cameraScript.enabled = false;
 			moveBehaviour.enabled = false;
 			basicBehaviour.enabled = false;
 			Time.timeScale = 0f;
