@@ -74,6 +74,8 @@ public class Enemy : Interactable {
     public override void Interact()
     {
         base.Interact();
+        PlayerManager.UnderEnemyAttack(this);
+
         interacting = true;
 		gameObject.GetComponent<AudioController> ().Play ("Grawl");
        // navAgent.isStopped = false;
@@ -83,6 +85,7 @@ public class Enemy : Interactable {
     public override void StopInteract()
     {
         base.StopInteract();
+        PlayerManager.EnemyStoppedAttack(this);
         interacting = false;
         //  if(navAgent.enabled) navAgent.isStopped = true;
         //controller.SetSpeed(0);
