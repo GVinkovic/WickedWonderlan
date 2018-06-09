@@ -1,8 +1,6 @@
 #ifndef FILE_UNIQUESHADOW_SHADOWSAMPLE
 #define FILE_UNIQUESHADOW_SHADOWSAMPLE
 
-#include "UnityCG.cginc"
-
 #if defined(UNIQUE_SHADOW) || defined(UNIQUE_SHADOW_LIGHT_COOKIE)
 	#if (defined(DIRECTIONAL) && !defined(UNIQUE_SHADOW_LIGHT_COOKIE)) || (defined(DIRECTIONAL_COOKIE) && defined(UNIQUE_SHADOW_LIGHT_COOKIE))
 		#define USE_UNIQUE_SHADOW
@@ -14,8 +12,8 @@
 	#define UNIQUE_SHADOW_INTERP(i)
 	#define UNIQUE_SHADOW_TRANSFER(o)
 	#define UNIQUE_SHADOW_ATTENUATION(i)		1.f
-	#define UNIQUE_SHADOW_SHADOW_ATTENUATION(i)	(SHADOW_ATTENUATION(i) * UNIQUE_SHADOW_ATTENUATION(i))
-	#define UNIQUE_SHADOW_LIGHT_ATTENUATION(i)	(LIGHT_ATTENUATION(i) * UNIQUE_SHADOW_ATTENUATION(i))
+	#define UNIQUE_SHADOW_SHADOW_ATTENUATION(i)	(UNITY_SHADOW_ATTENUATION(i) * UNIQUE_SHADOW_ATTENUATION(i))
+	#define UNIQUE_SHADOW_LIGHT_ATTENUATION(i)	(UNITY_LIGHT_ATTENUATION(i) * UNIQUE_SHADOW_ATTENUATION(i))
 #endif
 
 #ifdef USE_UNIQUE_SHADOW //<-ends at the very bottom
@@ -77,7 +75,9 @@ uniform half2 u_UniqueShadowBlockerWidth;
 uniform half u_UniqueShadowBlockerDistanceScale;
 uniform half2 u_UniqueShadowLightWidth;
 
+#if 0
 uniform sampler2D unity_RandomRotation16;
+#endif
 
 uniform samplerCUBE _ShadowsCube;
 uniform half4 _ShadowsCubeRoot;
@@ -174,19 +174,19 @@ half SampleUniqueD3D9OGL(const half4 coords) {
 
 uniform float4x4 u_UniqueShadowMatrix;
 
-#define UNIQUE_SHADOW_INTERP(i)				half4 uniqueShadowPos : TEXCOORD##i ;
-#define UNIQUE_SHADOW_TRANSFER(o)			o.uniqueShadowPos = mul(u_UniqueShadowMatrix, float4(posWorld.xyz, 1.f));
-#define UNIQUE_SHADOW_ATTENUATION(i)		UNIQUE_SHADOW_SAMPLE(i)
-#define UNIQUE_SHADOW_SHADOW_ATTENUATION(i)	(SHADOW_ATTENUATION(i) * UNIQUE_SHADOW_ATTENUATION(i))
-#define UNIQUE_SHADOW_LIGHT_ATTENUATION(i)	(LIGHT_ATTENUATION(i) * UNIQUE_SHADOW_ATTENUATION(i))
+#define UNIQUE_SHADOW_INTERP(i)				                    half4 uniqueShadowPos : TEXCOORD##i ;
+#define UNIQUE_SHADOW_TRANSFER(o)			                    o.uniqueShadowPos = mul(u_UniqueShadowMatrix, float4(posWorld.xyz, 1.f));
+#define UNIQUE_SHADOW_ATTENUATION(i)		                    UNIQUE_SHADOW_SAMPLE(i)
+#define UNIQUE_SHADOW_SHADOW_ATTENUATION(i, worldPos)	        (UNITY_SHADOW_ATTENUATION(i, worldPos) * UNIQUE_SHADOW_ATTENUATION(i))
+#define UNIQUE_SHADOW_LIGHT_ATTENUATION(destName, i, woldPos)   (UNITY_LIGHT_ATTENUATION(destName, i, woldPos) * UNIQUE_SHADOW_ATTENUATION(i))
 
 #if defined(UNITY_PASS_FORWARDBASE) || defined(UNITY_PASS_FORWARDADD) || defined(UNIQUE_SHADOW_FORCE_REPLACE_BUILTIN)
-	#undef SHADOW_COORDS
-	#undef TRANSFER_SHADOW
-	#undef SHADOW_ATTENUATION
-	#define SHADOW_COORDS(i)					UNIQUE_SHADOW_INTERP(i)
-	#define TRANSFER_SHADOW						o.uniqueShadowPos = mul(u_UniqueShadowMatrix, float4(worldPos.xyz, 1.f));
-	#define SHADOW_ATTENUATION(i)				UNIQUE_SHADOW_SAMPLE(i);
+	#undef UNITY_SHADOW_COORDS
+	#undef UNITY_TRANSFER_SHADOW
+	#undef UNITY_SHADOW_ATTENUATION
+	#define UNITY_SHADOW_COORDS(i)					UNIQUE_SHADOW_INTERP(i)
+	#define UNITY_TRANSFER_SHADOW(i, coord)			o.uniqueShadowPos = mul(u_UniqueShadowMatrix, float4(worldPos.xyz, 1.f));
+	#define UNITY_SHADOW_ATTENUATION(i, worldPos)	UNIQUE_SHADOW_SAMPLE(i);
 #endif
 
 #endif//USE_UNIQUE_SHADOWS

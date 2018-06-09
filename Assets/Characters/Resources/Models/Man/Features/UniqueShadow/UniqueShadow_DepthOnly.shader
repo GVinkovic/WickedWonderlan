@@ -3,7 +3,7 @@
 Shader "Hidden/Volund/Unique Shadow Depth Only" {
 
 CGINCLUDE
-	#pragma only_renderers d3d11 d3d9 opengl
+	#pragma only_renderers d3d11 d3d9 opengl glcore
 	#pragma fragmentoption ARB_precision_hint_fastest
 	
 	uniform float4		_MainTex_ST;
@@ -23,7 +23,8 @@ CGINCLUDE
 	v2f vert(a2v v) {
 		v2f o;
 		o.pos = UnityObjectToClipPos(v.vertex);
-		o.pos.z = max(UNITY_NEAR_CLIP_VALUE, o.pos.z);
+//o.pos.z = max(UNITY_NEAR_CLIP_VALUE, o.pos.z);
+o.pos.z = min(UNITY_NEAR_CLIP_VALUE, o.pos.z);
 		o.uv = v.uv * _MainTex_ST.xy + _MainTex_ST.zw;
 		return o;
 	}

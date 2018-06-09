@@ -265,14 +265,21 @@ public class UniqueShadow : MonoBehaviour {
 		m_shadowCamera.orthographicSize = focus.radius;
 		m_shadowCamera.nearClipPlane = useSceneCapture ? -focus.sceneCaptureDistance : 0f;
 		m_shadowCamera.farClipPlane = focus.radius * 2f;
-		m_shadowCamera.projectionMatrix
-			= GL.GetGPUProjectionMatrix(Matrix4x4.Ortho(-focus.radius, focus.radius, -focus.radius, focus.radius, 0f, focus.radius * 2f), false);
+//		m_shadowCamera.projectionMatrix
+//			= GL.GetGPUProjectionMatrix(Matrix4x4.Ortho(-focus.radius, focus.radius, -focus.radius, focus.radius, 0f, focus.radius * 2f), false);
+var ortho = Matrix4x4.Ortho(-focus.radius, focus.radius, -focus.radius, focus.radius, 0f, focus.radius * 2f);
+ortho[2, 0] = -ortho[2, 0];
+ortho[2, 1] = -ortho[2, 1];
+ortho[2, 2] = -ortho[2, 2];
+ortho[2, 3] = -ortho[2, 3];
+m_shadowCamera.projectionMatrix = GL.GetGPUProjectionMatrix(ortho, false);
 
 		var isD3D9 = SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Direct3D9;
 		var isD3D = isD3D9 || SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Direct3D11;
 		float to = isD3D9 ? 0.5f / (float)(int)shadowMapSize : 0f;
 		float zs = isD3D ? 1f : 0.5f, zo = isD3D ? 0f : 0.5f;
-		float db = -focus.depthBias;
+//float db = -focus.depthBias;
+float db = focus.depthBias;
 		m_shadowSpaceMatrix.SetRow(0, new Vector4(0.5f, 0.0f, 0.0f, 0.5f + to));
 		m_shadowSpaceMatrix.SetRow(1, new Vector4(0.0f, 0.5f, 0.0f, 0.5f + to));
 		m_shadowSpaceMatrix.SetRow(2, new Vector4(0.0f, 0.0f,   zs,   zo + db));
