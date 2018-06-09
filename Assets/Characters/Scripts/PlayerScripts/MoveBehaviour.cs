@@ -94,9 +94,11 @@ public class MoveBehaviour : GenericBehaviour
 				
 			{
 				if (PlayerManager.Character == 0) {
-					FindObjectOfType<AudioController> ().Play ("JumpMale");
+					gameObject.GetComponent<AudioController>().Play ("JumpMale");
 				} else {
-					FindObjectOfType<AudioController> ().Play ("JumpFemale");
+					gameObject.GetComponent<AudioController>().Play ("JumpFemale");
+
+
 				}
 				// Temporarily change player friction to pass through obstacles.
 				GetComponent<CapsuleCollider>().material.dynamicFriction = 0f;
@@ -126,7 +128,7 @@ public class MoveBehaviour : GenericBehaviour
 				jump = false;
 				behaviourManager.GetAnim.SetBool(jumpBool, false);
 				behaviourManager.UnlockTempBehaviour(this.behaviourCode);
-				FindObjectOfType<AudioController> ().Play ("JumpLand");
+				gameObject.GetComponent<AudioController>().Play ("JumpLand");
 			}
 		}
 	}

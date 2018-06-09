@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 114856130342438008}
   - component: {fileID: 114552222112391276}
   - component: {fileID: 195502242845309052}
+  - component: {fileID: 114764768539232954}
   m_Layer: 0
   m_Name: ElementalFire
   m_TagString: Untagged
@@ -1692,8 +1693,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1713113293812018}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 295.0062, y: 0, z: 45.428905}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 497.51855, y: 80.71782, z: 357.61362}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4275225456271392}
@@ -1922,6 +1923,31 @@ MonoBehaviour:
   interactionRadius: 15
   attackSpeed: 0.2
   enemyType: 0
+--- !u!114 &114764768539232954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713113293812018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1991aa13fa8c146ad15374793e3564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: ad1dfe014524bef4d89308464efe81b8, type: 3}
+    name: ElementalPunch
+    volume: 0.05
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c87003c1f51bb6d48a8a110b031eb219, type: 3}
+    name: EStep
+    volume: 0.05
+    pitch: 0.34
+    loop: 0
+    source: {fileID: 0}
+  SFXMixer: {fileID: 24300002, guid: 859dd8dc56f063e44a487061a1aee71f, type: 2}
 --- !u!114 &114856130342438008
 MonoBehaviour:
   m_ObjectHideFlags: 1
