@@ -60,6 +60,10 @@ public class PlayerManager : MonoBehaviour {
 
 	private ThirdPersonOrbitCamBasic cameraScript;
 
+    private RhinoController rhino;
+
+    private List<Enemy> enemyAttacking = new List<Enemy>();
+
 
 
 	private static bool isManaRecovering = false;
@@ -405,5 +409,47 @@ public class PlayerManager : MonoBehaviour {
 		PlayerStats.AlterStrength(amount);
 	}
 
+    public static void RegisterRhino(RhinoController rhino)
+    {
+        instance.rhino = rhino;
+    }
+
+    public static void UnderEnemyAttack(Enemy enemy)
+    {
+        if (instance.enemyAttacking.Contains(enemy)) return;
+
+        instance.enemyAttacking.Add(enemy);
+
+        if (instance.rhino && !instance.rhino.Attacks)
+        {
+            instance.rhino.SetTarget(enemy.gameObject, true);
+        }
+    }
+
+    public static void EnemyStoppedAttack(Enemy enemy)
+    {
+        instance.enemyAttacking.Remove(enemy);
+
+        if (instance.rhino)
+        {
+            if (instance.enemyAttacking.Count > 0)
+            {
+                instance.rhino.SetTarget(instance.enemyAttacking[0].gameObject, true);
+            }
+            else
+            {
+                instance.rhino.SetTarget(Player, false);
+            }
+        }
+       
+    }
+
+    public static List<Enemy> UnderAttackFromEnemys
+    {
+        get
+        {
+            return instance.enemyAttacking;
+        }
+    }
 
 }

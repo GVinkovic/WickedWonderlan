@@ -4,8 +4,6 @@
 public class CombatWeapon : MonoBehaviour {
 
     protected CharacterStats stats;
- //   MoveBehaviour moveBehaviour;
- //   EnemyController enemyController;
 
     public delegate void GameObjectAction(GameObject source, GameObject enemy);
     public GameObjectAction OnDamage;
@@ -16,11 +14,7 @@ public class CombatWeapon : MonoBehaviour {
     {
         if(!stats)
             stats = GetComponentInParent<CharacterStats>();
-        /*
-        if (!moveBehaviour)
-            moveBehaviour = GetComponentInParent<MoveBehaviour>();
-        if (!enemyController)
-            enemyController = GetComponentInParent<EnemyController>();*/
+
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -29,24 +23,22 @@ public class CombatWeapon : MonoBehaviour {
         var characterStats = other.gameObject.GetComponentInParent<CharacterStats>();
         if (characterStats)
         {
-        //    bool isAttacking = false;
-            if(characterStats.GetType() != stats.GetType())
+            //    bool isAttacking = false;
+            //   if(characterStats.GetType() != stats.GetType())
+            
+            // ako nije tip lika super klasa lika kojeg napada i
+            // ako nije tip lika nasljedija statove lika kojeg napada
+            if(!stats.GetType().IsAssignableFrom(characterStats.GetType()) && !stats.GetType().IsSubclassOf(characterStats.GetType()))
             {
-                if (stats.IsAttacking())
+            //    print(stats.GetType() + " attacks with "+other.gameObject.name+", particle= " + other.gameObject.GetComponentInChildren<ParticleSystem>()!=null);
+                if (stats.IsAttacking() || other.gameObject.GetComponentInChildren<ParticleSystem>())
                 {
                     characterStats.TakeDamage(stats.GetDamageValue());
                     if (OnDamage != null) OnDamage.Invoke(gameObject, other.gameObject);
                 }
-                //    if (moveBehaviour) isAttacking = moveBehaviour.GetAttacks;
-                //   else isAttacking = enemyController.IsAttacking();
-
             }
             
-          /*  if (isAttacking)
-            {
-                characterStats.TakeDamage(stats.damage.Value);
-                if (OnDamage != null) OnDamage.Invoke(gameObject, other.gameObject);
-            }*/
+       
         }
     }
     public CharacterStats Stats
@@ -61,31 +53,5 @@ public class CombatWeapon : MonoBehaviour {
             stats = value;
         }
     }
-    /*
-    public MoveBehaviour MoveBehaviour
-    {
-        get
-        {
-            return moveBehaviour;
-        }
-
-        set
-        {
-            moveBehaviour = value;
-        }
-    }
-
-    public EnemyController EnemyController
-    {
-        get
-        {
-            return enemyController;
-        }
-
-        set
-        {
-            enemyController = value;
-        }
-    }
-*/
+  
 }
