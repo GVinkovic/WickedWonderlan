@@ -300,7 +300,7 @@ public class Player : MonoBehaviour {
     public int GetAttackType
     {
         get {
-            if (attackType == AttackType.SwordAttack1) return Random.Range((int)AttackType.SwordAttack1, (int)AttackType.SwordJump);
+          //  if (attackType == AttackType.SwordAttack1) return Random.Range((int)AttackType.SwordAttack1, (int)AttackType.SwordJump);
             if(type == PlayerType.Sword)
             {
                 int min = (int)AttackType.SwordAttack1;
@@ -309,6 +309,7 @@ public class Player : MonoBehaviour {
                 currentSwordIndex++;
 
                 if (currentSwordIndex > max) currentSwordIndex = min;
+
                 return currentSwordIndex;
             }
             return (int)attackType;
