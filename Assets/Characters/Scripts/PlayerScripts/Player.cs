@@ -106,6 +106,7 @@ public class Player : MonoBehaviour {
         {
             Type = PlayerType.Sword;
             attackType = AttackType.SwordAttack1;
+            currentSwordIndex = (int)AttackType.SwordAttack1;
         }
         else if (Input.GetKeyDown("3"))
         {
@@ -191,11 +192,12 @@ public class Player : MonoBehaviour {
             else if (type == PlayerType.Sword)
             {
                 attackType = AttackType.SwordAttack1;
+                currentSwordIndex = (int)AttackType.SwordAttack1;
 
-                if(value == (int)AttackType.SwordJump)
+                if (value == (int)AttackType.SwordJump)
                 {
                     attackType = AttackType.SwordJump;
-				
+                    currentSwordIndex = (int)AttackType.SwordJump;
                 }
             }
             else attackType = AttackType.Default;
@@ -294,9 +296,21 @@ public class Player : MonoBehaviour {
     }
 
     // ovo služi samo za radnom napade mačen
+    private int currentSwordIndex = (int) AttackType.SwordAttack1;
     public int GetAttackType
     {
-        get {if(attackType == AttackType.SwordAttack1) return Random.Range((int)AttackType.SwordAttack1, (int)AttackType.SwordJump);
+        get {
+            if (attackType == AttackType.SwordAttack1) return Random.Range((int)AttackType.SwordAttack1, (int)AttackType.SwordJump);
+            if(type == PlayerType.Sword)
+            {
+                int min = (int)AttackType.SwordAttack1;
+                int max = (int)AttackType.SwordJump;
+
+                currentSwordIndex++;
+
+                if (currentSwordIndex > max) currentSwordIndex = min;
+                return currentSwordIndex;
+            }
             return (int)attackType;
         }
 
