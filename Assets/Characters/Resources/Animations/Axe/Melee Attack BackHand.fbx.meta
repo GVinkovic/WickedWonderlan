@@ -173,8 +173,8 @@ ModelImporter:
     - serializedVersion: 16
       name: MeleeAttackBackHand
       takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 95
+      firstFrame: 5
+      lastFrame: 71
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
