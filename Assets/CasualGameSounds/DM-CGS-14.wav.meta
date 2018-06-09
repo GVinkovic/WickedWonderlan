@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: dfe6e3b30ef440645b89d1553527a2af
-timeCreated: 1527037494
-licenseType: Free
+guid: b6428d4edb06344ba829da4edd9967c1
+labels:
+- Audio
+- Casual
+- Sound
+- SFX
+- Effect
+timeCreated: 1453238769
+licenseType: Store
 AudioImporter:
-  externalObjects: {}
   serializedVersion: 6
   defaultSettings:
     loadType: 0
@@ -17,7 +22,6 @@ AudioImporter:
   normalize: 1
   preloadAudioData: 1
   loadInBackground: 0
-  ambisonic: 0
   3D: 1
   userData: 
   assetBundleName: 

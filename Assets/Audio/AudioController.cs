@@ -28,6 +28,9 @@ public class AudioController : MonoBehaviour {
 		Sound s = Array.Find (sounds, sound => sound.name == name);
 		if (s == null)
 			return;
+		s.source.spatialBlend = 1f;
 		s.source.Play ();
 	}
 }
+
+//POZIVANJE -- gameObject.GetComponent<AudioController>().Play ("MagicShot");

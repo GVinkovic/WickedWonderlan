@@ -415,7 +415,7 @@ BlendTree:
   m_Name: Walk
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400002, guid: 8ba535c70bbcf7b46b0cba1188faae47, type: 3}
+    m_Motion: {fileID: 7400000, guid: 2fb8ed5c38ea91c44becfde4ba14206e, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -477,7 +477,7 @@ BlendTree:
   m_Name: Elemental
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400010, guid: 8ba535c70bbcf7b46b0cba1188faae47, type: 3}
+    m_Motion: {fileID: 7400000, guid: 8072b5c7c7c77be4eba41d3aab1e0d85, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -649,7 +649,7 @@ BlendTree:
   m_Name: Run
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400004, guid: 8ba535c70bbcf7b46b0cba1188faae47, type: 3}
+    m_Motion: {fileID: 7400000, guid: 89b690fedef4e9e4193204f298189cc9, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1

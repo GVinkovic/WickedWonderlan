@@ -5,6 +5,20 @@ TagManager:
   serializedVersion: 2
   tags:
   - Continue
+  - EventSystem
+  - Canvas
+  - CraftSystem
+  - EquipmentSystem
+  - MainInventory
+  - DraggingItem
+  - Tooltip
+  - Slot
+  - Item
+  - Slots
+  - Panel
+  - ResultSlot
+  - ItemIcon
+  - Audio
   layers:
   - Default
   - TransparentFX

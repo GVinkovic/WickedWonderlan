@@ -215,7 +215,7 @@ public class Player : MonoBehaviour {
     // Ovu metodu poziva event animacije kada lik otpušta strijelu
     public void OnArrowReleased()
     {
-		FindObjectOfType<AudioController> ().Play ("ArrowShot");
+		gameObject.GetComponent<AudioController>().Play ("ArrowShot");
         // kreiranje noveg projektila
         var currentArrow = CloneProjectile(arrow);
         // sakrij strelicu
@@ -276,7 +276,7 @@ public class Player : MonoBehaviour {
 
     void ThrowLightning(LightningBolt.Type type)
     {
-		FindObjectOfType<AudioController> ().Play ("MagicShot");
+		gameObject.GetComponent<AudioController>().Play ("MagicShot");
         LightningBolt.LightningType = type;
         lightningBolt.SetActive(true);
         
@@ -284,7 +284,7 @@ public class Player : MonoBehaviour {
 
     void ThrowBall(GameObject ball)
     {
-		FindObjectOfType<AudioController> ().Play ("Fireball");
+		gameObject.GetComponent<AudioController>().Play ("Fireball");
         var fb = CloneProjectile(ball);
         fb.SetActive(true);
         var rb = fb.GetComponent<Rigidbody>();

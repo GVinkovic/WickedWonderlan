@@ -75,6 +75,7 @@ public class Enemy : Interactable {
     {
         base.Interact();
         interacting = true;
+		gameObject.GetComponent<AudioController> ().Play ("Grawl");
        // navAgent.isStopped = false;
         //  Attack();
 
@@ -129,7 +130,7 @@ public class Enemy : Interactable {
         Invoke("RemoveEnemy", 3);
         
         Invoke("DeathParticle", 2);
-        //TODO: zvuk umiranja
+		gameObject.GetComponent<AudioController> ().Play ("ElementalDeath");
     }
     void DeathParticle()
     {
