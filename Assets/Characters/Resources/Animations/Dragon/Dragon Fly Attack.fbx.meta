@@ -238,7 +238,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7583314
+      - time: 0.97316164
         functionName: FlameAttackEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 283ec87f903894f48adfba98d7e320b3,
