@@ -101,6 +101,14 @@ public class QuestManager : MonoBehaviour {
                 break;
             }
         }
+
+        if (!HasActiveQuests())
+        {
+            if(quest.questAfterCompleted != null && quest.questAfterCompleted.Length > 0)
+            {
+                foreach (var questName in quest.questAfterCompleted) AcceptQuest(questName);
+            }
+        }
     }
     static void RefreshQuestUI(Quest quest)
     {

@@ -27,6 +27,7 @@ MonoBehaviour:
       quantity: 1
     - itemId: 18
       quantity: 30
+    questAfterCompleted: []
   - name: Silk
     displayName: Collect 3 silks
     description: Collect 3 silks by killing 3 spiders in the woods
@@ -38,6 +39,8 @@ MonoBehaviour:
     finishProgress: 3
     requiredQuestNames: []
     rewardItems: []
+    questAfterCompleted:
+    - ReturnVillage
   - name: Goblins
     displayName: Kill goblin's boss
     description: Kill the goblin's boss in order to gain elder's trust
@@ -49,6 +52,8 @@ MonoBehaviour:
     finishProgress: 1
     requiredQuestNames: []
     rewardItems: []
+    questAfterCompleted:
+    - ReturnVillage
   - name: Dragon
     displayName: Kill the dragon
     description: Kill the dragon in order to get to the portal which leeds to mainland
@@ -62,3 +67,33 @@ MonoBehaviour:
     - Silk
     - Goblins
     rewardItems: []
+    questAfterCompleted:
+    - Portal
+  - name: ReturnVillage
+    displayName: Return to village
+    description: Return to the village to get more quests.
+    questType: 1
+    enemyType: 6
+    locationName: Village
+    ItemIds:
+      items: 
+    finishProgress: 1
+    requiredQuestNames:
+    - Silk
+    - Goblins
+    rewardItems: []
+    questAfterCompleted: []
+  - name: Portal
+    displayName: Go to the portal
+    description: Go to the portal to get to the mainland
+    questType: 1
+    enemyType: 6
+    locationName: Portal
+    ItemIds:
+      items: 
+    finishProgress: 1
+    requiredQuestNames:
+    - Silk
+    - Goblins
+    rewardItems: []
+    questAfterCompleted: []

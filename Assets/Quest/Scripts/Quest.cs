@@ -54,8 +54,11 @@ public class Quest {
     public string[] requiredQuestNames;
 
     public RewardItem[] rewardItems;
-   // public string requiredQuestStepErroMsg;
-    
+    // public string requiredQuestStepErroMsg;
+
+
+    public string[] questAfterCompleted;
+
     public int[] itemIds
     {
         get { return ItemIds.items; }
