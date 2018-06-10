@@ -420,28 +420,41 @@ public class PlayerManager : MonoBehaviour {
 
         instance.enemyAttacking.Add(enemy);
 
-        if (instance.rhino && !instance.rhino.Attacks)
-        {
-            instance.rhino.SetTarget(enemy.gameObject, true);
-        }
+        RhinoAttackEnemy();
+
     }
 
     public static void EnemyStoppedAttack(Enemy enemy)
     {
         instance.enemyAttacking.Remove(enemy);
 
-        if (instance.rhino)
+        RhinoAttackEnemy();
+       
+    }
+
+    static void RhinoAttackEnemy()
+    {
+
+        if (!instance.rhino) return;
+
+
+        if (!instance.rhino.Attacks && instance.enemyAttacking.Count > 1)
         {
-            if (instance.enemyAttacking.Count > 0)
+            foreach(var enemy in UnderAttackFromEnemys)
             {
-                instance.rhino.SetTarget(instance.enemyAttacking[0].gameObject, true);
-            }
-            else
-            {
-                instance.rhino.SetTarget(Player, false);
+                if(enemy.enemyType != Enemy.Type.Dragon)
+                {
+                    instance.rhino.SetTarget(enemy.gameObject, true);
+                    enemy.SetTarget(instance.rhino.gameObject, false);
+                    return;
+                }
             }
         }
-       
+        else if(instance.enemyAttacking.Count == 0)
+        {
+            instance.rhino.SetTarget(Player, false);
+        }
+
     }
 
     public static List<Enemy> UnderAttackFromEnemys

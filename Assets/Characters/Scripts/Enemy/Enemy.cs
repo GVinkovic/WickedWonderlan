@@ -19,6 +19,7 @@ public class Enemy : Interactable {
     private EnemyStats enemyStats;
     private ProgressBar healthBar;
     private Vector3 initialPosition;
+    private bool isPlayer = true;
 
     // za questove type enemy-a
     // dodat dodatne po po potrebi
@@ -154,7 +155,8 @@ public class Enemy : Interactable {
     void RemoveEnemy()
     {
         gameObject.SetActive(false);
-        GameManager.EnemyDied(this);
+        // samo ako se je bori s likom obavjesti GameManeger-a
+        if(isPlayer)GameManager.EnemyDied(this);
     }
     public void Knocback()
     {
@@ -164,14 +166,19 @@ public class Enemy : Interactable {
     {
         if (!interacting) Interact();
 
-        // ako trči prema igraču onda neće play-at animacije udara da ga ne usporava
-        if (GetPlayerDistance() < navAgent.stoppingDistance)
+        // samo ako ga player napada onda animacije 
+        if (isPlayer)
         {
-            controller.Hit();
-        }
-        else
-        {
-            controller.NotfyHit();
+            // ako trči prema igraču onda neće play-at animacije udara da ga ne usporava
+            if (GetPlayerDistance() < navAgent.stoppingDistance)
+            {
+                controller.Hit();
+            }
+            else
+            {
+                controller.NotfyHit();
+            }
+
         }
         healthBar.SetProgress(enemyStats.CurrentHealth);
 
@@ -185,4 +192,12 @@ public class Enemy : Interactable {
     {
         return controller.IsAttacking();
     }
+
+
+    public void SetTarget(GameObject target, bool isPlayer)
+    {
+        player = target;
+        this.isPlayer = isPlayer;
+    }
+
 }

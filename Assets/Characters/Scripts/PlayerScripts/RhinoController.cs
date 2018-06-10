@@ -45,25 +45,28 @@ public class RhinoController : MonoBehaviour {
     {
         while (true)
         {
-            var distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
-            float speed = 0;
-            if (distanceToTarget > navMeshAgent.stoppingDistance)
+            if (!dead)
             {
-             
-                navMeshAgent.SetDestination(target.transform.position);
+                var distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+                float speed = 0;
+                if (distanceToTarget > navMeshAgent.stoppingDistance)
+                {
 
-                speed = distanceToTarget / navMeshAgent.stoppingDistance * 2;
-                if (speed > 30) speed = 30;
+                    navMeshAgent.SetDestination(target.transform.position);
 
-                navMeshAgent.speed = speed;
-                animator.SetFloat(speedFloat, speed/2);
-                
-            }
-            else
-            {
-                animator.SetFloat(speedFloat, 0);
-                if(attack) Attack();
-                
+                    speed = distanceToTarget / navMeshAgent.stoppingDistance * 2;
+                    if (speed > 30) speed = 30;
+
+                    navMeshAgent.speed = speed;
+                    animator.SetFloat(speedFloat, speed / 2);
+
+                }
+                else
+                {
+                    animator.SetFloat(speedFloat, 0);
+                    if (attack) Attack();
+
+                }
             }
             yield return new WaitForSeconds(.5f);
         }
@@ -78,11 +81,21 @@ public class RhinoController : MonoBehaviour {
         }
         else
         {
-            navMeshAgent.stoppingDistance = targetToFollow.transform.lossyScale.x * targetToFollow.GetComponent<NavMeshAgent>().radius * 3;
+            var sd = targetToFollow.transform.lossyScale.x * targetToFollow.GetComponent<NavMeshAgent>().radius * 3 + 0.5f;
+            sd = (int)sd;
+            if (sd > 4) sd = 4;
+            navMeshAgent.stoppingDistance = sd;
         }
         this.target = targetToFollow;
         this.attack = attackTarget;
 //        print("Following target " + targetToFollow.name);
+    }
+
+
+    void FaceTarget()
+    {
+
+        transform.LookAt(target.transform);
     }
 
     public void Revive()
@@ -92,6 +105,7 @@ public class RhinoController : MonoBehaviour {
             animator.SetTrigger(respawnTrigger);
             dead = false;
             rhinoStats.CurrentHealth = rhinoStats.MaxHealth;
+            navMeshAgent.isStopped = false;
         }
     }
 
@@ -105,6 +119,9 @@ public class RhinoController : MonoBehaviour {
         {
             dead = true;
             animator.SetTrigger(deadTrigger);
+            navMeshAgent.isStopped = true;
+            var enemy = target.GetComponent<Enemy>();
+            if (enemy) enemy.SetTarget(PlayerManager.Player,true);
         }
     }
     public void Attack()
@@ -112,6 +129,7 @@ public class RhinoController : MonoBehaviour {
 
         if(!IsAttacking())
         {
+            FaceTarget();
             animator.SetTrigger(attackTrigger);
         }
     }

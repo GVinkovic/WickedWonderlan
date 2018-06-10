@@ -3,6 +3,8 @@
 //[RequireComponent(typeof(Collider))]
 public class CombatWeapon : MonoBehaviour {
 
+    public bool flyingWeapon = false;
+
     protected CharacterStats stats;
 
     public delegate void GameObjectAction(GameObject source, GameObject enemy);
@@ -25,13 +27,14 @@ public class CombatWeapon : MonoBehaviour {
         {
             //    bool isAttacking = false;
             //   if(characterStats.GetType() != stats.GetType())
-            
+
             // ako nije tip lika super klasa lika kojeg napada i
             // ako nije tip lika nasljedija statove lika kojeg napada
             if(!stats.GetType().IsAssignableFrom(characterStats.GetType()) && !stats.GetType().IsSubclassOf(characterStats.GetType()))
             {
-            //    print(stats.GetType() + " attacks with "+other.gameObject.name+", particle= " + other.gameObject.GetComponentInChildren<ParticleSystem>()!=null);
-                if (stats.IsAttacking() || other.gameObject.GetComponentInChildren<ParticleSystem>())
+                //    print(stats.GetType() + " attacks with "+other.gameObject.name+", particle= " + other.gameObject.GetComponentInChildren<ParticleSystem>()!=null);
+                // ako igrača napda ili ako je ovo nešto ča se baca prema neprijatelju
+                if (flyingWeapon || stats.IsAttacking())
                 {
                     characterStats.TakeDamage(stats.GetDamageValue());
                     if (OnDamage != null) OnDamage.Invoke(gameObject, other.gameObject);
