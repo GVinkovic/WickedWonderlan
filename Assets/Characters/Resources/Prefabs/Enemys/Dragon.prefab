@@ -2522,15 +2522,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876612118358730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 357.0926, y: 0, z: 375.77048}
-  m_LocalScale: {x: 2.373039, y: 2.373039, z: 2.373039}
+  m_LocalRotation: {x: -0, y: 0.03683805, z: -0, w: 0.9993213}
+  m_LocalPosition: {x: 214.83, y: 26.47, z: 197.86}
+  m_LocalScale: {x: 2.3730392, y: 2.3730388, z: 2.3730388}
   m_Children:
   - {fileID: 4141361392669890}
   - {fileID: 4873004442395330}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 4.222, z: 0}
 --- !u!4 &4704591405281100
 Transform:
   m_ObjectHideFlags: 1
@@ -3180,6 +3180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114223513380247776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3206,6 +3207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421f982a1ca1bfd4ea0cf4368b56abfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114675350806030710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3233,6 +3235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114945057801809680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3244,6 +3247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114978561265592662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3259,7 +3263,7 @@ MonoBehaviour:
   damage:
     baseValue: 30
   armor:
-    baseValue: 30
+    baseValue: 10
 --- !u!137 &137490604716680560
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
