@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 65002361707199896}
   - component: {fileID: 114378469654625548}
   - component: {fileID: 195031249511947194}
+  - component: {fileID: 114740210508316788}
   m_Layer: 0
   m_Name: Rhino
   m_TagString: Untagged
@@ -610,6 +611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440778}
   - component: {fileID: 136367931497913202}
+  - component: {fileID: 114237916621354710}
   m_Layer: 0
   m_Name: CATRigHub003Bone002
   m_TagString: Untagged
@@ -844,7 +846,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0379596, y: 0, z: 4.581151}
+  m_LocalPosition: {x: 338.1, y: 0, z: 407.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417792}
@@ -1783,6 +1785,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5, z: 1.7}
   m_Center: {x: 0, y: 0.8, z: 0.2}
+--- !u!114 &114237916621354710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114378469654625548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1794,6 +1808,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57826429f9153e144b03c74b4b7d602d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDistance: 4
+--- !u!114 &114740210508316788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c269da0eaf2f097448a391cf114e9da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  damage:
+    baseValue: 5
+  armor:
+    baseValue: 0
+  strength:
+    baseValue: 0
+  constitution:
+    baseValue: 0
+  intelligence:
+    baseValue: 0
+  dexterity:
+    baseValue: 0
+  MaxMana: 100
 --- !u!136 &136367931497913202
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1801,7 +1841,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190008}
   m_Material: {fileID: 13400000, guid: 7a665289b8701a143a4d81cc38730390, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.2
   m_Height: 0.6

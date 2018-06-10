@@ -9158,68 +9158,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 153050, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 136367931497913202, guid: 2357bdd96b6ce844fa79e39acd2bdbbc,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114378469654625548, guid: 2357bdd96b6ce844fa79e39acd2bdbbc,
-        type: 2}
-      propertyPath: attackDistance
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1335048443 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 190008, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 2}
-  m_PrefabInternal: {fileID: 1335048442}
---- !u!114 &1335048444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1335048443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flyingWeapon: 0
---- !u!1 &1335048445 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 153050, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 2}
-  m_PrefabInternal: {fileID: 1335048442}
---- !u!114 &1335048446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1335048445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c269da0eaf2f097448a391cf114e9da6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 100
-  damage:
-    baseValue: 5
-  armor:
-    baseValue: 0
-  strength:
-    baseValue: 0
-  constitution:
-    baseValue: 0
-  intelligence:
-    baseValue: 0
-  dexterity:
-    baseValue: 0
-  MaxMana: 100
 --- !u!1 &1343383998
 GameObject:
   m_ObjectHideFlags: 0
