@@ -413,6 +413,23 @@ public class PlayerManager : MonoBehaviour {
     {
         instance.rhino = rhino;
     }
+    public static Vector3 RhinoPosition
+    {
+        get
+        {
+            return instance.rhino ? instance.rhino.transform.position : Vector3.zero;
+        }
+        set
+        {
+            if(value != Vector3.zero)
+            {
+                if (instance.rhino)
+                {
+                    instance.rhino.SetPosition(value);
+                }
+            }
+        }
+    }
 
     public static void UnderEnemyAttack(Enemy enemy)
     {

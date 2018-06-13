@@ -137,5 +137,9 @@ public class RhinoController : MonoBehaviour {
     {
         get { return attack; }
     }
+    public void SetPosition(Vector3 position)
+    {
+        navMeshAgent.Warp(position);
+    }
 	
 }
