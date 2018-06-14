@@ -31,6 +31,7 @@ public class MoveBehaviour : GenericBehaviour
     static int jumpIdleState = Animator.StringToHash("IdleJump");
     static int attackState = Animator.StringToHash("Attack");
     static int floatAttackType = Animator.StringToHash("AttackType");
+    static int dieTrigger = Animator.StringToHash("Die");
 
     // Start is always called after any Awake functions.
     void Start() 
@@ -224,6 +225,11 @@ public class MoveBehaviour : GenericBehaviour
     public bool GetAttacks
     {
         get { return (behaviourManager.GetAnim.GetCurrentAnimatorStateInfo(0).shortNameHash == attackState); }
+    }
+
+    public void Die()
+    {
+        GetAnimator.SetTrigger(dieTrigger);
     }
     // Collision detection.
     private void OnCollisionStay(Collision collision)

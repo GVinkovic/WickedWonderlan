@@ -304,7 +304,14 @@ public class PlayerManager : MonoBehaviour {
 	public static void Die()
 	{
 		instance.healthBar.SetProgress(0);
+        StopPlayerMovement();
+        PlayerScript.Die();
+        instance.Invoke("ShowGameOver", 5);
 	}
+    private void ShowGameOver()
+    {
+        // TODO: GAME OVER SCREEN
+    }
 
 	public static void ConsumeMana()
 	{

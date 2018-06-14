@@ -198,6 +198,16 @@ public class QuestManager : MonoBehaviour {
         }
         return false;
     }
+
+    public static bool IsQuestActive(string questName)
+    {
+        foreach (var kvp in questsProgress)
+        {
+            var quest = Quests.FindByName(kvp.Key);
+            if (quest.finishProgress != kvp.Value) return true;
+        }
+        return false;
+    }
     public static List<Quest> GetAvailableQuests()
     {
         List<Quest> available = new List<Quest>();

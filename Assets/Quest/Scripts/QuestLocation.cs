@@ -8,10 +8,15 @@ public class QuestLocation : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        QuestManager.ArriveAtLocation(LocationName);    
+        ArrivedAtLocation();
     }
 
     void OnCollisionEnter(Collision collision)
+    {
+        ArrivedAtLocation();
+    }
+
+    public virtual void ArrivedAtLocation()
     {
         QuestManager.ArriveAtLocation(LocationName);
     }

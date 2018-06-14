@@ -2770,7 +2770,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -772738484
+  randomSeed: 776061473
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9519,7 +9519,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1389787570
+  randomSeed: 339733234
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -18494,7 +18494,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 534440709
+  randomSeed: 1754008767
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -39168,7 +39168,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -748264912
+  randomSeed: -1090959335
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -44931,7 +44931,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2058188670
+  randomSeed: -2130565806
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -68195,6 +68195,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11387396ccd933544b0567a831ce751a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1558457658 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 194316, guid: 11387396ccd933544b0567a831ce751a, type: 2}
+  m_PrefabInternal: {fileID: 1558457657}
+--- !u!65 &1558457659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558457658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 25.64, y: 4.23, z: 26.420012}
+  m_Center: {x: -2.76, y: 9.24, z: 12.500007}
+--- !u!114 &1558457660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558457658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8db5bf8457ecb4bbaeb67a46fb9406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocationName: Portal
 --- !u!1 &1560145958
 GameObject:
   m_ObjectHideFlags: 0
@@ -81636,7 +81664,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1688761744
+  randomSeed: 1167063410
   InitialModule:
     serializedVersion: 3
     enabled: 1

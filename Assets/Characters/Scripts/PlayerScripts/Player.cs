@@ -370,6 +370,10 @@ public class Player : MonoBehaviour {
     {
         moveBehaviour.Attack();
     }
+    public void Die()
+    {
+        moveBehaviour.Die();
+    }
 
 
 
