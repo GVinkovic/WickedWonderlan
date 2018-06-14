@@ -322,6 +322,9 @@ public class PlayerManager : MonoBehaviour {
     public static void Hide()
     {
         PlayerInventory.HideAll();
+
+        var pauseMenu = FindObjectOfType<PauseMenuScript>();
+        if (pauseMenu) pauseMenu.enabled = false;
       
     }
 
