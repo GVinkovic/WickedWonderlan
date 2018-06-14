@@ -373,6 +373,8 @@ public class Player : MonoBehaviour {
     public void Die()
     {
         moveBehaviour.Die();
+        var collider = GetComponent<CapsuleCollider>();
+        collider.height = collider.radius;
     }
 
 
