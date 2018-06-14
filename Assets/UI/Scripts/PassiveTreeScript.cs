@@ -7,6 +7,7 @@ public class PassiveTreeScript : MonoBehaviour {
 	public static bool TreeIsActive = false;
 	public GameObject PassiveTreeUI;
 	public GameObject StatsUI;
+	public GameObject ToolTipUI;
 	public InputManager InputManagerDatabase;
 	private int StatPoints = 0;
 	private int TreePoints = 0;
@@ -19,7 +20,7 @@ public class PassiveTreeScript : MonoBehaviour {
 	private int Initial = 0;
 	private int Counter = 0;
 	private Button BtnAddDex, BtnAddStr, BtnAddIntel, BtnAddConst;
-	private Text PointsAvail, PointsDex, PointsConst, PointsStr, PointsIntel, PointsAvailT, CurrentLevel;
+	private Text PointsAvail, PointsDex, PointsConst, PointsStr, PointsIntel, PointsAvailT, CurrentLevel, ToolTipText;
 	private Button o1, o2, o3, o4, o5, o6, o7, o8, o9, o10;
 	private int bo1, bo2, bo3, bo4, bo5, bo6, bo7, bo8, bo9, bo10 = 0;
 
@@ -52,7 +53,7 @@ public class PassiveTreeScript : MonoBehaviour {
 		PlayerManager.instance.WindowClosed();
 		PassiveTreeUI.SetActive (false);
 		StatsUI.SetActive (false);
-	
+		ToolTipUI.SetActive (false);
 
 		//	Cursor.visible = false;
 
@@ -77,6 +78,7 @@ public class PassiveTreeScript : MonoBehaviour {
 		PointsStr = GameObject.Find ("Points_Str").GetComponent<Text> ();
 		PointsConst = GameObject.Find ("Points_Const").GetComponent<Text> ();
 		PointsIntel = GameObject.Find ("Points_Intel").GetComponent<Text> ();
+
 		o1 = GameObject.Find ("Orb1").GetComponent<Button> ();
 		o2 = GameObject.Find ("Orb2").GetComponent<Button> ();
 		o3 = GameObject.Find ("Orb3").GetComponent<Button> ();
@@ -125,40 +127,50 @@ public class PassiveTreeScript : MonoBehaviour {
 	private void UpdateOrbs(){
 		if (bo1 == 1) {
 			o1.enabled = false;
-			o3.interactable = true;
+			setInteraction (o3);
+			//o3.interactable = true;
 		}
 		if (bo2 == 1) {
 			o2.enabled = false;
-			o4.interactable = true;
+			setInteraction (o4);
+			//o4.interactable = true;
 		}
 		if (bo3 == 1) {
 			o3.enabled = false;
-			o5.interactable = true;
+			setInteraction (o5);
+			//o5.interactable = true;
 		}
 		if (bo4 == 1) {
 			o4.enabled = false;
-			o7.interactable = true;
+			setInteraction (o7);
+			//o7.interactable = true;
 			if (!o3.enabled) {
-				o6.interactable = true;
+				setInteraction (o6);
+				//o6.interactable = true;
 			}
 		}
 		if (bo5 == 1) {
 			o5.enabled = false;
-			o8.interactable = true;
+			//o8.interactable = true;
+			setInteraction (o8);
 		}
 		if (bo6 == 1) {
 			o6.enabled = false;
-			o9.interactable = true;
+			//o9.interactable = true;
+			setInteraction (o9);
 		}
 		if (bo7 == 1) {
 			o7.enabled = false;
-			o10.interactable = true;
+			//o10.interactable = true;
+			setInteraction (o10);
 		}
 		if (bo8 == 1 ) {
 			o8.enabled = false;
+
 		}
 		if (bo9 == 1) {
 			o9.enabled = false;
+
 		}
 		if (bo10 == 1) {
 			o10.enabled = false;
@@ -186,62 +198,74 @@ public class PassiveTreeScript : MonoBehaviour {
 				StatsManager ();
 				DecreaseAvailPoints ();
 				PlayerManager.AlterIntelligence(1);
+			    setSelectedButton ();
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Btn_AddDex") {
 				PointsDexNum++;
 				StatsManager ();
 				DecreaseAvailPoints ();
 				PlayerManager.AlterDexterity(1);
+			    setSelectedButton ();
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Btn_AddConst") {
 				PointsConstNum++;
 				StatsManager ();
 				DecreaseAvailPoints ();
 				PlayerManager.AlterConstitution(1);
+			    setSelectedButton ();
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Btn_AddStr") {
 				PointsStrNum++;
 				StatsManager ();
 				DecreaseAvailPoints ();
 				PlayerManager.AlterStrength(1);
+			    setSelectedButton ();
 		}
 	}
 	public void AddTreePoints(){
 		if (TreePoints > 0) {
 			if (EventSystem.current.currentSelectedGameObject.name == "Orb1") {
 				o1.enabled = false;
-				o3.interactable = true;
+				//o3.interactable = true;
 				bo1 = 1;
 				DecreaseAvailPointsT ();
+				setInteraction (o3);
 				PlayerManager.AlterHealth (20);
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb2") {
 				o2.enabled = false;
-				o4.interactable = true;
+				//o4.interactable = true;
 				bo2 = 1;
 				DecreaseAvailPointsT ();
+				setInteraction (o4);
 				PlayerManager.AlterMana (10);
 
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb3") {
 				o3.enabled = false;
-				o5.interactable = true;
+				//o5.interactable = true;
 				bo3 = 1;
-			     if (!o4.enabled) {
-					o6.interactable = true;
-				}
 				DecreaseAvailPointsT ();
+			     if (!o4.enabled) {
+					setInteraction (o6);
+					//o6.interactable = true;
+				}
+				setInteraction (o5);
 				PlayerManager.AlterStrength (2);
 
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb4") {
 				o4.enabled = false;
-				o7.interactable = true;
+				//o7.interactable = true;
+				DecreaseAvailPointsT ();
+				setInteraction (o7);
 				bo4 = 1;
 				if (!o3.enabled) {
-					o6.interactable = true;
+					//o6.interactable = true;
+					setInteraction (o6);
 				}
-				DecreaseAvailPointsT ();
+
 				PlayerManager.AlterIntelligence (2);
 
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb5") {
 				o5.enabled = false;
-				o8.interactable = true;
 				DecreaseAvailPointsT ();
+				setInteraction (o8);
+				//o8.interactable = true;
 				bo5 = 1;
 				PlayerManager.AlterHealth (30);
 				PlayerManager.AlterStrength (3);
@@ -249,16 +273,18 @@ public class PassiveTreeScript : MonoBehaviour {
 
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb6") {
 				o6.enabled = false;
-				o9.interactable = true;
 				DecreaseAvailPointsT ();
+				setInteraction (o9);
+				//o9.interactable = true;
 				bo6 = 1;
 				PlayerManager.AlterHealth (20);
 				PlayerManager.AlterStrength (2);
 				PlayerManager.AlterDexterity (2);
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb7") {
 				o7.enabled = false;
-				o10.interactable = true;
 				DecreaseAvailPointsT ();
+				setInteraction (o10);
+				//o10.interactable = true;
 				bo7 = 1;
 				PlayerManager.AlterMana (30);
 				PlayerManager.AlterIntelligence (3);
@@ -282,6 +308,25 @@ public class PassiveTreeScript : MonoBehaviour {
 				PlayerManager.AlterIntelligence (2);
 				PlayerManager.AlterMana (20);
 			} 
+		}
+	}
+
+	private void setSelectedButton(){
+		UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject (null);
+	}
+
+	public void setToolTip(string t){
+		
+		ToolTipUI.SetActive (true);
+		ToolTipText = GameObject.Find ("ToolTipText").GetComponent<Text> ();
+		ToolTipText.text = t;
+	}
+
+	private void setInteraction(Button b){
+		if (TreePoints <= 0) {
+			b.interactable = false;
+		} else {
+			b.interactable = true;
 		}
 	}
 
