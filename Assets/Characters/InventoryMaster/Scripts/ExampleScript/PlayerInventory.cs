@@ -38,6 +38,8 @@ public class PlayerInventory : MonoBehaviour
     float currentArmor = 0;
     */
     int normalSize = 3;
+    private bool hidden = false;
+
     public Inventory MainInventory
     {
         get { return mainInventory; }
@@ -342,7 +344,7 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		
+        if (hidden) return;
         if (Input.GetKeyDown(inputManagerDatabase.CharacterSystemKeyCode))
         {
             if (!characterSystem.activeSelf)
@@ -385,6 +387,15 @@ public class PlayerInventory : MonoBehaviour
             }
         }
 
+    }
+    public void HideAll()
+    {
+        inventory.SetActive(false);
+        characterSystem.SetActive(false);
+        craftSystem.SetActive(false);
+     //   hotbar.SetActive(false);
+        passiveSkillTree.SetActive(false);
+        hidden = true;
     }
 
 }

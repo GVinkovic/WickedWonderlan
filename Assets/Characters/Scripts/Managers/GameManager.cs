@@ -159,4 +159,11 @@ public class GameManager : MonoBehaviour
         }
        
     }
+
+    public static void Hide()
+    {
+        if (GetButtonsDialogMgr.InProgress) GetButtonsDialogMgr.EndDialog();
+        if (GetDialogMgr.InProgress) GetDialogMgr.EndDialog();
+    }
+
 }

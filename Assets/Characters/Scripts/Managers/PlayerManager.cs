@@ -313,7 +313,19 @@ public class PlayerManager : MonoBehaviour {
 		gameOverMenu = GameObject.Find ("GameOverMenu");
 		GameOverMenuScript govms = gameOverMenu.GetComponent<GameOverMenuScript> ();
 		govms.loadMenu();
+
+        Hide();
+        GameManager.Hide();
+        QuestManager.Hide();
+
     }
+    public static void Hide()
+    {
+        PlayerInventory.HideAll();
+      
+    }
+
+   
 
 	public static void ConsumeMana()
 	{

@@ -8,7 +8,7 @@ public class QuestManager : MonoBehaviour {
     public GameObject QuestUI;
     public QuestsCollection questsCollection;
 
-    private static Dictionary<string, int> questsProgress = new Dictionary<string, int>();
+    private static Dictionary<string, int> questsProgress;
 
     #region Singleton
 
@@ -17,8 +17,8 @@ public class QuestManager : MonoBehaviour {
     void Awake () {
 
         instance = this;
+        questsProgress = new Dictionary<string, int>();
 
-       
     }
     #endregion
   
@@ -324,6 +324,15 @@ public class QuestManager : MonoBehaviour {
         }
     }
 
+    public static void Hide()
+    {
+        instance.QuestUIParent.SetActive(false);
+    }
+
+    public static void Show()
+    {
+        instance.QuestUIParent.SetActive(true);
+    }
 
     /*
     void Update()
