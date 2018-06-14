@@ -57,6 +57,7 @@ public class PlayerManager : MonoBehaviour {
 
 
 	private PlayerInventory playerInventory;
+	private GameObject gameOverMenu;
 
 	private ThirdPersonOrbitCamBasic cameraScript;
 
@@ -83,7 +84,6 @@ public class PlayerManager : MonoBehaviour {
 		Character = (PlayerCharacter) playerIndex;
 
 		cameraScript = playerCamera.GetComponent<ThirdPersonOrbitCamBasic>();
-
 		playerInventory = GetComponent<PlayerInventory>();
 
 		Inventory.AllInventoriesClosed += InventoriesClosed;
@@ -310,7 +310,9 @@ public class PlayerManager : MonoBehaviour {
 	}
     private void ShowGameOver()
     {
-        // TODO: GAME OVER SCREEN
+		gameOverMenu = GameObject.Find ("GameOverMenu");
+		GameOverMenuScript govms = gameOverMenu.GetComponent<GameOverMenuScript> ();
+		govms.loadMenu();
     }
 
 	public static void ConsumeMana()
