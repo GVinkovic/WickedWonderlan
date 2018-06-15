@@ -667,7 +667,7 @@ MonoBehaviour:
   - enemyType: 0
     ExperienceFromKilling: 100
     items:
-    - itemId: 3
+    - itemId: 2
       count: 1
     - itemId: 4
       count: 1
@@ -678,7 +678,7 @@ MonoBehaviour:
     items:
     - itemId: 6
       count: 1
-    - itemId: 9
+    - itemId: 15
       count: 1
     - itemId: 11
       count: 1
@@ -689,7 +689,7 @@ MonoBehaviour:
       count: 1
     - itemId: 9
       count: 1
-    - itemId: 11
+    - itemId: 5
       count: 1
     - itemId: 19
       count: 1
@@ -705,20 +705,20 @@ MonoBehaviour:
   - enemyType: 2
     ExperienceFromKilling: 1500
     items:
-    - itemId: 6
+    - itemId: 7
       count: 1
-    - itemId: 9
+    - itemId: 3
       count: 1
     - itemId: 11
       count: 1
   - enemyType: 5
     ExperienceFromKilling: 5000
     items:
-    - itemId: 6
+    - itemId: 14
       count: 1
-    - itemId: 9
-      count: 1
-    - itemId: 11
+    - itemId: 18
+      count: 500
+    - itemId: 5
       count: 1
 --- !u!114 &114161096884225840
 MonoBehaviour:

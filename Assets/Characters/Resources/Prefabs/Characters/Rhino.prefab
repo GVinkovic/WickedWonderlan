@@ -1822,9 +1822,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   damage:
-    baseValue: 5
+    baseValue: 17
   armor:
-    baseValue: 0
+    baseValue: 10
   strength:
     baseValue: 0
   constitution:

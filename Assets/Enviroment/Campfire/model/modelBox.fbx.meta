@@ -9,8 +9,14 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: modelBox
+    6400000: //RootNode
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tx_Box
+    second: {fileID: 2100000, guid: c4310722298d5374d9d8b53065b21362, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -42,7 +48,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 0.2
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
