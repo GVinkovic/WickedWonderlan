@@ -78,6 +78,7 @@ public class PlayerManager : MonoBehaviour {
 	void Awake()
 	{
 		openedWindows = 0;
+        level = 0;
 		instance = this;
 		int playerIndex =  PlayerPrefs.GetInt("CharacterSelected", 0);
 
