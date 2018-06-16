@@ -5281,8 +5281,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877579319145770}
-  m_LocalRotation: {x: -0, y: 0.032122493, z: -0, w: -0.99948394}
-  m_LocalPosition: {x: 459.468, y: 83.357, z: 365.227}
+  m_LocalRotation: {x: -0, y: -0.9959445, z: -0, w: -0.08997007}
+  m_LocalPosition: {x: 342.13, y: 0.14, z: 412.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4983887671942150}
@@ -8408,6 +8408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114274411808613690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8441,6 +8442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114410245975961858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8452,6 +8454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 1
 --- !u!114 &114434228402095378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8463,6 +8466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 1
 --- !u!114 &114459283572243434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8499,6 +8503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 1
 --- !u!114 &114478124672102982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8582,6 +8587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114581791330002064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8593,6 +8599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114596711285678930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8604,6 +8611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114649416069808008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8615,6 +8623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114661343309378156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8626,6 +8635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114805569981660162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8662,6 +8672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114819959167604960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8673,6 +8684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114820681713922584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8684,6 +8696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114920251475415348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8707,6 +8720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5b4cb81f332a04eba8dc43f039ab43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingWeapon: 0
 --- !u!114 &114959755813204694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8777,7 +8791,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 0fa954a1d9b34b442b9e43f32c7bc7f7, type: 3}
+  - clip: {fileID: 8300000, guid: 6a7640f0e8750ab40b204269ed02e977, type: 3}
     name: TakeHitScream
     volume: 0.45
     pitch: 0.97
@@ -8797,7 +8811,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 31c8a2dd10b2a1b4bbb57b677fdb9d6f, type: 3}
     name: TakePunch
-    volume: 0.4
+    volume: 0.269
     pitch: 0.72
     loop: 0
     source: {fileID: 0}

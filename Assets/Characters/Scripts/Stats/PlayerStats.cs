@@ -31,13 +31,15 @@ public class PlayerStats : CharacterStats {
 			gameObject.GetComponent<AudioController> ().Play ("TakeHitScream");
 		}
 
-		gameObject.GetComponent<AudioController> ().Play ("TakePunch");
+	//TODO ako je dragon ugasi zvuk puncha
+			gameObject.GetComponent<AudioController> ().Play ("TakePunch");
+		
     }
     public override void Die()
     {
         base.Die();
         PlayerManager.Die();
-		gameObject.GetComponent<AudioController>().Play ("GameOver");
+		//gameObject.GetComponent<AudioController>().Play ("GameOver");
 		gameObject.GetComponent<AudioController>().Play ("DeathScream");
     }
 

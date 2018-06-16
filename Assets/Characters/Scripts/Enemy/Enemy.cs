@@ -60,6 +60,14 @@ public class Enemy : Interactable {
                     {
                         Attack();
                         attackCooldown = 1f / attackSpeed;
+						if (Random.Range (0, 3) == 0) {
+							gameObject.GetComponent<AudioController> ().Play ("EnemyAttack");
+						}
+
+						if (Random.Range (0, 15) == 0) {
+							gameObject.GetComponent<AudioController> ().Play ("Grawl");
+						}
+					
                     }
                     else FaceTarget();
                 }
@@ -78,7 +86,9 @@ public class Enemy : Interactable {
         PlayerManager.UnderEnemyAttack(this);
 
         interacting = true;
-		gameObject.GetComponent<AudioController> ().Play ("Grawl");
+
+			gameObject.GetComponent<AudioController> ().Play ("Grawl");
+
        // navAgent.isStopped = false;
         //  Attack();
 
@@ -134,7 +144,7 @@ public class Enemy : Interactable {
         Invoke("RemoveEnemy", 3);
         
         Invoke("DeathParticle", 2);
-		gameObject.GetComponent<AudioController> ().Play ("ElementalDeath");
+		gameObject.GetComponent<AudioController> ().Play ("Death");
     }
     void DeathParticle()
     {
