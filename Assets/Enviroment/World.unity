@@ -3245,7 +3245,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1416040670
+  randomSeed: 1100822050
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8997,7 +8997,7 @@ MonoBehaviour:
   characterSystem: {fileID: 1919396827}
   craftSystem: {fileID: 1729820459}
   hotbar: {fileID: 1917649175}
-  passiveSkillTree: {fileID: 0}
+  passiveSkillTree: {fileID: 1080668986}
 --- !u!114 &201200320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10171,7 +10171,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -885981011
+  randomSeed: -1969500740
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -19910,7 +19910,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1648628594
+  randomSeed: -1173477492
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -43346,7 +43346,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1968866147
+  randomSeed: -546181828
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -46852,7 +46852,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1263321699
+  randomSeed: -1090011627
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -58731,6 +58731,11 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 437724, guid: ef1c62f982f9b6146a65dc0af92b9321, type: 2}
   m_PrefabInternal: {fileID: 1079637907}
+--- !u!1 &1080668986 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1953438185286212, guid: 36fc4993eec185140831ab23ac13f85e,
+    type: 2}
+  m_PrefabInternal: {fileID: 716656384}
 --- !u!4 &1085489292 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4186144181833622, guid: 537ae3e6a4032874ba776aceb93d58cb,
@@ -89027,7 +89032,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -127896251
+  randomSeed: 445249272
   InitialModule:
     serializedVersion: 3
     enabled: 1
