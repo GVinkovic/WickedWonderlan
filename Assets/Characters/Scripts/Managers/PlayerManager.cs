@@ -79,7 +79,10 @@ public class PlayerManager : MonoBehaviour {
 	{
 		openedWindows = 0;
         level = 0;
-		instance = this;
+        isHealthRecovering = false;
+        isManaRecovering = false;
+
+        instance = this;
 		int playerIndex =  PlayerPrefs.GetInt("CharacterSelected", 0);
 
 		Character = (PlayerCharacter) playerIndex;
