@@ -15,6 +15,7 @@ public class PlayerStats : CharacterStats {
     public int MaxMana = 100;
     public int CurrentMana { get; set; }
 
+
     public override void Awake()
     {
         base.Awake();
@@ -32,6 +33,7 @@ public class PlayerStats : CharacterStats {
 		}
 
 	//TODO ako je dragon ugasi zvuk puncha
+
 			gameObject.GetComponent<AudioController> ().Play ("TakePunch");
 		
     }

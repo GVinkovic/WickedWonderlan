@@ -88,7 +88,7 @@ public class Enemy : Interactable {
         interacting = true;
 
 			gameObject.GetComponent<AudioController> ().Play ("Grawl");
-
+		
        // navAgent.isStopped = false;
         //  Attack();
 

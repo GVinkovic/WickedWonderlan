@@ -61628,6 +61628,11 @@ Prefab:
       propertyPath: flyingWeapon
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114969478208555696, guid: f2f9dd0d4e3008a4b8d270a3f1893577,
+        type: 2}
+      propertyPath: sounds.Array.data[10].pitch
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2f9dd0d4e3008a4b8d270a3f1893577, type: 2}
   m_IsPrefabParent: 0

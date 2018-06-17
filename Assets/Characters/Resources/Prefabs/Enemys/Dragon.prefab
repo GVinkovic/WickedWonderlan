@@ -2524,7 +2524,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876612118358730}
   m_LocalRotation: {x: -0, y: 0.03683805, z: -0, w: 0.9993213}
-  m_LocalPosition: {x: 369.35693, y: 0, z: 347.7285}
+  m_LocalPosition: {x: 214.83, y: 26.47, z: 197.86}
   m_LocalScale: {x: 2.3730392, y: 2.3730388, z: 2.3730388}
   m_Children:
   - {fileID: 4141361392669890}
@@ -3309,7 +3309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0492e0506d8dfe44ad81b8fa9c1b73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 15
+  MaxHealth: 100
   damage:
     baseValue: 30
   armor:
