@@ -165,10 +165,8 @@ public class QuestManager : MonoBehaviour {
             questUI.RemoveImmediate();
         }
 
-        foreach(var kvp in questsProgress)
+        foreach(var quest in GetActiveQuests())
         {
-            var quest = Quests.FindByName(kvp.Key);
-
             ShowQuestInUI(quest);
 
         }
