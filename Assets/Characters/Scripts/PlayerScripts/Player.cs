@@ -93,7 +93,7 @@ public class Player : MonoBehaviour {
         if(objects != null) list.AddRange(objects);
         weapons.Add(playerType, list);
     }
-        
+        /*
 
     // Update is called once per frame
     void Update () {
@@ -125,7 +125,7 @@ public class Player : MonoBehaviour {
         }
         
      }
-
+     */
     public PlayerType Type
     {
         get
