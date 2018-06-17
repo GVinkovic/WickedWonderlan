@@ -8364,7 +8364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShootingInertion: 3000
-  crosshair: {fileID: 10914, guid: 0000000000000000f000000000000000, type: 3}
   defaultSwordIndex: 0
   swords:
   - {fileID: 1441746203874380}
@@ -8488,7 +8487,7 @@ MonoBehaviour:
   jumpIntertialForce: 10
   aimButton: Aim
   shoulderButton: Aim Shoulder
-  crosshair: {fileID: 10914, guid: 0000000000000000f000000000000000, type: 3}
+  crosshair: {fileID: 10914, guid: 0000000000000000f000000000000000, type: 0}
   aimTurnSmoothing: 0.5
   aimPivotOffset: {x: 0.5, y: 1.2, z: 0}
   aimCamOffset: {x: 0, y: 0.4, z: -0.7}
