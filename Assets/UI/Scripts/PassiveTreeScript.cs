@@ -9,8 +9,8 @@ public class PassiveTreeScript : MonoBehaviour {
 	public GameObject StatsUI;
 	public GameObject ToolTipUI;
 	public InputManager InputManagerDatabase;
-	private int StatPoints = 0;
-	private int TreePoints = 0;
+	private int StatPoints = 10;
+	private int TreePoints = 10;
 	private int PassivePoints = 0;
 	private int PointsConstNum = 0;
 	private int PointsIntelNum = 0;
