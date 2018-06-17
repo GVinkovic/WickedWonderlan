@@ -9,8 +9,8 @@ public class PassiveTreeScript : MonoBehaviour {
 	public GameObject StatsUI;
 	public GameObject ToolTipUI;
 	public InputManager InputManagerDatabase;
-	private int StatPoints = 10;
-	private int TreePoints = 10;
+	private int StatPoints = 0;
+	private int TreePoints = 0;
 	private int PassivePoints = 0;
 	private int PointsConstNum = 0;
 	private int PointsIntelNum = 0;
@@ -247,6 +247,8 @@ public class PassiveTreeScript : MonoBehaviour {
 				}
 				setInteraction (o5);
 				PlayerManager.AlterStrength (2);
+				PointsStrNum += 2;
+				StatsManager ();
 
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb4") {
 				o4.enabled = false;
@@ -260,6 +262,8 @@ public class PassiveTreeScript : MonoBehaviour {
 				}
 
 				PlayerManager.AlterIntelligence (2);
+				PointsIntelNum += 2;
+				StatsManager ();
 
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb5") {
 				o5.enabled = false;
@@ -270,6 +274,9 @@ public class PassiveTreeScript : MonoBehaviour {
 				PlayerManager.AlterHealth (30);
 				PlayerManager.AlterStrength (3);
 				PlayerManager.AlterDexterity (2);
+				PointsStrNum += 3;
+				PointsDexNum += 2;
+				StatsManager ();
 
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb6") {
 				o6.enabled = false;
@@ -280,6 +287,10 @@ public class PassiveTreeScript : MonoBehaviour {
 				PlayerManager.AlterHealth (20);
 				PlayerManager.AlterStrength (2);
 				PlayerManager.AlterDexterity (2);
+
+				PointsStrNum += 2;
+				PointsDexNum += 2;
+				StatsManager ();
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb7") {
 				o7.enabled = false;
 				DecreaseAvailPointsT ();
@@ -288,12 +299,17 @@ public class PassiveTreeScript : MonoBehaviour {
 				bo7 = 1;
 				PlayerManager.AlterMana (30);
 				PlayerManager.AlterIntelligence (3);
+				PointsIntelNum += 3;
+				StatsManager ();
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb8") {
 				o8.enabled = false;
 				DecreaseAvailPointsT ();
 				bo8 = 1;
 				PlayerManager.AlterConstitution (3);
 				PlayerManager.AlterStrength(2);
+				PointsStrNum += 2;
+				PointsConstNum += 3;
+				StatsManager ();
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb9") {
 				o9.enabled = false;
 				DecreaseAvailPointsT ();
@@ -301,12 +317,19 @@ public class PassiveTreeScript : MonoBehaviour {
 				PlayerManager.AlterIntelligence (3);
 				PlayerManager.AlterStrength (2);
 				PlayerManager.AlterDexterity (2);
+
+				PointsStrNum += 2;
+				PointsDexNum += 2;
+				PointsIntelNum += 3;
+				StatsManager ();
 			} else if (EventSystem.current.currentSelectedGameObject.name == "Orb10") {
 				o10.enabled = false;
 				DecreaseAvailPointsT ();
 				bo10 = 1;
 				PlayerManager.AlterIntelligence (2);
 				PlayerManager.AlterMana (20);
+				PointsIntelNum += 2;
+				StatsManager ();
 			} 
 		}
 	}
