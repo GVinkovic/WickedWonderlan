@@ -2179,7 +2179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   damage:
-    baseValue: 10
+    baseValue: 12
   armor:
     baseValue: 0
 --- !u!114 &114794515015403536
