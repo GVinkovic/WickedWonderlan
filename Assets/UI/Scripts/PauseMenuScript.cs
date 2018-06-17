@@ -26,7 +26,7 @@ public class PauseMenuScript : MonoBehaviour {
 	{
         PlayerManager.instance.WindowClosed();
         PauseMenuUI.SetActive (false);
-		Time.timeScale = 1f;
+	//	Time.timeScale = 1f;
 		GameIsPaused = false;
 		//Cursor.visible = false;
 	}

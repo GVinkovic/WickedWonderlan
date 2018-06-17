@@ -265,6 +265,8 @@ public class PlayerManager : MonoBehaviour {
 	public void WindowClosed()
 	{
 		openedWindows--;
+        // ako ima još otvorenih prozora ne radi nista
+        if (openedWindows > 0) return;
 
 		//provjerava dali su svi inventory zatvoreni
 		// ako jesu invoka event, koji onda poziva metodu InventoriesClosed();
