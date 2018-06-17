@@ -41,8 +41,6 @@ public class Player : MonoBehaviour {
 
     public int ShootingInertion = 3000;
 
-    public Texture2D crosshair;
-
     public int defaultSwordIndex = 0;
     public GameObject[] swords;
     public GameObject bow;
