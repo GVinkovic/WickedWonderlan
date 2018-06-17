@@ -204,7 +204,7 @@ public class PlayerManager : MonoBehaviour {
 	{
 		while (instance.playerStats.CurrentMana < instance.playerStats.MaxMana)
 		{
-			AlterMana(PlayerStats.intelligence.Value);
+			AlterMana(PlayerStats.intelligence.Value, false);
 			yield return new WaitForSeconds(instance.ManaRegenerationTime);
 		}
 		isManaRecovering = false;
@@ -214,7 +214,7 @@ public class PlayerManager : MonoBehaviour {
     {
         while (instance.playerStats.CurrentHealth<instance.playerStats.MaxHealth)
         {
-            AlterHealth(PlayerStats.constitution.Value);
+            AlterHealth(PlayerStats.constitution.Value,false);
             yield return new WaitForSeconds(instance.HealthRegenerationTime);
         }
         isHealthRecovering = false;
@@ -333,17 +333,23 @@ public class PlayerManager : MonoBehaviour {
 
 	public static void ConsumeMana()
 	{
-		AlterMana(PlayerStats.intelligence.Value * 5);
+		AlterMana(PlayerStats.intelligence.Value * 5, false);
 		RecoverMana();
 	}
-	public static void AlterMana(int amount)
+    public static void AlterMana(int amount, bool increaseMax = true)
     {
+        //povećaj i max manu ako se povećava i maximum
+        if (increaseMax) PlayerStats.MaxMana += amount;
+
         instance.playerStats.CurrentMana = Mathf.Clamp(PlayerStats.CurrentMana + amount, 0, PlayerStats.MaxMana);
         RefreshManaUI();
     }
 
-    public static void AlterHealth(int amount)
+    public static void AlterHealth(int amount, bool increaseMax = true)
     {
+        // ako se povećava i maximum povećaj maxhealth variablu
+        if (increaseMax) PlayerStats.MaxHealth += amount;
+
         instance.playerStats.CurrentHealth = Mathf.Clamp(PlayerStats.CurrentHealth + amount, 0, PlayerStats.MaxHealth);
         RefreshHealthUI();
     }
