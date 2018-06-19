@@ -11,6 +11,8 @@ public class Portal : QuestLocation {
         if (QuestManager.IsQuestCompleted("Portal"))
         {
             SceneManager.LoadScene(sceneIndex);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
